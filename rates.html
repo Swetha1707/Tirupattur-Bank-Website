@@ -1,0 +1,246 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Interest rates & calculators | Kaveripattinam Urban Co-operative Bank</title>
+<meta name="description" content="Fixed deposit and loan interest rates with EMI and FD calculators.">
+<meta name="theme-color" content="#0F4C45">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anek+Tamil:wght@500;600;700&family=Mukta+Malar:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css?v=206">
+<style>
+/* Rates page styling */
+body.page-rates .section{background:var(--mist)}
+.rp-stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1rem;margin:-3.2rem 0 2.2rem;position:relative;z-index:2}
+.rp-stat{background:#fff;border:1px solid var(--line);border-top:3px solid var(--teal);border-radius:var(--r-md);padding:1.1rem 1.2rem;box-shadow:0 8px 24px rgba(20,36,61,.08)}
+.rp-stat small{display:block;font-size:.72rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-soft)}
+.rp-stat b{display:block;font-size:2rem;line-height:1.15;color:var(--teal-deep);margin:.2rem 0}
+.rp-stat span{font-size:.85rem;color:var(--ink-soft)}
+@media(max-width:900px){.rp-stats{grid-template-columns:repeat(2,1fr)}}
+.rates-scroll{max-height:none;overflow:visible;padding-right:0}
+.split{grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr)}
+@media(max-width:900px){.split{grid-template-columns:1fr}}
+.split>div:first-child>.rates-scroll>*{}
+.deposit-rate-pair>div,.rates-scroll>.table-wrap,.rates-scroll>h2,.rates-scroll>p{}
+.table-wrap{border-radius:var(--r-md);box-shadow:0 4px 16px rgba(20,36,61,.06);border-color:var(--line)}
+.rates-scroll table th{font-size:.78rem;letter-spacing:.07em;text-transform:uppercase;font-weight:600;text-align:left}
+.rates-scroll table th.num,.rates-scroll table td.num{text-align:right}
+.rates-scroll table tbody tr:nth-child(even) td{background:#F7F8FA}
+.rates-scroll table tbody tr:hover td{background:#EAF0F8}
+.rates-scroll table td+td{font-weight:700;color:var(--teal-deep);font-variant-numeric:tabular-nums}
+.rates-scroll table td:first-child{color:var(--ink);font-weight:500}
+.rates-scroll table td{border-top:1px solid var(--line)}
+.rates-scroll h2{display:flex;align-items:center;gap:.6rem;font-size:1.35rem}
+.rates-scroll h2::before{content:"";width:5px;height:1.2em;background:var(--teal);border-radius:3px}
+.fixed-rates-note{background:#fff;border-left:3px solid var(--accent);padding:.8rem 1rem;border-radius:var(--r-sm)}
+.loan-rates-note{display:inline-block;background:var(--teal-deep);color:#fff;padding:.5rem 1rem;border-radius:999px;font-weight:600}
+.split>div:last-child{position:sticky;top:5.5rem}
+.calc{box-shadow:0 12px 32px rgba(20,36,61,.10);border-top:4px solid var(--teal)}
+@media(max-width:900px){.split>div:last-child{position:static}.rp-stats{margin-top:-2rem}}
+.rp-stat{transition:transform .25s ease,box-shadow .25s ease,border-top-color .25s ease;cursor:default}
+.rp-stat:hover,.rp-stat:focus-within{transform:translateY(-6px);box-shadow:0 16px 32px rgba(20,36,61,.18);border-top-color:#3B82C4}
+.rp-stat b{transition:color .25s ease}
+.rp-stat:hover b{color:#2A5FA0}
+.calc:hover{box-shadow:0 16px 40px rgba(20,36,61,.16)}
+.calc{transition:box-shadow .25s ease}
+.btn{transition:transform .2s ease,box-shadow .2s ease,background .2s ease}
+.rates-scroll ~ *{}
+.calc .btn:hover{transform:translateY(-2px);box-shadow:0 8px 18px rgba(20,36,61,.22)}
+@media(prefers-reduced-motion:reduce){.rp-stat,.calc,.btn{transition:none}.rp-stat:hover{transform:none}}
+</style>
+</head>
+<body class="page-rates">
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header"><div class="wrap">
+  <a class="topbar-brand" href="index.html">
+    <img src="assets/bank-logo-cropped.png" alt="" width="34" height="34">
+    <span>Kaveripattinam Urban<br>Co-operative Bank Ltd.</span>
+  </a>
+  <button class="nav-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Open menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18"/></svg></button>
+  <nav class="nav" id="site-nav" aria-label="Main"><ul><li><a href="index.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 10.5 12 3l9 7.5"/><path d="M5 9.5V20a1 1 0 0 0 1 1h3v-6h6v6h3a1 1 0 0 0 1-1V9.5"/></svg>Home</a></li><li><a href="about.html">About us</a></li><li><a href="deposits.html">Deposits</a></li><li><a href="loans.html">Loans</a></li><li><a href="services.html">Services</a></li><li><a href="rates.html" aria-current="page">Interest rates</a></li><li><a href="notices.html">Notices</a></li><li><a href="customer-corner.html">Customer corner</a></li><li class="nav-cta"><a href="contact.html">Contact us</a></li></ul></nav>
+  <div class="settings-menu">
+    <button type="button" class="settings-toggle" aria-haspopup="true" aria-expanded="false" aria-controls="language-menu" aria-label="Settings">
+      <span class="settings-icon" aria-hidden="true">Aa</span>
+    </button>
+    <div class="language-menu" id="language-menu" role="group" aria-label="Display settings">
+      <div class="language-menu-group">
+        <span class="language-menu-label">Language</span>
+        <div class="language-menu-options" role="group" aria-label="Select language">
+          <button type="button" data-language="en" aria-pressed="true">EN</button>
+          <button type="button" data-language="ta" aria-pressed="false">தமிழ்</button>
+        </div>
+      </div>
+      <div class="language-menu-group">
+        <span class="language-menu-label">Font size</span>
+        <div class="language-menu-options" role="group" aria-label="Font size">
+          <button type="button" data-font-size="decrease" aria-pressed="false" aria-label="Decrease font size">A-</button>
+          <button type="button" data-font-size="normal" aria-pressed="true" aria-label="Normal font size">A</button>
+          <button type="button" data-font-size="increase" aria-pressed="false" aria-label="Increase font size">A+</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div></header>
+<main id="main"><section class="page-hero"><div class="wrap">
+  <div class="crumbs"><a href="index.html">Home</a> / <span>Interest rates</span></div>
+  <h1>Interest rates & calculators</h1>
+  <p class="hero-ta" lang="ta">வட்டி விகிதங்கள்</p>
+  <p>For Deposit individual 8.25% and For senior citizens 8.50%</p>
+  <a class="hero-link" href="#calculators">Calculate Loans and Deposits <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"/></svg></a>
+</div></section><section class="section" style="padding-bottom:0;background:transparent"><div class="wrap"><div class="rp-stats">
+  <div class="rp-stat"><small>Best FD rate</small><b>8.25%</b><span>Senior citizens, 2–3 years</span></div>
+  <div class="rp-stat"><small>Recurring deposit</small><b>7.75%</b><span>12 to 24 months</span></div>
+  <div class="rp-stat"><small>Lowest loan rate</small><b>6%</b><span>TAMCO Loan</span></div>
+  <div class="rp-stat"><small>Highest loan rate</small><b>13%</b><span>Joint Liability Group Loan</span></div>
+</div></div></section>
+<section class="section" style="padding-top:0"><div class="wrap split">
+  <div>
+    <div class="rates-scroll">
+      <div class="deposit-rate-pair">
+        <div>
+          <h2>Fixed deposit interest rates</h2>
+          <p class="fixed-rates-intro">Indicative rates for deposits below ₹2 crore, per annum. Senior citizens (60+) receive an additional 0.50%.</p>
+          <div class="table-wrap"><table class="fixed-rates-table"><thead><tr><th>Period</th><th class="num">General</th><th class="num">Senior citizens</th></tr></thead><tbody>
+            <tr><td>180 days – 364 days</td><td class="num">6.50%</td><td class="num">7.00%</td></tr>
+            <tr><td>1 year – below 2 years</td><td class="num">7.50%</td><td class="num">8.00%</td></tr>
+            <tr><td>2 years – below 3 years</td><td class="num">7.75%</td><td class="num">8.25%</td></tr>
+            <tr><td>3 years and above</td><td class="num">7.25%</td><td class="num">7.75%</td></tr>
+          </tbody></table></div>
+          <p class="fixed-rates-note">Rates are indicative and subject to change. Please confirm at the branch. Each depositor is insured by DICGC up to a maximum of ₹5,00,000 (principal and interest combined) per bank, in the same right and capacity.</p>
+        </div>
+        <div class="recurring-rates-block">
+          <h2>Recurring deposit rate</h2>
+          <p class="recurring-rates-intro">Save a fixed amount every month and earn a fixed rate.</p>
+          <div class="table-wrap"><table class="recurring-rates-table"><thead><tr><th>Tenure</th><th>Interest Rate</th></tr></thead><tbody>
+            <tr><td>12 to 24 months</td><td>7.75%</td></tr>
+          </tbody></table></div>
+        </div>
+      </div>
+      <h2 class="loan-rates-title">Loan interest rates</h2>
+      <p class="loan-rates-intro">Rates per annum, calculated as simple interest on a daily basis (principal × rate × days ÷ 365).</p>
+      <div class="table-wrap"><table class="loan-rates-table"><thead><tr><th>Loan type</th><th>Interest rate (p.a.)</th></tr></thead><tbody>
+        <tr><td>House Construction Loan</td><td>12%</td></tr>
+        <tr><td>Gold Loan</td><td>11%</td></tr>
+        <tr><td>Joint Liability Group Loan</td><td>13%</td></tr>
+        <tr><td>Mortgage Loan</td><td>12%</td></tr>
+        <tr><td>Loan for Differently Abled Persons (NHFDC)</td><td>12%</td></tr>
+        <tr><td>Self Help Group Loan</td><td>12%</td></tr>
+        <tr><td>Business Loan</td><td>12%</td></tr>
+        <tr><td>TABCEDCO Loan</td><td>8%</td></tr>
+        <tr><td>TAMCO Loan</td><td>6%</td></tr>
+        <tr><td>Women Entrepreneur Loan</td><td>12%</td></tr>
+        <tr><td>Working Women Loan</td><td>12%</td></tr>
+        <tr><td>Surety Loan</td><td>12%</td></tr>
+      </tbody></table></div>
+    </div>
+  </div>
+  <div id="calculators"><h2>Calculators</h2><div class="calc" data-calc>
+  <div class="calc-tabs" role="tablist" aria-label="Calculators">
+    <button role="tab" aria-selected="true" aria-controls="p-emi" id="t-emi">Loan EMI</button>
+    <button role="tab" aria-selected="false" aria-controls="p-fd" id="t-fd">Fixed deposit</button>
+  </div>
+  <div role="tabpanel" id="p-emi" aria-labelledby="t-emi">
+    <div class="field"><div class="field-head"><label for="loantype-manual">Loan type</label><select class="calc-manual" id="loantype-manual" data-manual="loantype" aria-label="Select loan type">
+      <option value="12">House Construction Loan</option>
+      <option value="11">Gold Loan</option>
+      <option value="13">Joint Liability Group Loan</option>
+      <option value="12">Mortgage Loan</option>
+      <option value="12">Loan for Differently Abled Persons (NHFDC)</option>
+      <option value="12" selected>Self Help Group Loan</option>
+      <option value="12">Business Loan</option>
+      <option value="8">TABCEDCO Loan</option>
+      <option value="6">TAMCO Loan</option>
+      <option value="12">Women Entrepreneur Loan</option>
+      <option value="12">Working Women Loan</option>
+    </select></div></div>
+    <div class="field"><div class="field-head"><label for="loan-manual">Loan amount</label><input class="calc-manual" type="number" id="loan-manual" data-manual="loan" min="10000" max="5000000" step="1" value="0" aria-label="Enter loan amount"></div></div>
+    <div class="field"><div class="field-head"><label for="lrate-manual">Interest rate (% per year, set by loan type)</label><input class="calc-manual" type="number" id="lrate-manual" data-manual="lrate" min="6" max="13" step="0.1" value="12" readonly aria-label="Interest rate, set automatically by loan type"></div></div>
+    <div class="field"><div class="field-head"><label for="tenure-manual">Tenure (months)</label><input class="calc-manual" type="number" id="tenure-manual" data-manual="tenure" min="6" max="240" step="1" value="0" aria-label="Enter loan tenure in months"></div></div>
+    <div class="result" aria-live="polite">
+      <div class="big"><small>Monthly EMI</small><b data-out="emi"></b></div>
+      <div><small>Total interest</small><b data-out="interest"></b></div>
+      <div><small>Total payable</small><b data-out="total"></b></div>
+    </div>
+    <div class="calc-actions"><button class="btn btn-line" type="button" data-action="cancel">Cancel</button><button class="btn btn-teal" type="button" data-action="calculate">Calculate</button></div>
+  </div>
+  <div role="tabpanel" id="p-fd" aria-labelledby="t-fd" hidden>
+    <div class="field"><div class="field-head"><label for="dep-manual">Deposit amount</label><input class="calc-manual" type="number" id="dep-manual" data-manual="dep" min="5000" max="2500000" step="1" value="0" aria-label="Enter deposit amount"></div></div>
+    <div class="field"><div class="field-head"><label for="drate-manual">Interest rate</label><input class="calc-manual" type="number" id="drate-manual" data-manual="drate" min="4" max="9" step="0.05" value="0" aria-label="Enter deposit interest rate"></div></div>
+    <div class="field"><div class="field-head"><label for="years-manual">Period (years)</label><input class="calc-manual" type="number" id="years-manual" data-manual="years" min="1" max="10" step="1" value="0" aria-label="Enter deposit period in years"></div></div>
+    <div class="result" aria-live="polite">
+      <div class="big"><small>Maturity value</small><b data-out="mat"></b></div>
+      <div><small>Interest earned</small><b data-out="earned"></b></div>
+      <div><small>You deposit</small><b data-out="principal"></b></div>
+    </div>
+    <div class="calc-actions"><button class="btn btn-line" type="button" data-action="cancel">Cancel</button><button class="btn btn-teal" type="button" data-action="calculate">Calculate</button></div>
+  </div>
+  <p class="note">Estimates only. FD calculated with quarterly compounding. Final figures are confirmed at the branch.</p>
+</div></div></div></section>
+<section class="cta-band"><div class="wrap">
+  <div><h2>Talk to us at the branch</h2><p>Bring your Aadhaar and PAN. Most accounts open the same day.</p></div>
+  <div class="hero-actions" style="margin:0"><a class="btn btn-mango" href="contact.html">Send an enquiry</a><a class="btn btn-ghost" href="tel:04343-252-026">Call the branch</a></div>
+</div></section></main>
+<footer class="site-footer"><div class="wrap">
+  <div class="foot-grid">
+    <div>
+      <div class="foot-brand"><img src="assets/bank-logo-cropped.png" alt="" width="46" height="46"><strong>Kaveripattinam Urban Co-operative Bank Ltd.</strong></div>
+      <p>A member-owned co-operative bank serving Kaveripattinam and the surrounding villages of Krishnagiri district.</p>
+    </div>
+    <div>
+      <h4>Banking</h4>
+      <ul>
+        <li><a href="deposits.html">Deposit accounts</a></li>
+        <li><a href="deposits.html#savings">Savings account</a></li>
+        <li><a href="deposits.html#current">Current account</a></li>
+        <li><a href="deposits.html#fixed">Fixed deposit</a></li>
+        <li><a href="loans.html">Loans</a></li>
+        <li><a href="loans.html#gold">Gold loan</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="rates.html">Interest rates &amp; calculators</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Help</h4>
+      <ul>
+        <li><a href="customer-corner.html#kyc">KYC documents</a></li>
+        <li><a href="contact.html">Contact us</a></li>
+        <li><a href="customer-corner.html#grievance">Raise a complaint</a></li>
+        <li><a href="customer-corner.html#fraud">Fraud awareness</a></li>
+        <li><a href="about.html">About the bank</a></li>
+        <li><a href="customer-corner.html#dicgc">Deposit insurance</a></li>
+        <li><a href="contact.html">Send a query</a></li>
+        <li><a href="index.html#visit">Branch directions</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="https://kooturavu.tn.gov.in/" target="_blank" rel="noopener">Kooturavu</a></li>
+        <li><a href="https://www.tn.gov.in/" target="_blank" rel="noopener">TN Govt</a></li>
+        <li><a href="https://www.rbi.org.in/" target="_blank" rel="noopener">RBI</a></li>
+        <li><a href="https://www.dicgc.org.in/" target="_blank" rel="noopener">DICGC</a></li>
+        <li><a href="https://www.ckycindia.in/ckyc/?r=home" target="_blank" rel="noopener">CKYC</a></li>
+        <li><a href="https://cms.rbi.org.in/cms/indexpage.html#eng" target="_blank" rel="noopener">RBI Complaints</a></li>
+        <li><a href="https://www.npci.org.in/" target="_blank" rel="noopener">NPCI</a></li>
+        <li><a href="https://ckycregistry.co.in/" target="_blank" rel="noopener">CKYC Registry</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Visit us</h4>
+      <p>11/64,Pillaiyar Koil Strret,<br>Kaveripattinam,<br>Tamil Nadu - 635112</p>
+      <a class="footer-contact" href="tel:04343-252-026"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg><span class="placeholder phone-number" title="Placeholder – replace with official detail">04343-252-026</span></a><span class="footer-contact-spacer"></span><a class="footer-contact" href="mailto:email@kaveripattinamtown.bank.in"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>email@kaveripattinamtown.bank.in</a><span class="footer-contact-spacer"></span><a href="https://www.google.com/maps/dir/?api=1&destination=Kaveripattinam%20Urban%20Cooperative%20Bank%2C%2011%2F64%20Pillaiyar%20Koil%20Street%2C%20Kaveripattinam%2C%20Krishnagiri%2C%20Tamil%20Nadu%20635112" target="_blank" rel="noopener">Get directions</a></p>
+    </div>
+  </div>
+  <div class="foot-bottom">
+    <span>© <span data-year>2026</span> Kaveripattinam Urban Co-operative Bank Ltd. All rights reserved.</span>
+    <span>Regulated by the Reserve Bank of India and the Registrar of Co-operative Societies, Tamil Nadu.</span>
+  </div>
+</div></footer>
+<button class="to-top" aria-label="Back to top"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m18 15-6-6-6 6"/></svg></button>
+<script src="js/translations.js?v=25"></script>
+<script src="js/main.js?v=37"></script>
+</body>
+</html>

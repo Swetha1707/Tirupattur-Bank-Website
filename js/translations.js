@@ -1,0 +1,409 @@
+(function () {
+  "use strict";
+
+  var ta = {
+    "Skip to content": "உள்ளடக்கத்திற்குச் செல்லவும்",
+    "Mon–Sat, 10:00 AM – 4:00 PM": "திங்கள்–சனி, காலை 10:00 – மாலை 4:00",
+    "Kaveripattinam Urban": "காவேரிப்பட்டினம் நகர",
+    "Co-operative Bank Ltd.": "கூட்டுறவு வங்கி லிமிடெட்",
+    "Home": "முகப்பு", "About us": "எங்களைப் பற்றி", "About the bank": "வங்கியைப் பற்றி",
+    "Deposits": "வைப்புகள்", "Deposit accounts": "வைப்புக் கணக்குகள்", "Loans": "கடன்கள்",
+    "Services": "சேவைகள்", "Interest rates": "வட்டி விகிதங்கள்", "Interest rates & calculators": "வட்டி விகிதங்கள் மற்றும் கணிப்பான்கள்",
+    "Notices": "அறிவிப்புகள்", "Notices & Circulars": "அறிவிப்புகள் & சுற்றறிக்கைகள்",
+    "Language": "மொழி", "Font size": "எழுத்து அளவு",
+    "Customer corner": "வாடிக்கையாளர் பகுதி", "Contact us": "எங்களைத் தொடர்புகொள்ள", "Send an enquiry": "விசாரணையை அனுப்பவும்",
+    "Send a query": "கேள்வியை அனுப்பவும்", "Call the branch": "கிளையை அழைக்கவும்", "Get directions": "வழியைப் பெறவும்",
+    "Open in Google Maps": "Google வரைபடத்தில் திறக்கவும்", "Skip to content": "உள்ளடக்கத்திற்குச் செல்லவும்",
+    "Banking": "வங்கிச் சேவைகள்", "Help": "உதவி", "Quick Links": "விரைவு இணைப்புகள்", "Visit us": "எங்களைச் சந்திக்கவும்",
+    "Savings account": "சேமிப்புக் கணக்கு", "Current account": "நடப்புக் கணக்கு", "Fixed deposit": "நிலையான வைப்பு",
+    "Recurring deposit": "தொடர் வைப்பு", "Gold loan": "தங்கக் கடன்", "Gold Loan": "தங்கக் கடன்", "KYC documents": "KYC ஆவணங்கள்",
+    "Raise a complaint": "புகார் அளிக்கவும்", "Fraud awareness": "மோசடி விழிப்புணர்வு", "Deposit insurance": "வைப்புக் காப்பீடு",
+    "Branch directions": "கிளைக்குச் செல்லும் வழி", "Kooturavu": "கூட்டுறவு", "Tamil Nadu": "தமிழ்நாடு", "Government": "அரசு",
+    "RBI Complaints": "RBI புகார்கள்", "CKYC Registry": "CKYC பதிவகம்", "This page isn't here": "இந்தப் பக்கம் இல்லை",
+    "Not found": "கண்டறியப்படவில்லை", "The link may be old. Use the menu above or go back to the home page.": "இந்த இணைப்பு பழையதாக இருக்கலாம். மேலுள்ள பட்டியலைப் பயன்படுத்தவும் அல்லது முகப்புப் பக்கத்திற்குத் திரும்பவும்.",
+    "Go to home page": "முகப்புப் பக்கத்திற்குச் செல்லவும்", "About the bank": "வங்கியைப் பற்றி",
+    "A co-operative bank started by the people of Kaveripattinam to serve their own savings and credit needs.": "காவேரிப்பட்டினம் மக்களின் சேமிப்பு மற்றும் கடன் தேவைகளைப் பூர்த்தி செய்வதற்காக அவர்களால் தொடங்கப்பட்ட கூட்டுறவு வங்கி.",
+    "Banking Built Around People.": "மக்களை மையமாகக் கொண்ட வங்கிச் சேவை.", "Driven by Progress.": "முன்னேற்றத்தை நோக்கி.",
+    "At": "", "we believe modern banking should be built on something timeless - ": "நவீன வங்கிச் சேவை காலத்தால் மாறாத ஒன்றான", "trust": "நம்பிக்கை", ".": ".",
+    "We bring together the strength of a relationship-led institution with the simplicity and convenience of modern banking. Our approach is personal, transparent, and focused on helping individuals, families, and businesses make confident financial decisions.": "உறவுகளை அடிப்படையாகக் கொண்ட நிறுவனத்தின் வலிமையையும் நவீன வங்கிச் சேவையின் எளிமை மற்றும் வசதியையும் ஒன்றிணைக்கிறோம். தனிநபர்கள், குடும்பங்கள் மற்றும் வணிகங்கள் நம்பிக்கையுடன் நிதி முடிவுகளை எடுக்க உதவும் வகையில் தனிப்பட்ட, வெளிப்படையான சேவையை வழங்குகிறோம்.",
+    "More Than Banking": "வங்கிச் சேவையைத் தாண்டி", "Every financial journey is different. That is why we look beyond products and transactions to understand the people and aspirations behind them.": "ஒவ்வொருவரின் நிதிப் பயணமும் தனித்துவமானது. அதனால், சேவைகள் மற்றும் பரிவர்த்தனைகளைத் தாண்டி அவற்றைப் பயன்படுத்தும் மக்களையும் அவர்களின் இலக்குகளையும் புரிந்துகொள்கிறோம்.",
+    "Whether it is building savings, financing a new opportunity, growing a business, or planning for the future, we aim to provide dependable financial solutions backed by responsive service and a deep understanding of our community.": "சேமிப்பை உருவாக்குதல், புதிய வாய்ப்புக்கு நிதியளித்தல், வணிகத்தை வளர்த்தல் அல்லது எதிர்காலத்திற்குத் திட்டமிடுதல் என எதுவாக இருந்தாலும், எங்கள் சமூகத்தைப் பற்றிய புரிதலுடனும் விரைவான சேவையுடனும் நம்பகமான நிதித் தீர்வுகளை வழங்குகிறோம்.",
+    "Built on Trust.": "நம்பிக்கையின் அடித்தளம்.", "Ready for Tomorrow.": "நாளைய வளர்ச்சிக்குத் தயார்.",
+    "integrity, accountability, and long-term relationships": "நேர்மை, பொறுப்புணர்வு மற்றும் நீண்டகால உறவுகள்",
+    "Our foundation is built on": "எங்கள் அடித்தளம்", ". At the same time, we continue to embrace technology and evolving customer expectations to make banking more seamless, accessible, and secure.": "ஆகியவற்றால் அமைந்தது. அதேவேளையில், வங்கிச் சேவையை எளிமையானதாகவும் எளிதில் அணுகக்கூடியதாகவும் பாதுகாப்பானதாகவும் மாற்ற தொழில்நுட்பத்தையும் வாடிக்கையாளர்களின் மாறும் எதிர்பார்ப்புகளையும் ஏற்கிறோம்.",
+    "We believe progress is meaningful when it creates value for everyone we serve.": "நாங்கள் சேவை செய்யும் அனைவருக்கும் மதிப்பை உருவாக்கும்போதுதான் முன்னேற்றம் அர்த்தமுள்ளதாக இருக்கும் என நம்புகிறோம்.",
+    "Our Vision": "எங்கள் தொலைநோக்குப் பார்வை", "To create a trusted, modern banking experience that empowers our customers to move forward with confidence and contributes to the sustainable growth of the communities we serve.": "வாடிக்கையாளர்கள் நம்பிக்கையுடன் முன்னேற உதவும் நவீன, நம்பகமான வங்கிச் சேவையை உருவாக்கி, நாம் சேவை செய்யும் சமூகங்களின் நிலையான வளர்ச்சிக்குப் பங்களிப்பதே எங்கள் நோக்கம்.",
+    "Talk to us at the branch": "கிளையில் எங்களை அணுகவும்", "Bring your Aadhaar and PAN. Most accounts open the same day.": "ஆதார் மற்றும் PAN அட்டையைக் கொண்டு வாருங்கள். பெரும்பாலான கணக்குகள் அதே நாளில் தொடங்கப்படும்.",
+    "A member-owned co-operative bank serving Kaveripattinam and the surrounding villages of Krishnagiri district.": "காவேரிப்பட்டினம் மற்றும் கிருஷ்ணகிரி மாவட்டத்தைச் சுற்றியுள்ள கிராமங்களுக்கு சேவை வழங்கும், உறுப்பினர்களுக்குச் சொந்தமான கூட்டுறவு வங்கி.",
+    "Deposits insured by DICGC up to ₹5 lakh per depositor": "ஒவ்வொரு வைப்பாளருக்கும் ₹5 லட்சம் வரை DICGC வைப்புக் காப்பீடு",
+    "Savings, current, fixed, recurring and senior citizen deposit schemes.": "சேமிப்பு, நடப்பு, நிலையான, தொடர் மற்றும் மூத்த குடிமக்களுக்கான வைப்பு திட்டங்கள்.",
+    "Safe places to keep and grow your money, all insured by DICGC up to ₹5 lakh per depositor.": "உங்கள் பணத்தைப் பாதுகாப்பாக வைத்துப் பெருக்குவதற்கான திட்டங்கள். ஒவ்வொரு வைப்பாளருக்கும் ₹5 லட்சம் வரை DICGC காப்பீடு உண்டு.",
+    "Minimum balance ₹500": "குறைந்தபட்ச இருப்பு ₹500", "An everyday account for salaries, household savings and receiving payments, with interest credited every quarter.": "சம்பளம் பெறவும், குடும்பச் சேமிப்பிற்கும், பணம் பெறவும் ஏற்ற அன்றாடக் கணக்கு. வட்டி காலாண்டுதோறும் வரவு வைக்கப்படும்.",
+    "Interest on daily balance": "தினசரி இருப்புக்கு வட்டி", "Cheque book and passbook": "காசோலைப் புத்தகம் மற்றும் கணக்குப் புத்தகம்", "RuPay debit card": "RuPay பற்று அட்டை", "Free SMS alerts": "இலவச SMS அறிவிப்புகள்", "Nomination facility": "வாரிசு நியமன வசதி", "You will need:": "தேவையானவை:",
+    "For shops & firms": "கடைகள் மற்றும் நிறுவனங்களுக்கு", "For traders, shops and businesses that handle many deposits and payments each day.": "தினசரி பல வைப்பு மற்றும் பணப் பரிவர்த்தனைகளை மேற்கொள்ளும் வணிகர்கள், கடைகள் மற்றும் நிறுவனங்களுக்கு ஏற்றது.", "Unlimited transactions": "வரம்பற்ற பரிவர்த்தனைகள்", "Multi-city cheques": "பல நகரங்களில் செலுத்தக்கூடிய காசோலைகள்", "Overdraft facility on request": "கோரிக்கையின் பேரில் மிகைப்பற்று வசதி", "Statements on demand": "கோரிக்கையின் பேரில் கணக்கு அறிக்கை",
+    "7 days to 10 years": "7 நாட்கள் முதல் 10 ஆண்டுகள் வரை", "Lock in a fixed rate for a chosen period. Choose to receive interest monthly, quarterly, or at maturity.": "தேர்ந்தெடுத்த காலத்திற்கு நிலையான வட்டியில் முதலீடு செய்யுங்கள். வட்டியை மாதந்தோறும், காலாண்டுதோறும் அல்லது முதிர்வின்போது பெறலாம்.", "Monthly or quarterly interest payout": "மாதாந்திர அல்லது காலாண்டு வட்டித் தொகை", "Reinvestment (cumulative) option": "மறு முதலீட்டு (ஒட்டுமொத்த) வசதி", "Loan up to 90% of deposit": "வைப்புத் தொகையில் 90% வரை கடன்", "Auto-renewal on maturity": "முதிர்வில் தானியங்கி புதுப்பிப்பு", "Premature closure allowed": "முன்கூட்டியே முடிக்கும் வசதி",
+    "From ₹100 a month": "மாதம் ₹100 முதல்", "Save a fixed amount every month and receive a lump sum with interest at the end - ideal for school fees, festivals or a wedding.": "ஒவ்வொரு மாதமும் ஒரு நிலையான தொகையைச் சேமித்து, கால முடிவில் வட்டியுடன் மொத்தமாகப் பெறுங்கள். கல்விக் கட்டணம், விழாக்கள் அல்லது திருமணச் செலவுகளுக்குப் பயனுள்ளது.", "Tenure of 12 to 120 months": "12 முதல் 120 மாதங்கள் வரையிலான காலம்", "Fixed deposit rates apply": "நிலையான வைப்புக்கான வட்டி விகிதம் பொருந்தும்", "Standing instruction from savings": "சேமிப்புக் கணக்கிலிருந்து நிலையான பணப் பரிமாற்ற உத்தரவு", "Loan against RD balance": "RD இருப்புக்கு எதிராகக் கடன்",
+    "+0.50% extra": "+0.50% கூடுதல்", "Depositors aged 60 and above earn an additional 0.50% on all fixed and recurring deposits.": "60 வயது மற்றும் அதற்கு மேற்பட்ட வைப்பாளர்கள் அனைத்து நிலையான மற்றும் தொடர் வைப்புகளுக்கும் கூடுதலாக 0.50% வட்டி பெறுவர்.", "Additional 0.50% interest": "கூடுதலாக 0.50% வட்டி", "Monthly interest to savings": "மாதாந்திர வட்டி சேமிப்புக் கணக்கில் வரவு", "Form 15H for TDS exemption": "TDS விலக்கிற்கான Form 15H", "Priority service at the counter": "வங்கிக் கவுண்டரில் முன்னுரிமைச் சேவை",
+    "For minors": "18 வயதுக்குட்பட்டோருக்கு", "Open an account for your child, operated by a parent or guardian, to build the saving habit early.": "குழந்தையின் பெயரில் பெற்றோர் அல்லது பாதுகாவலர் இயக்கும் கணக்கைத் தொடங்கி, சிறு வயதிலேயே சேமிப்புப் பழக்கத்தை வளர்த்திடுங்கள்.", "No minimum balance": "குறைந்தபட்ச இருப்புத் தொகை இல்லை", "Operated by guardian": "பாதுகாவலரால் இயக்கப்படும்", "Converts to regular account at 18": "18 வயதில் வழக்கமான கணக்காக மாற்றப்படும்",
+    "Fair rates, local decisions and repayment plans that fit the way you earn.": "நியாயமான வட்டி விகிதங்கள், உள்ளூர் முடிவுகள் மற்றும் உங்கள் வருமானத்திற்கு ஏற்ற திருப்பிச் செலுத்தும் திட்டங்கள்.", "Housing loan": "வீட்டுக் கடன்", "Vehicle loan": "வாகனக் கடன்", "Business & MSME loan": "வணிக மற்றும் MSME கடன்", "Personal & salary loan": "தனிநபர் மற்றும் சம்பளக் கடன்", "Education loan": "கல்விக் கடன்", "Loan against deposit": "வைப்புக்கு எதிரான கடன்", "Agricultural & allied loans": "விவசாயம் மற்றும் தொடர்புடைய கடன்கள்",
+    "Disbursed same day": "அதே நாளில் வழங்கப்படும்", "Borrow against your gold ornaments, appraised at the counter in front of you. The most requested loan at our branch.": "உங்கள் முன்னிலையில் கவுண்டரில் மதிப்பிடப்படும் தங்க நகைகளுக்கு எதிராகக் கடன் பெறுங்கள். எங்கள் கிளையில் அதிகம் கோரப்படும் கடன் இது.", "Loan up to RBI-permitted loan-to-value": "RBI அனுமதித்த மதிப்பு விகிதம் வரை கடன்", "Pay interest monthly, principal at end": "வட்டியை மாதந்தோறும், அசலை கால முடிவில் செலுத்துங்கள்", "No prepayment charges": "முன்கூட்டிச் செலுத்தக் கட்டணம் இல்லை", "Gold stored in insured vault": "காப்பீடு செய்யப்பட்ட பாதுகாப்புப் பெட்டகத்தில் தங்கம் வைக்கப்படும்", "Renewal without re-pledging": "மீண்டும் அடமானம் வைக்காமல் புதுப்பிக்கலாம்", "Agricultural gold loans available": "விவசாய தங்கக் கடன்கள் கிடைக்கும்",
+    "Up to 20 years": "20 ஆண்டுகள் வரை", "Build, buy or extend your home, or buy a house site within our area of operation.": "எங்கள் செயல்பாட்டுப் பகுதியில் வீடு கட்ட, வாங்க, விரிவாக்க அல்லது வீட்டு மனை வாங்க உதவும் கடன்.", "Construction, purchase or repair": "கட்டுமானம், கொள்முதல் அல்லது பழுதுபார்ப்பு", "Repayment up to 20 years": "20 ஆண்டுகள் வரை திருப்பிச் செலுத்தலாம்", "Stage-wise disbursement": "கட்டங்களாகக் கடன் வழங்கப்படும்", "No hidden charges": "மறைமுகக் கட்டணங்கள் இல்லை",
+    "New & used": "புதிய மற்றும் பயன்படுத்திய வாகனங்கள்", "Finance a two-wheeler, car, auto-rickshaw, goods carrier or tractor.": "இருசக்கர வாகனம், கார், ஆட்டோ, சரக்கு வாகனம் அல்லது டிராக்டர் வாங்க நிதியுதவி.", "Two-wheelers and cars": "இருசக்கர வாகனங்கள் மற்றும் கார்கள்", "Commercial vehicles": "வணிக வாகனங்கள்", "Tractors for farmers": "விவசாயிகளுக்கான டிராக்டர்கள்", "Quick sanction": "விரைவான கடன் ஒப்புதல்",
+    "For traders": "வணிகர்களுக்கு", "Working capital and term loans for shops, small manufacturers, dealers and service businesses.": "கடைகள், சிறு உற்பத்தியாளர்கள், விற்பனையாளர்கள் மற்றும் சேவை நிறுவனங்களுக்கான செயல்பாட்டு மூலதனம் மற்றும் தவணைக் கடன்கள்.", "Cash credit and overdraft": "ரொக்கக் கடன் மற்றும் மிகைப்பற்று", "Term loans for machinery": "இயந்திரங்களுக்கான தவணைக் கடன்", "Stock-based limits": "சரக்கு அடிப்படையிலான கடன் வரம்பு", "Udyam-registered units supported": "Udyam-ல் பதிவு செய்த நிறுவனங்களுக்கு ஆதரவு",
+    "Salaried employees": "சம்பளப் பணியாளர்களுக்கு", "For education, medical costs or family functions, repaid through monthly salary deduction.": "கல்வி, மருத்துவச் செலவுகள் அல்லது குடும்ப நிகழ்வுகளுக்கான கடன். மாதச் சம்பளத்திலிருந்து தவணை பிடித்தம் செய்யப்படும்.", "Repay in up to 60 months": "60 மாதங்கள் வரை திருப்பிச் செலுத்தலாம்", "Salary tie-up with employer": "பணியமர்த்துநருடன் சம்பள ஒப்பந்தம்", "Minimal paperwork": "குறைந்த ஆவணங்கள்",
+    "Higher studies": "உயர்கல்விக்கு", "Fees for college, professional and technical courses for students in our area.": "எங்கள் பகுதி மாணவர்களின் கல்லூரி, தொழில்முறை மற்றும் தொழில்நுட்பப் படிப்புகளுக்கான கட்டண உதவி.", "Tuition, hostel and exam fees": "கல்வி, விடுதி மற்றும் தேர்வுக் கட்டணங்கள்", "Repayment after course": "படிப்பு முடிந்த பின் திருப்பிச் செலுத்தலாம்", "Parent as co-borrower": "பெற்றோர் இணைக் கடனாளராக",
+    "Instant": "உடனடி", "Borrow up to 90% of your fixed or recurring deposit without breaking it.": "நிலையான அல்லது தொடர் வைப்பை முடிக்காமல் அதன் 90% வரை கடன் பெறுங்கள்.", "No processing delay": "செயலாக்கத் தாமதம் இல்லை", "Only 1% above deposit rate": "வைப்பு வட்டியை விட 1% மட்டுமே அதிகம்", "Your deposit keeps earning": "உங்கள் வைப்புக்கு தொடர்ந்து வட்டி கிடைக்கும்",
+    "Farmers": "விவசாயிகளுக்கு", "Crop loans, dairy, poultry and mango orchard development for farmers of the Kaveripattinam block.": "காவேரிப்பட்டினம் வட்டார விவசாயிகளுக்கான பயிர்க் கடன், பால் பண்ணை, கோழிப் பண்ணை மற்றும் மாமரத் தோட்ட மேம்பாட்டுக் கடன்கள்.", "Crop and orchard loans": "பயிர் மற்றும் தோட்டக் கடன்கள்", "Dairy and poultry units": "பால் மற்றும் கோழிப் பண்ணைகள்", "Seasonal repayment schedule": "பருவகால திருப்பிச் செலுத்தும் அட்டவணை",
+    "Everything beyond savings and loans that you use week to week.": "சேமிப்பு மற்றும் கடன்களுக்கு அப்பால், அன்றாடம் நீங்கள் பயன்படுத்தும் அனைத்து வங்கிச் சேவைகளும்.", "Send money to any bank account in India. NEFT runs 24×7; RTGS for ₹2 lakh and above.": "இந்தியாவில் உள்ள எந்த வங்கிக் கணக்கிற்கும் பணம் அனுப்புங்கள். NEFT 24×7 செயல்படும்; ₹2 லட்சம் மற்றும் அதற்கு மேல் RTGS பயன்படுத்தலாம்.", "Small, medium and large lockers in our strong room, rented yearly under RBI locker rules.": "RBI பாதுகாப்புப் பெட்டக விதிகளின்படி எங்கள் பாதுகாப்பு அறையில் சிறிய, நடுத்தர மற்றும் பெரிய பெட்டகங்களை ஆண்டுக் கட்டணத்தில் பெறலாம்.", "Withdraw cash at any ATM in India and pay at shops and online.": "இந்தியாவில் உள்ள ATM-களில் பணம் எடுக்கவும், கடைகளிலும் இணையத்திலும் பணம் செலுத்தவும்.", "An SMS for every deposit, withdrawal and transfer on your account.": "உங்கள் கணக்கில் ஒவ்வொரு வைப்புக்கும், பணம் எடுத்தலுக்கும், பரிமாற்றத்திற்கும் SMS அறிவிப்பு.", "Issued on the same day for fees, tenders and payments.": "கட்டணம், ஒப்பந்தப்புள்ளி மற்றும் பணம் செலுத்துவதற்கான வரைவோலைகள் அதே நாளில் வழங்கப்படும்.", "Where available, link your account to UPI apps for instant payments.": "வசதி கிடைக்கும் இடங்களில், உடனடிப் பணப்பரிவர்த்தனைக்கு உங்கள் கணக்கை UPI செயலிகளுடன் இணைக்கலாம்.", "Cheques from any bank credited through the CTS clearing system.": "எந்த வங்கியின் காசோலையும் CTS தீர்வக முறை மூலம் வரவு வைக்கப்படும்.", "PMJJBY, PMSBY and APY enrolment for eligible account holders.": "தகுதியுள்ள கணக்குதாரர்களுக்கு PMJJBY, PMSBY மற்றும் APY திட்டங்களில் சேரும் வசதி.", "Receive pensions and government benefit transfers directly into your account.": "ஓய்வூதியம் மற்றும் அரசின் நலத்தொகைகளை நேரடியாக உங்கள் கணக்கில் பெறுங்கள்.",
+    "Availability of some digital services depends on the bank's sponsor-bank arrangements. Ask at the branch for current status.": "சில மின்னணுச் சேவைகள் வங்கியின் ஆதரவு வங்கியுடனான ஏற்பாடுகளைப் பொறுத்து கிடைக்கும். தற்போதைய நிலையை கிளையில் விசாரிக்கவும்.",
+    "Indicative rates for deposits below ₹2 crore and for our main loan products.": "₹2 கோடிக்குக் குறைவான வைப்புகள் மற்றும் முக்கியக் கடன் திட்டங்களுக்கான உத்தேச வட்டி விகிதங்கள்.", "Deposit rates": "வைப்பு வட்டி விகிதங்கள்", "Savings account: 3.00% p.a. on daily balance, credited quarterly.": "சேமிப்புக் கணக்கு: தினசரி இருப்புக்கு ஆண்டுக்கு 3.00% வட்டி; காலாண்டுதோறும் வரவு வைக்கப்படும்.", "Loan rates": "கடன் வட்டி விகிதங்கள்", "All rates are indicative, per annum, and subject to change by the board. The rate applicable to you is confirmed at sanction or at the time of deposit.": "அனைத்து விகிதங்களும் ஆண்டுக்கான உத்தேச விகிதங்கள்; நிர்வாகக் குழுவின் முடிவின்படி மாறலாம். உங்களுக்கான விகிதம் கடன் ஒப்புதல் அல்லது வைப்பு நேரத்தில் உறுதி செய்யப்படும்.", "Calculators": "கணிப்பான்கள்",
+    "Page not found": "பக்கம் கிடைக்கவில்லை", "Customer corner": "வாடிக்கையாளர் பகுதி", "Forms, KYC, complaints, deposit insurance and staying safe from fraud.": "படிவங்கள், KYC, புகார்கள், வைப்புக் காப்பீடு மற்றும் மோசடியிலிருந்து பாதுகாப்பு.", "For individuals": "தனிநபர்களுக்கு", "For businesses and firms": "வணிகங்கள் மற்றும் நிறுவனங்களுக்கு", "Periodic KYC update": "அவ்வப்போது KYC புதுப்பித்தல்", "Aadhaar card, PAN card or Form 60, and a recent photograph. If your current address differs from Aadhaar, bring a utility bill, rent agreement or ration card.": "ஆதார் அட்டை, PAN அட்டை அல்லது Form 60 மற்றும் சமீபத்திய புகைப்படம். தற்போதைய முகவரி ஆதாரில் உள்ள முகவரியிலிருந்து மாறுபட்டால், பயன்பாட்டுக் கட்டண ரசீது, வாடகை ஒப்பந்தம் அல்லது குடும்ப அட்டையைக் கொண்டு வாருங்கள்.", "KYC of the proprietor or all partners, GST registration or trade licence, and the partnership deed, society bye-laws or company documents as applicable.": "உரிமையாளர் அல்லது அனைத்து கூட்டாளர்களின் KYC, GST பதிவு அல்லது வணிக உரிமம், மேலும் பொருந்துமாறு கூட்டாண்மை ஒப்பந்தம், சங்க விதிமுறைகள் அல்லது நிறுவன ஆவணங்கள்.", "RBI requires KYC to be refreshed periodically depending on the risk category of the account. Visit the branch with your documents when you receive a notice from us.": "கணக்கின் இடர் வகையைப் பொறுத்து KYC-ஐ அவ்வப்போது புதுப்பிக்க RBI கோருகிறது. எங்களிடமிருந்து அறிவிப்பு கிடைத்ததும் ஆவணங்களுடன் கிளைக்கு வரவும்.", "Speak to the branch": "கிளையுடன் பேசவும்", "Escalate to the General Manager": "பொது மேலாளரிடம் மேல்முறையீடு செய்யவும்", "RBI Ombudsman": "RBI குறைதீர்ப்பாளர்", "Stay safe from fraud": "மோசடியில் இருந்து பாதுகாப்பாக இருங்கள்",
+    "The bank will never call or message you asking for your PIN, OTP, CVV or password.": "உங்கள் PIN, OTP, CVV அல்லது கடவுச்சொல்லைக் கேட்டு வங்கி ஒருபோதும் அழைக்கவோ செய்தி அனுப்பவோ செய்யாது.", "Do not install screen-sharing apps at the request of callers claiming to be from a bank.": "வங்கியிலிருந்து பேசுவதாகக் கூறும் நபர்கள் கேட்டால், திரையைப் பகிரும் செயலிகளை நிறுவ வேண்டாம்.", "Check that you are on the bank's official website before entering any details.": "விவரங்களை உள்ளிடும் முன் வங்கியின் அதிகாரப்பூர்வ இணையதளத்தில்தான் உள்ளீர்கள் என்பதை உறுதிப்படுத்தவும்.", "Report unauthorised transactions to the branch immediately, and on the national cyber crime helpline 1930 or cybercrime.gov.in.": "அங்கீகரிக்கப்படாத பரிவர்த்தனைகளை உடனடியாக கிளையிலும், தேசிய இணையக் குற்ற உதவி எண் 1930 அல்லது cybercrime.gov.in வழியாகவும் தெரிவிக்கவும்.",
+    "Visit, call or write. We answer enquiries during banking hours.": "நேரில் வரவும், அழைக்கவும் அல்லது எழுதவும். வங்கிப் பணிநேரத்தில் விசாரணைகளுக்குப் பதிலளிக்கிறோம்.", "Visit the branch": "கிளைக்கு வரவும்", "Address": "முகவரி", "Phone": "தொலைபேசி", "Email": "மின்னஞ்சல்", "Banking hours": "வங்கிப் பணிநேரம்", "Closed on Sundays, 2nd & 4th Saturdays and public holidays": "ஞாயிற்றுக்கிழமைகள், 2வது மற்றும் 4வது சனிக்கிழமைகள், அரசு விடுமுறை நாட்களில் விடுமுறை", "Send an enquiry": "விசாரணையை அனுப்பவும்", "Tell us what you need and how to reach you. Your email app will open with the message ready to send.": "உங்கள் தேவையையும் உங்களைத் தொடர்புகொள்ளும் விவரத்தையும் தெரிவிக்கவும். அனுப்பத் தயாரான செய்தியுடன் உங்கள் மின்னஞ்சல் செயலி திறக்கும்.", "Your name": "உங்கள் பெயர்", "Mobile nr / email": "கைபேசி எண் / மின்னஞ்சல்", "Enquiry about": "விசாரணையின் வகை", "Savings or current account": "சேமிப்பு அல்லது நடப்புக் கணக்கு", "Fixed or recurring deposit": "நிலையான அல்லது தொடர் வைப்பு", "Housing loan": "வீட்டுக் கடன்", "Business loan": "வணிகக் கடன்", "Locker": "பாதுகாப்புப் பெட்டகம்", "Membership": "உறுப்பினர் சேர்க்கை", "Complaint": "புகார்", "Other": "பிற", "Reason": "காரணம்", "Cancel": "ரத்து செய்", "Submit": "சமர்ப்பிக்கவும்", "Getting here": "இங்கு வருவது எப்படி", "From Krishnagiri": "கிருஷ்ணகிரியிலிருந்து", "About 15 minutes by road along NH 44 towards Salem.": "சேலம் நோக்கிச் செல்லும் NH 44 சாலையில் சுமார் 15 நிமிடப் பயணம்.",
+    "The bank that belongs to Kaveripattinam": "காவேரிப்பட்டினத்திற்குச் சொந்தமான வங்கி", "Savings, deposits, gold loans and everyday banking from a co-operative owned by its members - local traders, farmers, families and salaried people of Krishnagiri district.": "உள்ளூர் வணிகர்கள், விவசாயிகள், குடும்பங்கள் மற்றும் கிருஷ்ணகிரி மாவட்ட சம்பளதாரர்களுக்குச் சொந்தமான கூட்டுறவு வங்கியிலிருந்து சேமிப்பு, வைப்புகள், தங்கக் கடன் மற்றும் அன்றாட வங்கிச் சேவைகள்.", "Open an account": "கணக்கைத் தொடங்குங்கள்", "Get a gold loan": "தங்கக் கடன் பெறுங்கள்", "What do you need today?": "இன்று உங்களுக்கு என்ன தேவை?", "What you need Today?": "இன்று உங்களுக்கு என்ன தேவை?", "Check interest rates": "வட்டி விகிதங்களைப் பார்க்கவும்", "Deposits and loans, with calculators": "வைப்புகள் மற்றும் கடன்கள்; கணிப்பான்களுடன்", "Apply for a loan": "கடனுக்கு விண்ணப்பிக்கவும்", "Jewel, housing, vehicle, business": "நகை, வீடு, வாகனம், வணிகம்", "Tell us what you need": "உங்கள் தேவையைத் தெரிவிக்கவும்", "Find the branch": "கிளையைக் கண்டறியவும்",
+    "Banking for every household in town": "ஊரின் ஒவ்வொரு குடும்பத்திற்குமான வங்கிச் சேவை", "Everything a family, a shop or a farm needs from its bank, handled at one branch by people who know the town.": "குடும்பம், கடை அல்லது பண்ணைக்குத் தேவையான வங்கிச் சேவைகள் அனைத்தும், ஊரை நன்கு அறிந்த எங்கள் கிளை ஊழியர்களால் வழங்கப்படுகின்றன.", "Save": "சேமிக்கவும்", "Borrow": "கடன் பெறவும்", "Bank every day": "அன்றாட வங்கிச் சேவைகள்", "Min. ₹500": "குறைந்தது ₹500", "For business": "வணிகத்திற்காக", "Up to 8.25%": "8.25% வரை", "From ₹100/month": "மாதம் ₹100 முதல்", "Two & four wheelers": "இருசக்கர மற்றும் நான்கு சக்கர வாகனங்கள்", "All deposit schemes": "அனைத்து வைப்பு திட்டங்களும்", "All loan products": "அனைத்து கடன் திட்டங்களும்", "All services": "அனைத்து சேவைகளும்", "Aadhaar & PAN": "ஆதார் & PAN", "3-step process": "3-படி செயல்முறை", "Available soon": "விரைவில் கிடைக்கும்", "Up to ₹5 lakh": "₹5 லட்சம் வரை", "Stay alert": "விழிப்புடன் இருங்கள்", "Visit customer corner": "வாடிக்கையாளர் பகுதிக்குச் செல்லவும்", "Gold Loan in under an hour": "ஒரு மணி நேரத்திற்குள் தங்கக் கடன்", "Bring your gold ornaments and your Aadhaar card. Our appraiser weighs and tests the gold in front of you, and the loan is paid out the same visit - to your account or in cash.": "தங்க நகைகளையும் ஆதார் அட்டையையும் கொண்டு வாருங்கள். மதிப்பீட்டாளர் உங்கள் முன்னிலையில் தங்கத்தை எடைபோட்டு பரிசோதிப்பார். அதே வருகையிலேயே கடன் தொகை உங்கள் கணக்கில் அல்லது ரொக்கமாக வழங்கப்படும்.", "See gold loan details": "தங்கக் கடன் விவரங்களைப் பார்க்கவும்", "Estimate your EMI": "உங்கள் EMI-ஐ கணக்கிடவும்", "Appraised in front of you": "உங்கள் முன்னிலையில் மதிப்பீடு", "Weight and purity checked at the counter, recorded on your receipt.": "எடை மற்றும் தூய்மை கவுண்டரில் சரிபார்க்கப்பட்டு ரசீதில் பதிவு செய்யப்படும்.", "Stored in our strong room": "எங்கள் பாதுகாப்பு அறையில் சேமிப்பு", "Sealed packets, insured and kept in the branch vault until you repay.": "கடன் திருப்பிச் செலுத்தப்படும் வரை நகைகள் முத்திரையிடப்பட்டு, காப்பீடு செய்யப்பட்டு, கிளைப் பெட்டகத்தில் வைக்கப்படும்.", "Flexible repayment": "நெகிழ்வான திருப்பிச் செலுத்துதல்", "Pay interest monthly and the principal at the end, or close early with no penalty.": "வட்டியை மாதந்தோறும் செலுத்தி அசலை கால முடிவில் செலுத்தலாம்; அல்லது அபராதமின்றி முன்கூட்டியே முடிக்கலாம்.", "Fixed deposit rates": "நிலையான வைப்பு வட்டி விகிதங்கள்", "Indicative rates for deposits below ₹2 crore. Senior citizens (60+) receive an additional 0.50%.": "₹2 கோடிக்குக் குறைவான வைப்புகளுக்கான உத்தேச விகிதங்கள். மூத்த குடிமக்களுக்கு (60+) கூடுதலாக 0.50% வழங்கப்படும்.", "Rates are indicative and subject to change. Please confirm at the branch.": "விகிதங்கள் உத்தேசமானவை; மாறக்கூடும். கிளையில் உறுதிப்படுத்தவும்.", "Full rate chart": "முழு வட்டி விகித அட்டவணை", "Plan before you visit": "வருகைக்கு முன் திட்டமிடுங்கள்", "Work out your loan instalment or what your deposit will grow to.": "கடன் தவணை அல்லது உங்கள் வைப்பு வளர்ந்து கிடைக்கும் தொகையைக் கணக்கிடுங்கள்.", "Loan EMI": "கடன் EMI", "Fixed deposit": "நிலையான வைப்பு", "Loan amount": "கடன் தொகை", "Interest rate": "வட்டி விகிதம்", "Tenure (months)": "காலம் (மாதங்கள்)", "Monthly EMI": "மாதாந்திர EMI", "Total interest": "மொத்த வட்டி", "Total payable": "செலுத்த வேண்டிய மொத்தம்", "Calculate": "கணக்கிடவும்", "Deposit amount": "வைப்புத் தொகை", "Period (years)": "காலம் (ஆண்டுகள்)", "Maturity value": "முதிர்வுத் தொகை", "Interest earned": "கிடைக்கும் வட்டி", "You deposit": "நீங்கள் வைக்கும் தொகை", "Estimates only. FD calculated with quarterly compounding. Final figures are confirmed at the branch.": "இவை மதிப்பீடுகள் மட்டுமே. நிலையான வைப்புக் கணக்கு காலாண்டு கூட்டுவட்டியில் கணக்கிடப்படுகிறது. இறுதித் தொகையை கிளையில் உறுதிப்படுத்தவும்.", "Why bank with a co-operative": "கூட்டுறவு வங்கியை ஏன் தேர்வு செய்ய வேண்டும்", "Owned by members": "உறுப்பினர்களுக்குச் சொந்தமானது", "Every shareholder is a customer from our area. Profits return to members as dividend and to the town as lower loan rates.": "ஒவ்வொரு பங்குதாரரும் எங்கள் பகுதியைச் சேர்ந்த வாடிக்கையாளர். லாபம் உறுப்பினர்களுக்கு ஈவுத்தொகையாகவும், ஊருக்கு குறைந்த கடன் வட்டியாகவும் திரும்புகிறது.", "Decisions made here": "உள்ளூரிலேயே எடுக்கப்படும் முடிவுகள்", "Loans are sanctioned by a local board that understands the mango season, the market days and the needs of small traders.": "மாம்பழப் பருவம், சந்தை நாட்கள் மற்றும் சிறு வணிகர்களின் தேவைகளை அறிந்த உள்ளூர் நிர்வாகக் குழு கடன்களுக்கு ஒப்புதல் அளிக்கிறது.", "Safe and regulated": "பாதுகாப்பானதும் ஒழுங்குபடுத்தப்பட்டதும்", "We are supervised by the Reserve Bank of India, and every depositor is insured by DICGC up to ₹5 lakh.": "நாங்கள் இந்திய ரிசர்வ் வங்கியின் மேற்பார்வையில் செயல்படுகிறோம். ஒவ்வொரு வைப்பாளருக்கும் ₹5 லட்சம் வரை DICGC காப்பீடு உண்டு.",
+    "Notice": "அறிவிப்பு", "Senior citizens get 0.50% extra on fixed deposits": "மூத்த குடிமக்களுக்கு நிலையான வைப்பில் கூடுதலாக 0.50% வட்டி", "Gold loans sanctioned the same day after appraisal": "மதிப்பீட்டுக்குப் பின் தங்கக் கடன் அதே நாளில் ஒப்புதல்", "Update your KYC at the branch to keep your account active": "கணக்கைச் செயல்பாட்டில் வைத்திருக்க கிளையில் KYC-ஐ புதுப்பிக்கவும்", "The bank never asks for your PIN, OTP or password - do not share them": "உங்கள் PIN, OTP அல்லது கடவுச்சொல்லை வங்கி கேட்காது - அவற்றைப் பகிர வேண்டாம்", "Deposits are insured by DICGC up to ₹5 lakh per depositor": "ஒவ்வொரு வைப்பாளருக்கும் ₹5 லட்சம் வரை DICGC காப்பீடு உண்டு",
+    "Send an enquiry by email": "மின்னஞ்சல் மூலம் விசாரணையை அனுப்பவும்", "Enter your name": "உங்கள் பெயரை உள்ளிடவும்", "Mobile number or email address": "கைபேசி எண் அல்லது மின்னஞ்சல் முகவரி", "Type here....": "இங்கே எழுதவும்....", "Enter a valid mobile number or email address.": "சரியான கைபேசி எண் அல்லது மின்னஞ்சல் முகவரியை உள்ளிடவும்.", "Your email app should open with the enquiry ready. Review it and press Send to submit.": "விசாரணைச் செய்தியுடன் உங்கள் மின்னஞ்சல் செயலி திறக்கும். விவரங்களைச் சரிபார்த்து அனுப்பு என்பதை அழுத்தவும்.", "Enquiry cancelled. The form has been cleared.": "விசாரணை ரத்து செய்யப்பட்டது. படிவம் அழிக்கப்பட்டது.", "Your email app has opened with the enquiry filled in. Press send to reach us.": "விசாரணை விவரங்களுடன் உங்கள் மின்னஞ்சல் செயலி திறக்கப்பட்டுள்ளது. எங்களைத் தொடர்புகொள்ள அனுப்பு என்பதை அழுத்தவும்.",
+    "Regulated by the Reserve Bank of India and the Registrar of Co-operative Societies, Tamil Nadu.": "இந்திய ரிசர்வ் வங்கி மற்றும் தமிழ்நாடு கூட்டுறவு சங்கங்களின் பதிவாளரால் ஒழுங்குபடுத்தப்படுகிறது.", "Kaveripattinam Urban Co-operative Bank Ltd. All rights reserved.": "காவேரிப்பட்டினம் நகர கூட்டுறவு வங்கி லிமிடெட். அனைத்து உரிமைகளும் பாதுகாக்கப்பட்டவை.", "Back to top": "பக்கத்தின் மேல் செல்லவும்", "Open menu": "பட்டியலைத் திறக்கவும்", "Main": "முதன்மை பட்டியல்", "Calculators": "கணிப்பான்கள்", "On this page": "இந்தப் பக்கத்தில்", "ENQUIRY": "விசாரணை", "Sending...": "அனுப்பப்படுகிறது...", "Success": "வெற்றிகரமாக முடிந்தது", "Error": "பிழை",
+    "Select language": "மொழியைத் தேர்ந்தெடுக்கவும்", "months": "மாதங்கள்", "year": "ஆண்டு", "years": "ஆண்டுகள்",
+    "Website enquiry:": "இணையதள விசாரணை:", "Home /": "முகப்பு /", "KYC, downloadable forms, complaints, DICGC insurance and fraud awareness.": "KYC, பதிவிறக்கப் படிவங்கள், புகார்கள், DICGC காப்பீடு மற்றும் மோசடி விழிப்புணர்வு.",
+    "History, mission, membership and board of Kaveripattinam Urban Co-operative Bank.": "காவேரிப்பட்டினம் நகர கூட்டுறவு வங்கியின் வரலாறு, நோக்கம், உறுப்பினர் சேர்க்கை மற்றும் நிர்வாகக் குழு.",
+    "Your email app has opened with the enquiry filled in. Press send to reach us.": "விசாரணை விவரங்களுடன் உங்கள் மின்னஞ்சல் செயலி திறக்கப்பட்டுள்ளது. எங்களைத் தொடர்புகொள்ள அனுப்பு என்பதை அழுத்தவும்.",
+    "Savings or current account": "சேமிப்பு அல்லது நடப்புக் கணக்கு", "Fixed or recurring deposit": "நிலையான அல்லது தொடர் வைப்பு", "Business loan": "வணிகக் கடன்", "Locker": "பாதுகாப்புப் பெட்டகம்", "Membership": "உறுப்பினர் சேர்க்கை", "Complaint": "புகார்", "Other": "பிற",
+    "Kaveripattinam is on National Highway 44, about 10 km south of Krishnagiri and 30 km from Dharmapuri. Town buses from Krishnagiri stop on Salem Main Road.": "காவேரிப்பட்டினம் தேசிய நெடுஞ்சாலை 44-ல், கிருஷ்ணகிரிக்கு தெற்கே சுமார் 10 கி.மீ. தொலைவிலும் தருமபுரியிலிருந்து 30 கி.மீ. தொலைவிலும் அமைந்துள்ளது. கிருஷ்ணகிரியிலிருந்து வரும் நகரப் பேருந்துகள் சேலம் பிரதான சாலையில் நிற்கும்.",
+    "Enter your name": "உங்கள் பெயரை உள்ளிடவும்", "Mobile number or email address": "கைபேசி எண் அல்லது மின்னஞ்சல் முகவரி", "Type here....": "இங்கே எழுதவும்....", "Please complete this field.": "இந்தப் புலத்தை நிரப்பவும்.", "Name:": "பெயர்:", "Mobile nr / email:": "கைபேசி எண் / மின்னஞ்சல்:", "Category:": "வகை:", "Reason:": "காரணம்:",
+    "Governance": "நிர்வாகம்", "Board of directors": "இயக்குநர் குழு", "Elected by the members for a fixed term under the Co-operative Societies Act.": "கூட்டுறவு சங்கங்கள் சட்டத்தின்படி உறுப்பினர்களால் நிர்ணயிக்கப்பட்ட காலத்திற்கு தேர்ந்தெடுக்கப்படுவர்.", "Name to be added": "பெயர் சேர்க்கப்பட வேண்டும்", "President": "தலைவர்", "Vice President": "துணைத் தலைவர்", "Director": "இயக்குநர்", "General Manager": "பொது மேலாளர்",
+    "Download forms": "படிவங்களைப் பதிவிறக்கவும்", "Official bank forms will be available here soon. Contact the branch if you need a form in the meantime.": "வங்கியின் அதிகாரப்பூர்வப் படிவங்கள் விரைவில் இங்கே கிடைக்கும். அதுவரை படிவம் தேவைப்பட்டால் கிளையைத் தொடர்புகொள்ளவும்.", "Available soon": "விரைவில் கிடைக்கும்", "Official bank forms": "வங்கியின் அதிகாரப்பூர்வப் படிவங்கள்", "Download links will be added once the approved forms are ready.": "அங்கீகரிக்கப்பட்ட படிவங்கள் தயாரானதும் பதிவிறக்க இணைப்புகள் சேர்க்கப்படும்.", "Request a form": "படிவத்தைக் கோரவும்",
+    "Recurring deposit rate": "\u0ba4\u0bca\u0b9f\u0bb0\u0bcd \u0bb5\u0bc8\u0baa\u0bcd\u0baa\u0bc1 \u0bb5\u0b9f\u0bcd\u0b9f\u0bbf \u0bb5\u0bbf\u0b95\u0bbf\u0ba4\u0bae\u0bcd", "Save a fixed amount every month and earn a fixed rate.": "\u0b92\u0bb5\u0bcd\u0bb5\u0bca\u0bb0\u0bc1 \u0bae\u0bbe\u0ba4\u0bae\u0bc1\u0bae\u0bcd \u0b92\u0bb0\u0bc1 \u0ba8\u0bbf\u0bb2\u0bc8\u0baf\u0bbe\u0ba9 \u0ba4\u0bca\u0b95\u0bc8\u0baf\u0bc8\u0b9a\u0bcd \u0b9a\u0bc7\u0bae\u0bbf\u0ba4\u0bcd\u0ba4\u0bc1, \u0ba8\u0bbf\u0bb2\u0bc8\u0baf\u0bbe\u0ba9 \u0bb5\u0b9f\u0bcd\u0b9f\u0bbf \u0bb5\u0bbf\u0b95\u0bbf\u0ba4\u0ba4\u0bcd\u0ba4\u0bc8\u0baa\u0bcd \u0baa\u0bc6\u0bb1\u0bc1\u0b99\u0bcd\u0b95\u0bb3\u0bcd.", "Interest Rate": "\u0bb5\u0b9f\u0bcd\u0b9f\u0bbf \u0bb5\u0bbf\u0b95\u0bbf\u0ba4\u0bae\u0bcd", "Fixed deposit interest rates": "நிலையான வைப்பு வட்டி விகிதங்கள்", "Rates shown per annum, calculated as simple interest. Monthly payout is 0.10% lower than cumulative.": "விகிதங்கள் ஆண்டுக்கானவை; எளிய வட்டி முறையில் கணக்கிடப்பட்டவை. மாதாந்திர வட்டி வழங்கல், ஒட்டுமொத்த வட்டியை விட 0.10% குறைவு.", "Tenure": "காலம்", "Cumulative (paid at maturity)": "ஒட்டுமொத்த வட்டி (முதிர்வில் வழங்கப்படும்)", "Monthly Payout": "மாதாந்திர வட்டி வழங்கல்", "1 to 2 months": "1 முதல் 2 மாதங்கள்", "3 to 4 months": "3 முதல் 4 மாதங்கள்", "5 to 6 months": "5 முதல் 6 மாதங்கள்", "6 to 9 months": "6 முதல் 9 மாதங்கள்", "10 to 11 months": "10 முதல் 11 மாதங்கள்", "12 to 24 months": "12 முதல் 24 மாதங்கள்", "Senior citizens earn an additional 0.25% p.a. on deposits with tenure above 12 months. Each depositor is insured by DICGC up to a maximum of ₹5,00,000 (principal and interest combined) per bank, in the same right and capacity.": "12 மாதங்களுக்கு மேற்பட்ட கால வைப்புகளுக்கு மூத்த குடிமக்களுக்கு ஆண்டுக்கு கூடுதலாக 0.25% வட்டி வழங்கப்படும். ஒவ்வொரு வைப்பாளருக்கும், ஒரே உரிமை மற்றும் திறனில் உள்ள வைப்புகளின் அசல் மற்றும் வட்டி சேர்த்து, ஒவ்வொரு வங்கியிலும் அதிகபட்சம் ₹5,00,000 வரை DICGC காப்பீடு உண்டு.",
+    "Loan interest rates": "கடன் வட்டி விகிதங்கள்", "Rates per annum, calculated as simple interest on a daily basis (principal ÷ 365 × rate × days).": "ஆண்டுக்கான விகிதங்கள்; தினசரி அடிப்படையில் எளிய வட்டியாக (அசல் ÷ 365 × வட்டி விகிதம் × நாட்கள்) கணக்கிடப்படும்.", "Loan type": "கடன் வகை", "Interest rate (p.a.)": "வட்டி விகிதம் (ஆண்டுக்கு)", "House Construction Loan": "வீட்டுக் கட்டுமானக் கடன்", "Gold Loan": "தங்கக் கடன்", "Joint Liability Group Loan": "கூட்டு பொறுப்புக் குழுக் கடன்", "Mortgage Loan": "அடமானக் கடன்", "Loan for Differently Abled Persons (NHFDC)": "மாற்றுத்திறனாளிகளுக்கான கடன் (NHFDC)", "Self Help Group Loan": "சுய உதவிக் குழுக் கடன்", "Business Loan": "வணிகக் கடன்", "TABCEDCO Loan": "TABCEDCO கடன்", "TAMCO Loan": "TAMCO கடன்", "Women Entrepreneur Loan": "பெண் தொழில்முனைவோர் கடன்", "Working Women Loan": "பணிபுரியும் பெண்களுக்கான கடன்", "Surety Loan": "பிணையக் கடன்", "11% p.a.": "ஆண்டுக்கு 11%", "12% p.a.": "ஆண்டுக்கு 12%", "8% p.a.": "ஆண்டுக்கு 8%", "6% p.a.": "ஆண்டுக்கு 6%", "Against property": "சொத்துக்கு எதிராக", "Group lending": "குழுக் கடன்", "No collateral": "அடமானம் தேவையில்லை",
+    "Senior citizen deposit": "மூத்த குடிமக்கள் வைப்பு", "Children's savings": "குழந்தைகளுக்கான சேமிப்பு", "Locker deposit": "பாதுகாப்பு பெட்டக வாடகை", "Subject to availability": "இருப்பைப் பொறுத்து", "Up to 8.25%": "8.25% வரை", "Same day": "அதே நாளில்", "Up to 20 yrs": "20 ஆண்டுகள் வரை", "Traders": "வணிகர்கள்", "Any bank": "எந்த வங்கியும்", "Safe deposit lockers": "பாதுகாப்புப் பெட்டகங்கள்", "Sizes S–L": "S–L அளவுகள்", "ATM & POS": "ATM மற்றும் POS", "SMS alerts": "SMS அறிவிப்புகள்", "Free": "இலவசம்", "Demand drafts": "வரைவோலைகள்", "Demand drafts & pay orders": "வரைவோலைகள் மற்றும் செலுத்தல் ஆணைகள்", "Cheque clearing (CTS)": "காசோலைத் தீர்வு (CTS)", "Insurance & government schemes": "காப்பீடு மற்றும் அரசு திட்டங்கள்", "Pension & DBT credit": "ஓய்வூதியம் மற்றும் DBT வரவு",
+    "Meet the branch manager or write to": "கிளை மேலாளரைச் சந்திக்கவும் அல்லது மின்னஞ்சல் எழுதவும்", ". We reply within 7 working days.": ". 7 வேலை நாட்களுக்குள் பதிலளிப்போம்.", "If unresolved in 15 days, write to the General Manager at the head office address.": "15 நாட்களுக்குள் தீர்வு கிடைக்காவிட்டால், தலைமை அலுவலக முகவரிக்கு பொது மேலாளருக்கு எழுதவும்.", "If you are not satisfied after 30 days, file a complaint on the RBI's Complaint Management System at": "30 நாட்களுக்குப் பிறகும் திருப்தி இல்லை என்றால், RBI குறைதீர்ப்பு மேலாண்மை அமைப்பில் புகார் அளிக்கவும்:", "Deposits with the bank are insured by the Deposit Insurance and Credit Guarantee Corporation (DICGC) up to ₹5 lakh per depositor, covering principal and interest. Details at": "வங்கியில் உள்ள வைப்புகளுக்கு அசல் மற்றும் வட்டி உட்பட ஒவ்வொரு வைப்பாளருக்கும் ₹5 லட்சம் வரை வைப்புக் காப்பீடு மற்றும் கடன் உத்தரவாதக் கழகத்தின் (DICGC) காப்பீடு உண்டு. விவரங்களுக்கு:",
+    "Home": "முகப்பு", "Senior citizen deposit": "மூத்த குடிமக்கள் வைப்பு", "Children's savings": "குழந்தைகளுக்கான சேமிப்பு", "Minimum balance ₹500": "குறைந்தபட்ச இருப்பு ₹500", "From ₹100 a month": "மாதம் ₹100 முதல்", "For minors": "சிறார்களுக்கு", "Interest rates": "வட்டி விகிதங்கள்", "Current account": "நடப்புக் கணக்கு", "Fixed deposit": "நிலையான வைப்பு", "Recurring deposit": "தொடர் வைப்பு", "Jewel loan": "நகைக் கடன்", "Housing loan": "வீட்டுக் கடன்", "Vehicle loan": "வாகனக் கடன்", "Business & MSME loan": "வணிக மற்றும் MSME கடன்", "Personal & salary loan": "தனிநபர் மற்றும் சம்பளக் கடன்", "Education loan": "கல்விக் கடன்", "Loan against deposit": "வைப்புக்கு எதிரான கடன்", "Agricultural & allied loans": "விவசாயம் மற்றும் தொடர்புடைய கடன்கள்",
+    "11/64,Pillaiyar Koil Strret, Kaveripattinam": "11/64, பிள்ளையார் கோயில் தெரு, காவேரிப்பட்டினம்", "11/64,Pillaiyar Koil Strret,": "11/64, பிள்ளையார் கோயில் தெரு,", "Kaveripattinam,": "காவேரிப்பட்டினம்,", "Tamil Nadu - 635112": "தமிழ்நாடு - 635112", "Kaveripattinam Urban Bank": "காவேரிப்பட்டினம் நகர வங்கி", "co-operative owned by its members": "உறுப்பினர்களுக்குச் சொந்தமான கூட்டுறவு வங்கி",
+    "At": "", "Kaveripattinam Urban Bank": "காவேரிப்பட்டினம் நகர வங்கியில்", ", we believe modern banking should be built on something timeless - ": ", நவீன வங்கிச் சேவை காலத்தால் மாறாத ஒன்றின் மீது கட்டப்பட வேண்டும் என நாங்கள் நம்புகிறோம் - ", "Our foundation is built on": "எங்கள் அடித்தளம்", ". At the same time, we continue to embrace technology and evolving customer expectations to make banking more seamless, accessible, and secure.": ". அதேவேளையில், வங்கிச் சேவையை எளிமையானதாகவும், அணுகக்கூடியதாகவும், பாதுகாப்பானதாகவும் மாற்ற தொழில்நுட்பத்தையும் வாடிக்கையாளர்களின் மாறும் எதிர்பார்ப்புகளையும் ஏற்கிறோம்.",
+    "Page not found": "பக்கம் கிடைக்கவில்லை", "Deposit accounts": "வைப்புக் கணக்குகள்", "Loans": "கடன்கள்", "Services": "சேவைகள்", "Customer corner": "வாடிக்கையாளர் பகுதி", "Contact us": "எங்களைத் தொடர்புகொள்ள", "About us": "எங்களைப் பற்றி", "Banking": "வங்கிச் சேவைகள்", "Help": "உதவி", "Quick Links": "விரைவு இணைப்புகள்", "Visit us": "எங்களைச் சந்திக்கவும்",
+    "Address, phone, banking hours and map for Kaveripattinam Urban Co-operative Bank, Krishnagiri district.": "கிருஷ்ணகிரி மாவட்ட காவேரிப்பட்டினம் நகர கூட்டுறவு வங்கியின் முகவரி, தொலைபேசி, வங்கிப் பணிநேரம் மற்றும் வரைபடம்.",
+    "Kaveripattinam Urban Co-operative Bank – savings, fixed deposits, gold loans, house construction and business loans in Kaveripattinam, Krishnagiri district, Tamil Nadu.": "தமிழ்நாடு, கிருஷ்ணகிரி மாவட்டம், காவேரிப்பட்டினம் நகர கூட்டுறவு வங்கியின் சேமிப்பு, நிலையான வைப்புகள், தங்கக் கடன், வீட்டுக் கட்டுமானக் கடன் மற்றும் வணிகக் கடன் சேவைகள்.",
+    "Kaveripattinam Urban Co-operative Bank Ltd. | Krishnagiri District": "காவேரிப்பட்டினம் நகர கூட்டுறவு வங்கி லிமிடெட் | கிருஷ்ணகிரி மாவட்டம்",
+    "Kaveripattinam Urban Co-operative Bank Ltd. All rights reserved.": "காவேரிப்பட்டினம் நகர கூட்டுறவு வங்கி லிமிடெட். அனைத்து உரிமைகளும் பாதுகாக்கப்பட்டவை.",
+    "Gold, house construction, mortgage, self help group, TABCEDCO, TAMCO, women entrepreneur, working women and surety loans.": "தங்கம், வீட்டுக் கட்டுமானம், அடமானம், சுய உதவிக் குழு, TABCEDCO, TAMCO, பெண் தொழில்முனைவோர், பணிபுரியும் பெண்கள் மற்றும் பிணையக் கடன்கள்.",
+    "Fixed deposit and loan interest rates with EMI and FD calculators.": "நிலையான வைப்பு மற்றும் கடன் வட்டி விகிதங்கள்; EMI மற்றும் FD கணிப்பான்களுடன்.",
+    "Fund transfers, lockers, debit cards, SMS alerts, demand drafts and more.": "பணப் பரிமாற்றம், பாதுகாப்புப் பெட்டகங்கள், பற்று அட்டைகள், SMS அறிவிப்புகள், வரைவோலைகள் உள்ளிட்ட சேவைகள்.",
+    "Cancelled. Your form has been cleared.": "ரத்து செய்யப்பட்டது. படிவம் அழிக்கப்பட்டது.", "Cancel": "ரத்து செய்", "Submit": "சமர்ப்பிக்கவும்", "Your name": "உங்கள் பெயர்", "Mobile nr / email": "கைபேசி எண் / மின்னஞ்சல்", "Enquiry about": "விசாரணையின் வகை", "Reason": "காரணம்"
+  };
+
+  // kucb-extra-translations: strings added after the first pass (all pages)
+  Object.assign(ta, {
+  "TN Govt": "தமிழ்நாடு அரசு",
+  "View details": "விவரங்களைக் காண",
+  "Key features": "முக்கிய அம்சங்கள்",
+  "Close": "மூடு",
+    "Settings": "அமைப்புகள்",
+    "Display settings": "காட்சி அமைப்புகள்",
+    "Decrease font size": "எழுத்து அளவைக் குறைக்க",
+    "Normal font size": "இயல்பான எழுத்து அளவு",
+    "Increase font size": "எழுத்து அளவை அதிகரிக்க",
+    "Kaveripattinam Urban Co-operative Bank Ltd.": "காவேரிப்பட்டினம் நகர கூட்டுறவு வங்கி லிமிடெட்",
+    "Placeholder – replace with official detail": "மாதிரி விவரம் – அதிகாரப்பூர்வ விவரத்தால் மாற்றவும்",
+    "A co-operative bank started by the": "காவேரிப்பட்டினம் மக்களால் தொடங்கப்பட்ட",
+    "people of Kaveripattinam": "ஒரு கூட்டுறவு வங்கி,",
+    "to serve their own savings and credit needs.": "தங்கள் சொந்த சேமிப்பு மற்றும் கடன் தேவைகளுக்காக.",
+    "Registration & Regulatory Details": "பதிவு மற்றும் ஒழுங்குமுறை விவரங்கள்",
+    "Our History": "எங்கள் வரலாறு",
+    "The Kaveripattinam Co-operative Town Bank Ltd. No. 5918 was registered on 19/03/1921 and commenced its operations on 01/04/1921. The Bank is currently functioning with two branches located at Kaveripattinam and Vadamalampatti (Pochampalli). A proposal to open a new branch at Uthangarai and Mathur is under process. The Reserve Bank of India issued the banking licence on 27/09/2026.": "காவேரிப்பட்டினம் கூட்டுறவு நகர வங்கி லிமிடெட், எண் 5918, 19/03/1921 அன்று பதிவு செய்யப்பட்டு 01/04/1921 அன்று செயல்படத் தொடங்கியது. தற்போது வங்கி காவேரிப்பட்டினம் மற்றும் வடமலம்பட்டி (போச்சம்பள்ளி) ஆகிய இடங்களில் இரண்டு கிளைகளுடன் இயங்கி வருகிறது. உத்தங்கரை மற்றும் மத்தூரில் புதிய கிளை திறப்பதற்கான முன்மொழிவு செயல்பாட்டில் உள்ளது. இந்திய ரிசர்வ் வங்கி 27/09/2026 அன்று வங்கி உரிமத்தை வழங்கியது.",
+    "Membership and Share Capital": "உறுப்பினர் மற்றும் பங்கு மூலதனம்",
+    "As on 31.3.2026, the Kaveripattinam Co-operative Town Bank Ltd. No. 5918 'A' Class membership stands at 12,889, holding a share capital of ₹25.87 lakhs.": "31.3.2026 நிலவரப்படி, காவேரிப்பட்டினம் கூட்டுறவு நகர வங்கி லிமிடெட், எண் 5918-இன் 'ஏ' வகுப்பு உறுப்பினர்கள் 12,889 பேர்; பங்கு மூலதனம் ₹25.87 லட்சம்.",
+    "Head Office Address": "தலைமை அலுவலக முகவரி",
+    "The Kaveripattinam Co-operative Town Bank Ltd. No. 5918, 11/64, Pillaiyar Kovil Street, Kaveripattinam, Krishnagiri (Dt), Tamil Nadu – 635112.": "காவேரிப்பட்டினம் கூட்டுறவு நகர வங்கி லிமிடெட், எண் 5918, 11/64, பிள்ளையார் கோவில் தெரு, காவேரிப்பட்டினம், கிருஷ்ணகிரி (மா), தமிழ்நாடு – 635112.",
+    "Other Branch Address": "மற்ற கிளை முகவரி",
+    "The Kaveripattinam Co-operative Town Bank Ltd. No. 5918, 3/335, Tirupattur Main Road, Vadamalampatti, Pochampalli, Krishnagiri (Dt) – 635206.": "காவேரிப்பட்டினம் கூட்டுறவு நகர வங்கி லிமிடெட், எண் 5918, 3/335, திருப்பத்தூர் பிரதான சாலை, வடமலம்பட்டி, போச்சம்பள்ளி, கிருஷ்ணகிரி (மா) – 635206.",
+    "Registered name": "பதிவு செய்யப்பட்ட பெயர்",
+    "Kaveripattinam Urban Co-operative Bank Limited": "காவேரிப்பட்டினம் நகர கூட்டுறவு வங்கி லிமிடெட்",
+    "Type of institution": "நிறுவன வகை",
+    "Urban Cooperative Bank / Cooperative Urban Bank": "நகர கூட்டுறவு வங்கி",
+    "District": "மாவட்டம்",
+    "Krishnagiri District, Tamil Nadu": "கிருஷ்ணகிரி மாவட்டம், தமிழ்நாடு",
+    "Cooperative Society Registration No.": "கூட்டுறவு சங்கப் பதிவு எண்",
+    "Registered / Bank Address": "பதிவு செய்யப்பட்ட / வங்கி முகவரி",
+    "11/64, Pillaiyar Koil Street, Kaveripattinam, Krishnagiri District, Tamil Nadu – 635112": "11/64, பிள்ளையார் கோவில் தெரு, காவேரிப்பட்டினம், கிருஷ்ணகிரி மாவட்டம், தமிழ்நாடு – 635112",
+    "Telephone": "தொலைபேசி",
+    "RBI jurisdiction": "ரிசர்வ் வங்கி அதிகார எல்லை",
+    "RBI, Chennai": "ரிசர்வ் வங்கி, சென்னை",
+    "RBI classification": "ரிசர்வ் வங்கி வகைப்பாடு",
+    "Listed by RBI as Kaveripatnam Coop Town Bank Ltd.": "ரிசர்வ் வங்கியால் \"Kaveripatnam Coop Town Bank Ltd.\" என்று பட்டியலிடப்பட்டுள்ளது",
+    "The bank appears in the DICGC-insured Urban Co-operative Bank records; deposit insurance is generally up to ₹5 lakh per depositor, subject to DICGC rules.": "இந்த வங்கி DICGC காப்பீடு பெற்ற நகர கூட்டுறவு வங்கிகளின் பதிவுகளில் இடம்பெற்றுள்ளது; வைப்புத் தொகை காப்பீடு பொதுவாக ஒரு வைப்பாளருக்கு ₹5 லட்சம் வரை, DICGC விதிகளுக்கு உட்பட்டது.",
+    "Get Directions": "வழியைப் பெறவும்",
+    "11/64,Pillaiyar Koil Street,": "11/64, பிள்ளையார் கோவில் தெரு,",
+    "Map showing Kaveripattinam Urban Cooperative Bank": "காவேரிப்பட்டினம் நகர கூட்டுறவு வங்கியைக் காட்டும் வரைபடம்",
+    "House construction loan": "வீடு கட்டுமானக் கடன்",
+    "Mortgage loan": "அடமானக் கடன்",
+    "Other loan": "பிற கடன்",
+    "Forms, KYC, complaints and staying safe from fraud.": "படிவங்கள், KYC, புகார்கள் மற்றும் மோசடியிலிருந்து பாதுகாப்பாக இருத்தல்.",
+    "Safe places to keep and grow your money,": "உங்கள் பணத்தைப் பாதுகாப்பாக வைத்து வளர்க்கும் இடங்கள்,",
+    "all insured by DICGC up to ₹5 lakh per depositor.": "அனைத்தும் ஒரு வைப்பாளருக்கு ₹5 லட்சம் வரை DICGC காப்பீடு பெற்றவை.",
+    "NEFT, RTGS and IMPS": "NEFT, RTGS மற்றும் IMPS",
+    "Aadhaar card, PAN card (or Form 60), two passport-size photographs and address proof if different from Aadhaar.": "ஆதார் அட்டை, பான் அட்டை (அல்லது படிவம் 60), இரண்டு பாஸ்போர்ட் அளவு புகைப்படங்கள், ஆதாரிலிருந்து முகவரி வேறுபட்டால் முகவரிச் சான்று.",
+    "KYC of proprietor or partners, GST certificate or trade licence, partnership deed or company documents as applicable.": "உரிமையாளர் அல்லது கூட்டாளிகளின் KYC, ஜிஎஸ்டி சான்றிதழ் அல்லது வர்த்தக உரிமம், கூட்டாண்மை ஒப்பந்தம் அல்லது நிறுவன ஆவணங்கள் (பொருந்துமாறு).",
+    "Aadhaar card, PAN card (or Form 60), two passport-size photographs and address proof if different from Aadhaar. Age proof is required.": "ஆதார் அட்டை, பான் அட்டை (அல்லது படிவம் 60), இரண்டு பாஸ்போர்ட் அளவு புகைப்படங்கள், ஆதாரிலிருந்து முகவரி வேறுபட்டால் முகவரிச் சான்று. வயதுச் சான்று தேவை.",
+    "Child's birth certificate or Aadhaar, and the guardian's KYC.": "குழந்தையின் பிறப்புச் சான்றிதழ் அல்லது ஆதார், மற்றும் பாதுகாவலரின் KYC.",
+    "Rent a secure locker at the branch to safeguard jewellery, documents and other valuables.": "நகைகள், ஆவணங்கள் மற்றும் பிற மதிப்புமிக்க பொருட்களைப் பாதுகாக்க கிளையில் பாதுகாப்பான லாக்கரை வாடகைக்கு எடுங்கள்.",
+    "Multiple sizes available": "பல அளவுகள் கிடைக்கும்",
+    "Refundable security deposit": "திரும்பப் பெறக்கூடிய பாதுகாப்பு வைப்புத் தொகை",
+    "Linked savings/current account required": "இணைக்கப்பட்ட சேமிப்பு/நடப்புக் கணக்கு தேவை",
+    "Aadhaar card, PAN card (or Form 60), a passport-size photograph and an active savings or current account with the bank.": "ஆதார் அட்டை, பான் அட்டை (அல்லது படிவம் 60), ஒரு பாஸ்போர்ட் அளவு புகைப்படம் மற்றும் வங்கியில் செயலில் உள்ள சேமிப்பு அல்லது நடப்புக் கணக்கு.",
+    "Note:": "குறிப்பு:",
+    "Interest will be provided on monthly/quarterly/yearly basis.": "வட்டி மாதாந்திர/காலாண்டு/ஆண்டு அடிப்படையில் வழங்கப்படும்.",
+    "Important": "முக்கியம்",
+    "Alert: the Bank never asks for your OTP, PIN or card details": "எச்சரிக்கை: வங்கி ஒருபோதும் உங்கள் OTP, PIN அல்லது அட்டை விவரங்களைக் கேட்பதில்லை",
+    "Deposit insurance cover is subject to applicable DICGC terms; verify details with the Bank": "வைப்புத் தொகை காப்பீடு பொருந்தக்கூடிய DICGC விதிமுறைகளுக்கு உட்பட்டது; விவரங்களை வங்கியிடம் உறுதிசெய்யவும்",
+    "Close message": "செய்தியை மூடு",
+    "Little drops of water make a mighty ocean": "சிறு நீர்த்துளிகள் பெரும் கடலை உருவாக்கும்",
+    "The bank that": "நம் வங்கி,",
+    "belongs to": "நம் ஊருக்கே சொந்தமானது –",
+    "Kaveripattinam": "காவேரிப்பட்டினம்",
+    "We serve you better by": "இன்று உங்கள் நம்பிக்கையைப் பெற்று",
+    "earning your trust Today,": "உங்களுக்கு இன்னும் சிறப்பாகச் சேவை செய்கிறோம்;",
+    "and doing it all over": "நாளையும் அதையே",
+    "again Tomorrow.": "மீண்டும் செய்வோம்.",
+    "Fixed deposit rate": "நிலையான வைப்பு வட்டி விகிதம்",
+    "12–24 months, indicative - confirm the current rate at the branch": "12–24 மாதங்கள், குறியீட்டு விகிதம் - தற்போதைய விகிதத்தைக் கிளையில் உறுதிசெய்யவும்",
+    "View all rates →": "அனைத்து விகிதங்களையும் காண →",
+    "Gold appraised at the counter and the loan sanctioned the same visit": "தங்கம் கவுண்டரிலேயே மதிப்பிடப்பட்டு, அதே வருகையில் கடன் அனுமதிக்கப்படும்",
+    "Explore gold loan →": "தங்கக் கடனை அறிக →",
+    "₹5 lakh": "₹5 லட்சம்",
+    "Every deposit insured by DICGC, per depositor, per bank": "ஒவ்வொரு வைப்புத் தொகையும் DICGC காப்பீடு பெற்றது, ஒரு வைப்பாளருக்கு, ஒரு வங்கிக்கு",
+    "Learn about DICGC →": "DICGC பற்றி அறிக →",
+    "Senior citizens": "மூத்த குடிமக்கள்",
+    "Extra interest on deposits with tenure above 12 months": "12 மாதங்களுக்கு மேற்பட்ட வைப்புகளுக்கு கூடுதல் வட்டி",
+    "See deposit rates →": "வைப்பு வட்டி விகிதங்களைக் காண →",
+    "11/64, Pillaiyar Koil Street - our branch": "11/64, பிள்ளையார் கோவில் தெரு - எங்கள் கிளை",
+    "Get directions →": "வழியைப் பெறவும் →",
+    "Highlights": "முக்கிய அம்சங்கள்",
+    "Same-day gold loan": "அதே நாளில் தங்கக் கடன்",
+    "Gold Loan in": "தங்கக் கடன்",
+    "under an hour": "ஒரு மணி நேரத்திற்குள்",
+    "Since 1921, banking service": "1921 முதல், வங்கிச் சேவை",
+    "BANKING SERVICE ◆ BANKING SERVICE ◆": "வங்கிச் சேவை ◆ வங்கிச் சேவை ◆",
+    "SINCE": "முதல்",
+    "Jewel loan per gram": "ஒரு கிராமுக்கு நகைக் கடன்",
+    "Deposits · individuals": "வைப்புகள் · தனிநபர்கள்",
+    "Deposits · senior citizens": "வைப்புகள் · மூத்த குடிமக்கள்",
+    "*Per annum. Rates are indicative and subject to change. Please confirm at the branch.": "*ஆண்டுக்கு. விகிதங்கள் குறியீட்டு அளவிலானவை; மாற்றத்திற்கு உட்பட்டவை. கிளையில் உறுதிசெய்யவும்.",
+    "Select loan type": "கடன் வகையைத் தேர்ந்தெடுக்கவும்",
+    "Enter loan amount": "கடன் தொகையை உள்ளிடவும்",
+    "Interest rate (% per year, set by loan type)": "வட்டி விகிதம் (ஆண்டுக்கு %, கடன் வகையால் நிர்ணயிக்கப்படும்)",
+    "Interest rate, set automatically by loan type": "வட்டி விகிதம், கடன் வகைக்கேற்ப தானாக அமைக்கப்படும்",
+    "Enter loan tenure in months": "கடன் காலத்தை மாதங்களில் உள்ளிடவும்",
+    "Enter deposit amount": "வைப்புத் தொகையை உள்ளிடவும்",
+    "Enter deposit interest rate": "வைப்பு வட்டி விகிதத்தை உள்ளிடவும்",
+    "Enter deposit period in years": "வைப்புக் காலத்தை ஆண்டுகளில் உள்ளிடவும்",
+    "Fair rates, local decisions and repayment": "நியாயமான வட்டி, உள்ளூர் முடிவுகள் மற்றும்",
+    "plans that fit the way you earn.": "உங்கள் வருமானத்திற்குப் பொருந்தும் திருப்பிச் செலுத்தும் திட்டங்கள்.",
+    "Get up to ₹10,000 per gram against your gold ornaments, appraised at the counter in front of you. The most requested loan at our branch.": "உங்கள் தங்க நகைகளுக்கு எதிராக கிராமுக்கு ₹10,000 வரை பெறுங்கள்; உங்கள் முன்னிலையிலேயே கவுண்டரில் மதிப்பிடப்படும். எங்கள் கிளையில் அதிகம் கேட்கப்படும் கடன்.",
+    "Up to ₹10,000 per gram of gold": "ஒரு கிராம் தங்கத்திற்கு ₹10,000 வரை",
+    "Aadhaar card, PAN card, one photograph and the gold ornaments.": "ஆதார் அட்டை, பான் அட்டை, ஒரு புகைப்படம் மற்றும் தங்க நகைகள்.",
+    "Build, extend or repair your home, with funds released in stages as construction progresses.": "உங்கள் வீட்டைக் கட்ட, விரிவுபடுத்த அல்லது பழுதுபார்க்க; கட்டுமானம் முன்னேறும்போது நிதி கட்டங்களாக விடுவிக்கப்படும்.",
+    "Construction, extension or repair": "கட்டுமானம், விரிவாக்கம் அல்லது பழுதுபார்ப்பு",
+    "KYC, income proof, sale deed or patta, approved building plan, estimate and encumbrance certificate.": "KYC, வருமானச் சான்று, கிரையப் பத்திரம் அல்லது பட்டா, அங்கீகரிக்கப்பட்ட கட்டட வரைபடம், மதிப்பீடு மற்றும் வில்லங்கச் சான்றிதழ்.",
+    "Raise funds against your property for business, education or personal needs, secured by a registered mortgage.": "தொழில், கல்வி அல்லது தனிப்பட்ட தேவைகளுக்காக, பதிவு செய்யப்பட்ட அடமானத்தின் மூலம் உங்கள் சொத்தின் மீது நிதி திரட்டுங்கள்.",
+    "Loan against property title": "சொத்து உரிமைப் பத்திரத்தின் மீதான கடன்",
+    "Flexible repayment tenure": "நெகிழ்வான திருப்பிச் செலுத்தும் காலம்",
+    "Competitive interest rate": "போட்டித்தன்மை வாய்ந்த வட்டி விகிதம்",
+    "Part-prepayment allowed": "பகுதி முன்கூட்டிய செலுத்துதல் அனுமதிக்கப்படும்",
+    "Aadhaar card, PAN card, property title deed, encumbrance certificate and income proof.": "ஆதார் அட்டை, பான் அட்டை, சொத்து உரிமைப் பத்திரம், வில்லங்கச் சான்றிதழ் மற்றும் வருமானச் சான்று.",
+    "A concessional loan channelled through NHFDC to help persons with disabilities start or expand a livelihood activity.": "மாற்றுத்திறனாளிகள் வாழ்வாதாரத் தொழிலைத் தொடங்க அல்லது விரிவுபடுத்த உதவும் வகையில் NHFDC வழியாக வழங்கப்படும் சலுகைக் கடன்.",
+    "Concessional interest rate": "சலுகை வட்டி விகிதம்",
+    "Collateral/guarantor as applicable": "பொருந்தும்பட்சத்தில் பிணையம்/உத்தரவாததாரர்",
+    "Priority processing": "முன்னுரிமைச் செயலாக்கம்",
+    "Aadhaar card, PAN card, disability certificate and a project or business proposal.": "ஆதார் அட்டை, பான் அட்டை, மாற்றுத்திறனாளிச் சான்றிதழ் மற்றும் திட்ட அல்லது தொழில் முன்மொழிவு.",
+    "Credit for registered Self Help Groups to fund income-generating activities for their members.": "பதிவு செய்யப்பட்ட சுய உதவிக் குழுக்களின் உறுப்பினர்களுக்கு வருமானம் ஈட்டும் நடவடிக்கைகளுக்கு நிதி வழங்கும் கடன்.",
+    "Group-based lending": "குழு அடிப்படையிலான கடன்",
+    "No collateral for eligible groups": "தகுதியான குழுக்களுக்குப் பிணையம் தேவையில்லை",
+    "Linked group savings account required": "இணைக்கப்பட்ட குழு சேமிப்புக் கணக்கு தேவை",
+    "SHG registration/bye-laws, resolution copy and KYC of authorised signatories.": "சுய உதவிக் குழு பதிவு/துணை விதிகள், தீர்மான நகல் மற்றும் அங்கீகரிக்கப்பட்ட கையொப்பமிடுவோரின் KYC.",
+    "A subsidised loan routed through TABCEDCO for eligible backward class beneficiaries to start or grow a livelihood activity.": "தகுதியான பிற்படுத்தப்பட்ட வகுப்பினர் வாழ்வாதாரத் தொழிலைத் தொடங்க அல்லது வளர்க்க TABCEDCO வழியாக வழங்கப்படும் மானியக் கடன்.",
+    "Subsidised interest rate": "மானிய வட்டி விகிதம்",
+    "Government-linked scheme": "அரசுடன் இணைந்த திட்டம்",
+    "Aadhaar card, PAN card, community certificate and a project or business proposal.": "ஆதார் அட்டை, பான் அட்டை, சாதிச் சான்றிதழ் மற்றும் திட்ட அல்லது தொழில் முன்மொழிவு.",
+    "A subsidised loan routed through TAMCO for eligible minority community beneficiaries to start or grow a livelihood activity.": "தகுதியான சிறுபான்மையின பயனாளிகள் வாழ்வாதாரத் தொழிலைத் தொடங்க அல்லது வளர்க்க TAMCO வழியாக வழங்கப்படும் மானியக் கடன்.",
+    "Credit for women starting or expanding a business, trade or service venture.": "தொழில், வணிகம் அல்லது சேவை முயற்சியைத் தொடங்கும் அல்லது விரிவுபடுத்தும் பெண்களுக்கான கடன்.",
+    "Collateral as applicable": "பொருந்தும்பட்சத்தில் பிணையம்",
+    "Aadhaar card, PAN card, business proof or proposal and address proof.": "ஆதார் அட்டை, பான் அட்டை, தொழில் சான்று அல்லது முன்மொழிவு மற்றும் முகவரிச் சான்று.",
+    "Personal credit for salaried women employees to meet planned expenses, repaid through monthly salary deduction.": "மாதச் சம்பளம் பெறும் பெண் பணியாளர்களின் திட்டமிட்ட செலவுகளுக்கான தனிநபர் கடன்; மாதச் சம்பளப் பிடித்தம் மூலம் திருப்பிச் செலுத்தப்படும்.",
+    "Salary-linked eligibility": "சம்பளத்துடன் இணைந்த தகுதி",
+    "Aadhaar card, PAN card, salary certificate and latest payslips.": "ஆதார் அட்டை, பான் அட்டை, சம்பளச் சான்றிதழ் மற்றும் சமீபத்திய சம்பளச் சீட்டுகள்.",
+    "A personal loan secured by the guarantee of one or more sureties instead of collateral, for salaried or verified-income borrowers.": "பிணையத்திற்குப் பதிலாக ஒன்று அல்லது அதற்கு மேற்பட்ட உத்தரவாததாரர்களின் உத்தரவாதத்துடன் வழங்கப்படும் தனிநபர் கடன்; சம்பளம் பெறுவோர் அல்லது சரிபார்க்கப்பட்ட வருமானம் உள்ளவர்களுக்கு.",
+    "No collateral required": "பிணையம் தேவையில்லை",
+    "Guarantor-backed": "உத்தரவாததாரர் ஆதரவுடன்",
+    "Quick processing": "விரைவான செயலாக்கம்",
+    "Aadhaar card, PAN card, income proof and KYC of the surety/guarantor.": "ஆதார் அட்டை, பான் அட்டை, வருமானச் சான்று மற்றும் உத்தரவாததாரரின் KYC.",
+    "Regulatory disclosures, AGM notices and": "ஒழுங்குமுறை வெளிப்படுத்தல்கள், பொதுக்குழு அறிவிப்புகள் மற்றும்",
+    "tenders published by the bank.": "வங்கி வெளியிடும் ஒப்பந்தப்புள்ளிகள்.",
+    "RBI Disclosures": "ரிசர்வ் வங்கி வெளிப்படுத்தல்கள்",
+    "Filter notices": "அறிவிப்புகளை வடிகட்டு",
+    "All": "அனைத்தும்",
+    "AGM Notices": "பொதுக்குழு அறிவிப்புகள்",
+    "Tenders": "ஒப்பந்தப்புள்ளிகள்",
+    "[DD Mon YYYY]": "[நாள் மாதம் ஆண்டு]",
+    "RBI Disclosure": "ரிசர்வ் வங்கி வெளிப்படுத்தல்",
+    "Quarterly Financial Results - [Quarter, Year]": "காலாண்டு நிதி முடிவுகள் - [காலாண்டு, ஆண்டு]",
+    "Download PDF →": "PDF பதிவிறக்கு →",
+    "AGM Notice": "பொதுக்குழு அறிவிப்பு",
+    "Notice of Annual General Meeting - [Year]": "ஆண்டு பொதுக்குழுக் கூட்ட அறிவிப்பு - [ஆண்டு]",
+    "Statement of Non-Performing Assets (NPA) - [Period]": "செயல்படாத சொத்துகள் (NPA) அறிக்கை - [காலம்]",
+    "Tender": "ஒப்பந்தப்புள்ளி",
+    "Tender for [Description of Work/Supply]": "ஒப்பந்தப்புள்ளி - [பணி/விநியோக விவரம்]",
+    "Audited Annual Financial Statement - [Financial Year]": "தணிக்கை செய்யப்பட்ட ஆண்டு நிதி அறிக்கை - [நிதியாண்டு]",
+    "Minutes of the Previous Annual General Meeting": "முந்தைய ஆண்டு பொதுக்குழுக் கூட்டக் குறிப்புகள்",
+    "No notices in this category yet.": "இந்த வகையில் இதுவரை அறிவிப்புகள் இல்லை.",
+    "Entries above are placeholders. Replace them with actual dated notices linked to PDFs.": "மேலுள்ள பதிவுகள் மாதிரிகள் மட்டுமே. அவற்றை PDF இணைப்புடன் கூடிய உண்மையான தேதியிட்ட அறிவிப்புகளால் மாற்றவும்.",
+    "For Deposit individual 8.25% and For senior citizens 8.50%": "தனிநபர் வைப்புகளுக்கு 8.25% மற்றும் மூத்த குடிமக்களுக்கு 8.50%",
+    "Calculate Loans and Deposits": "கடன்கள் மற்றும் வைப்புகளைக் கணக்கிடுக",
+    "Best FD rate": "சிறந்த நிலையான வைப்பு விகிதம்",
+    "Senior citizens, 2–3 years": "மூத்த குடிமக்கள், 2–3 ஆண்டுகள்",
+    "Lowest loan rate": "குறைந்த கடன் விகிதம்",
+    "per annum": "ஆண்டுக்கு", "Highest loan rate": "அதிக கடன் விகிதம்",
+    "Indicative rates for deposits below ₹2 crore, per annum. Senior citizens (60+) receive an additional 0.50%.": "₹2 கோடிக்குக் குறைவான வைப்புகளுக்கான குறியீட்டு விகிதங்கள், ஆண்டுக்கு. மூத்த குடிமக்கள் (60+) கூடுதலாக 0.50% பெறுவர்.",
+    "Period": "காலம்",
+    "General": "பொது",
+    "180 days – 364 days": "180 நாட்கள் – 364 நாட்கள்",
+    "1 year – below 2 years": "1 ஆண்டு – 2 ஆண்டுகளுக்குக் குறைவு",
+    "2 years – below 3 years": "2 ஆண்டுகள் – 3 ஆண்டுகளுக்குக் குறைவு",
+    "3 years and above": "3 ஆண்டுகள் மற்றும் அதற்கு மேல்",
+    "Rates are indicative and subject to change. Please confirm at the branch. Each depositor is insured by DICGC up to a maximum of ₹5,00,000 (principal and interest combined) per bank, in the same right and capacity.": "விகிதங்கள் குறியீட்டு அளவிலானவை; மாற்றத்திற்கு உட்பட்டவை. கிளையில் உறுதிசெய்யவும். ஒவ்வொரு வைப்பாளரும் ஒரு வங்கிக்கு, அதே உரிமை மற்றும் தகுதியில், அதிகபட்சம் ₹5,00,000 வரை (அசல் மற்றும் வட்டி சேர்த்து) DICGC காப்பீடு பெறுகிறார்.",
+    "Rates per annum, calculated as simple interest on a daily basis (principal × rate × days ÷ 365).": "விகிதங்கள் ஆண்டுக்கு, தினசரி அடிப்படையில் எளிய வட்டியாகக் கணக்கிடப்படுகின்றன (அசல் × விகிதம் × நாட்கள் ÷ 365).",
+    "Everything beyond savings and": "சேமிப்பு மற்றும் கடன்களுக்கு அப்பால்",
+    "loans that you use week to week.": "வாரந்தோறும் நீங்கள் பயன்படுத்தும் அனைத்தும்.",
+    "Safe Deposit Lockers": "பாதுகாப்பு வைப்பு லாக்கர்கள்",
+    "UPI & mobile banking": "UPI & மொபைல் வங்கிச் சேவை"
+  });
+
+  // about-page-translations
+  Object.assign(ta, {
+    "Registered": "பதிவு செய்யப்பட்டது",
+    "'A' class members": "'ஏ' வகுப்பு உறுப்பினர்கள்",
+    "Share capital": "பங்கு மூலதனம்",
+    "Branches": "கிளைகள்",
+    "₹25.87 lakh": "₹25.87 லட்சம்",
+    "lakh": "லட்சம்",
+    "Our journey": "எங்கள் பயணம்",
+    "A century of banking, built by the town": "ஊரே கட்டியெழுப்பிய ஒரு நூற்றாண்டு வங்கிச் சேவை",
+    "The Kaveripattinam Co-operative Town Bank Ltd. No. 5918, from registration to today.": "காவேரிப்பட்டினம் கூட்டுறவு நகர வங்கி லிமிடெட், எண் 5918 — பதிவு முதல் இன்று வரை.",
+    "19 Mar 1921": "19 மார்ச் 1921",
+    "01 Apr 1921": "01 ஏப்ரல் 1921",
+    "Today": "இன்று",
+    "31 Mar 2026": "31 மார்ச் 2026",
+    "27 Sep 2026": "27 செப்டம்பர் 2026",
+    "Coming next": "அடுத்து வருவது",
+    "Bank registered": "வங்கி பதிவு",
+    "The Kaveripattinam Co-operative Town Bank Ltd. No. 5918 was registered.": "காவேரிப்பட்டினம் கூட்டுறவு நகர வங்கி லிமிடெட், எண் 5918 பதிவு செய்யப்பட்டது.",
+    "Operations begin": "செயல்பாடுகள் தொடக்கம்",
+    "The bank commenced its operations and opened its doors to members.": "வங்கி தனது செயல்பாடுகளைத் தொடங்கி உறுப்பினர்களுக்காகத் தனது கதவுகளைத் திறந்தது.",
+    "Two branches": "இரண்டு கிளைகள்",
+    "Functioning from Kaveripattinam and Vadamalampatti (Pochampalli).": "காவேரிப்பட்டினம் மற்றும் வடமலம்பட்டி (போச்சம்பள்ளி) ஆகிய இடங்களில் இயங்கி வருகிறது.",
+    "12,889 members": "12,889 உறுப்பினர்கள்",
+    "'A' Class membership stands at 12,889, holding a share capital of ₹25.87 lakhs.": "'ஏ' வகுப்பு உறுப்பினர்கள் 12,889 பேர்; பங்கு மூலதனம் ₹25.87 லட்சம்.",
+    "Banking licence": "வங்கி உரிமம்",
+    "The Reserve Bank of India issued the banking licence.": "இந்திய ரிசர்வ் வங்கி வங்கி உரிமத்தை வழங்கியது.",
+    "New branches": "புதிய கிளைகள்",
+    "A proposal to open a new branch at Uthangarai and Mathur is under process.": "உத்தங்கரை மற்றும் மத்தூரில் புதிய கிளை திறப்பதற்கான முன்மொழிவு செயல்பாட்டில் உள்ளது.",
+    "Find us": "எங்களைக் கண்டறிய",
+    "Our offices": "எங்கள் அலுவலகங்கள்",
+    "Head Office": "தலைமை அலுவலகம்",
+    "Other Branch": "மற்ற கிளை",
+    "Vadamalampatti": "வடமலம்பட்டி",
+    "Official record": "அதிகாரப்பூர்வ பதிவு"
+  });
+
+  // notices-page-translations
+  Object.assign(ta, {
+    "Browse notices": "அறிவிப்புகளைப் பார்க்க",
+    "Need a notice that is not listed?": "பட்டியலில் இல்லாத அறிவிப்பு தேவையா?",
+    "Ask at the branch and we will share the document with you.": "கிளையில் கேளுங்கள்; ஆவணத்தை உங்களுடன் பகிர்ந்துகொள்வோம்.",
+    "DD": "நாள்",
+    "Mon YYYY": "மாதம் ஆண்டு",
+    "Download PDF": "PDF பதிவிறக்கு"
+  });
+
+  // customer-corner-translations
+  Object.assign(ta, {
+    "Customer corner sections": "வாடிக்கையாளர் பகுதி பிரிவுகள்"
+  });
+
+  var originalNodes = new WeakMap();
+  var originalAttributes = new WeakMap();
+  var savedLanguage = "en";
+  try { savedLanguage = localStorage.getItem("kucb-language") || "en"; } catch (_) {}
+  var current = savedLanguage === "ta" ? "ta" : "en";
+
+  function localizeText(value, lang) {
+    var trimmed = value.trim();
+    if (lang !== "ta" || !Object.prototype.hasOwnProperty.call(ta, trimmed)) return value;
+    var start = value.match(/^\s*/)[0];
+    var end = value.match(/\s*$/)[0];
+    return start + ta[trimmed] + end;
+  }
+
+  function applyLanguage(lang) {
+    current = lang === "ta" ? "ta" : "en";
+    document.documentElement.lang = current;
+    document.querySelectorAll(".language-menu [data-language]").forEach(function (option) {
+      option.setAttribute("aria-pressed", option.getAttribute("data-language") === current ? "true" : "false");
+    });
+
+    var walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
+    var node;
+    while ((node = walker.nextNode())) {
+      if (!originalNodes.has(node)) originalNodes.set(node, node.nodeValue);
+      node.nodeValue = localizeText(originalNodes.get(node), current);
+    }
+
+    var attributeNames = ["placeholder", "aria-label", "aria-description", "title"];
+    document.querySelectorAll("[placeholder], [aria-label], [aria-description], [title]").forEach(function (el) {
+      attributeNames.forEach(function (name) {
+        if (!el.hasAttribute(name)) return;
+        var key = name;
+        var saved = originalAttributes.get(el) || {};
+        if (!Object.prototype.hasOwnProperty.call(saved, key)) saved[key] = el.getAttribute(name);
+        originalAttributes.set(el, saved);
+        el.setAttribute(name, localizeText(saved[key], current));
+      });
+    });
+
+    var pageTitles = {
+      "Kaveripattinam Urban Co-operative Bank Ltd. | Krishnagiri District": "காவேரிப்பட்டினம் நகர கூட்டுறவு வங்கி லிமிடெட் | கிருஷ்ணகிரி மாவட்டம்",
+      "About us | Kaveripattinam Urban Co-operative Bank": "எங்களைப் பற்றி | காவேரிப்பட்டினம் நகர கூட்டுறவு வங்கி",
+      "Deposit accounts | Kaveripattinam Urban Co-operative Bank": "வைப்புக் கணக்குகள் | காவேரிப்பட்டினம் நகர கூட்டுறவு வங்கி",
+      "Loans | Kaveripattinam Urban Co-operative Bank": "கடன்கள் | காவேரிப்பட்டினம் நகர கூட்டுறவு வங்கி",
+      "Services | Kaveripattinam Urban Co-operative Bank": "சேவைகள் | காவேரிப்பட்டினம் நகர கூட்டுறவு வங்கி",
+      "Interest rates & calculators | Kaveripattinam Urban Co-operative Bank": "வட்டி விகிதங்கள் மற்றும் கணிப்பான்கள் | காவேரிப்பட்டினம் நகர கூட்டுறவு வங்கி",
+      "Contact us | Kaveripattinam Urban Co-operative Bank": "எங்களைத் தொடர்புகொள்ள | காவேரிப்பட்டினம் நகர கூட்டுறவு வங்கி",
+      "Customer corner | Kaveripattinam Urban Co-operative Bank": "வாடிக்கையாளர் பகுதி | காவேரிப்பட்டினம் நகர கூட்டுறவு வங்கி",
+      "Notices & Circulars | Kaveripattinam Urban Co-operative Bank": "அறிவிப்புகள் & சுற்றறிக்கைகள் | காவேரிப்பட்டினம் நகர கூட்டுறவு வங்கி",
+      "Page not found | Kaveripattinam UCB": "பக்கம் கிடைக்கவில்லை | காவேரிப்பட்டினம் UCB"
+    };
+    if (!originalAttributes.has(document.documentElement)) originalAttributes.set(document.documentElement, {});
+    var htmlSaved = originalAttributes.get(document.documentElement);
+    if (!htmlSaved.title) htmlSaved.title = document.title;
+    document.title = current === "ta" ? (pageTitles[htmlSaved.title] || htmlSaved.title) : htmlSaved.title;
+    document.querySelectorAll('meta[name="description"]').forEach(function (meta) {
+      var saved = originalAttributes.get(meta) || {};
+      if (!saved.content) saved.content = meta.content;
+      originalAttributes.set(meta, saved);
+      meta.content = current === "ta" ? localizeText(saved.content, current) : saved.content;
+    });
+    try { localStorage.setItem("kucb-language", current); } catch (_) {}
+    window.dispatchEvent(new Event("kucb-languagechange"));
+  }
+
+  window.kucbTranslate = function (english) { return localizeText(english, current); };
+  window.kucbSetLanguage = applyLanguage;
+  document.addEventListener("DOMContentLoaded", function () {
+    document.querySelectorAll(".language-menu [data-language]").forEach(function (option) {
+      option.addEventListener("click", function () {
+        applyLanguage(option.getAttribute("data-language"));
+      });
+    });
+    applyLanguage(current);
+  });
+})();
