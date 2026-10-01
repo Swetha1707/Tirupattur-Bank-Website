@@ -439,28 +439,27 @@
     var nav = document.querySelector(".product-nav");
     if (!arts.length || !nav || typeof HTMLDialogElement === "undefined") return;
     var ICONS=[
-       /* gold bars */
-       '<path class="ac" d="M2.5 20 4.7 14.5h6.6L13.5 20z"/><path class="ac" d="M10.5 20l2.2-5.5h6.6L21.5 20z"/><path class="ac" d="M6.5 14l2.2-5.5h6.6L17.5 14z"/><path d="M19 2.5v3.6M17.2 4.3h3.6M4.5 3.5v2.4M3.3 4.7h2.4"/>',
-       /* house */
-       '<path d="M2.5 11.5 12 3.5l9.500 8"/><path d="M5.500 10.200V20.500h13V10.200" fill="#fff" fill-opacity=".18"/><path d="M15.800 6.800V4h2.300v4.700"/><path class="ac" d="M10 14.500h4v6h-4z"/><path class="ac" d="M6.800 12h2.400v2.400H6.800z"/><path d="M1.500 20.500h21"/>',
-       /* mortgage deed with seal */
-       '<path d="M5.500 2.500h9.500l4 4V21h-13.500z" fill="#fff" fill-opacity=".18"/><path d="M15 2.500v4h4"/><path d="M8.500 12 11.500 9.500 14.500 12v4h-6z"/><path d="M8.500 19h4.500"/><circle class="ac" cx="17.500" cy="18.500" r="3.200"/><path d="m16.100 18.600 1 1 1.700-2" stroke="#14243D"/>',
-       /* accessibility */
-       '<circle class="ac" cx="11" cy="4" r="2"/><path d="M11 7.500v6.500h5.200l2.300 5"/><path d="M8 9.500h7"/><path d="M8.200 12.200a5.800 5.800 0 1 0 7.300 8"/>',
-       /* group */
-       '<circle class="ac" cx="12" cy="7" r="3.100"/><path d="M6.300 20c0-3.500 2.500-5.800 5.700-5.800s5.700 2.300 5.700 5.800z" fill="#fff" fill-opacity=".2"/><circle cx="4.700" cy="10" r="2.100"/><path d="M1.600 17.700c.2-2 1.500-3.400 3.100-3.700"/><circle cx="19.300" cy="10" r="2.100"/><path d="M22.400 17.700c-.2-2-1.500-3.400-3.100-3.700"/>',
-       /* sprout */
-       '<path d="M12 21.500v-9.500"/><path class="ac" d="M12 13.500c0-4.200 2.700-6.900 7.300-7.100 0 4.400-2.700 7.100-7.300 7.100z"/><path d="M12 16C12 12.300 9.700 10 5.200 9.800c0 3.800 2.300 6.200 6.800 6.200z" fill="#fff" fill-opacity=".25"/><path d="M3.500 21.500h17"/>',
-       /* scale */
-       '<path d="M12 3.500v17M7.500 20.500h9"/><path d="M4 7.500h16"/><path class="ac" d="M4 7.500 1.700 14h4.600z"/><path d="M1.700 14a2.300 2.300 0 0 0 4.600 0"/><path class="ac" d="M20 7.500 17.700 14h4.600z"/><path d="M17.700 14a2.300 2.300 0 0 0 4.600 0"/><circle cx="12" cy="3.600" r="1.200" fill="#fff"/>',
-       /* storefront */
-       '<path class="ac" d="M3.500 9.500 5 4h14l1.500 5.500z"/><path d="M3.500 9.500c0 1.700 1.200 2.900 2.700 2.900s2.700-1.200 2.700-2.900c0 1.700 1.200 2.900 3.100 2.900s3.100-1.200 3.100-2.900c0 1.700 1.200 2.900 2.700 2.900s2.700-1.200 2.700-2.900"/><path d="M5 12.400V20.500h14v-8.100"/><path d="M9.500 14.500h5v6h-5z" fill="#fff" fill-opacity=".25"/>',
-       /* briefcase */
-       '<rect x="2.500" y="7.500" width="19" height="13" rx="2.400" fill="#fff" fill-opacity=".18"/><path d="M8.500 7.500V5.700c0-1 .8-1.700 1.700-1.700h3.600c.9 0 1.700.7 1.700 1.700v1.800"/><path d="M2.500 13.200h19"/><rect class="ac" x="10.200" y="11.600" width="3.600" height="3" rx=".8"/>',
-       /* shield */
-       '<path d="M12 2.500 4.400 5.600v5.900c0 4.700 3.200 8.400 7.600 9.900 4.400-1.500 7.600-5.200 7.600-9.900V5.600z" fill="#fff" fill-opacity=".2"/><path class="ac" style="fill:none" stroke-width="2.200" d="m8.300 12.200 2.700 2.800 4.800-5.300"/>'
+       /* gold: necklace with pendant */
+       '<path d="M8 6Q32 52 56 6" fill="none" stroke="#F2B632" stroke-width="3.500" stroke-linecap="round"/><circle cx="17" cy="20" r="3.500" fill="#F7C948"/><circle cx="47" cy="20" r="3.500" fill="#F7C948"/><circle cx="24" cy="31" r="3.500" fill="#F7C948"/><circle cx="40" cy="31" r="3.500" fill="#F7C948"/><path d="M32 36l7 8-7 8-7-8z" fill="#8E2A3A" stroke="#F2B632" stroke-width="2" stroke-linejoin="round"/><circle cx="32" cy="58" r="4" fill="#9B6BD3"/>',
+       /* house construction: house with coin */
+       '<rect x="16" y="14" width="6" height="12" fill="#6B1A26"/><path d="M6 32 32 10l26 22z" fill="#8E2A3A"/><rect x="12" y="32" width="40" height="22" fill="#FFE9C2"/><rect x="28" y="40" width="9" height="14" rx="1" fill="#2FA8DD"/><rect x="16" y="37" width="8" height="8" fill="#2FA8DD"/><rect x="40" y="37" width="8" height="8" fill="#2FA8DD"/><rect x="6" y="54" width="52" height="5" rx="2.500" fill="#0B5D57"/><circle cx="52" cy="14" r="8" fill="#F7C948" stroke="#E0A21B" stroke-width="2"/><circle cx="52" cy="14" r="3.500" fill="none" stroke="#E0A21B" stroke-width="2"/>',
+       /* mortgage: bank with cash */
+       '<rect x="14" y="4" width="36" height="18" rx="3" fill="#5BB65B"/><circle cx="32" cy="13" r="4.500" fill="#A8E0A8"/><path d="M5 36 32 20l27 16z" fill="#2FA8DD"/><rect x="11" y="38" width="7" height="14" fill="#2FA8DD"/><rect x="23" y="38" width="7" height="14" fill="#2FA8DD"/><rect x="34" y="38" width="7" height="14" fill="#2FA8DD"/><rect x="46" y="38" width="7" height="14" fill="#2FA8DD"/><rect x="5" y="54" width="54" height="6" rx="2" fill="#1C86B8"/>',
+       /* NHFDC: wheelchair */
+       '<circle cx="26" cy="10" r="6" fill="#8E2A3A"/><path d="M26 19V36H40L47 52" fill="none" stroke="#2FA8DD" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/><path d="M26 27H38" fill="none" stroke="#2FA8DD" stroke-width="6" stroke-linecap="round"/><circle cx="24" cy="44" r="13" fill="none" stroke="#F59B3A" stroke-width="5"/><circle cx="24" cy="44" r="3" fill="#0B5D57"/>',
+       /* SHG: group of three */
+       '<circle cx="12" cy="26" r="6" fill="#F4C7A1"/><path d="M1 56Q1 38 12 38Q23 38 23 56z" fill="#2FA8DD"/><circle cx="52" cy="26" r="6" fill="#F4C7A1"/><path d="M41 56Q41 38 52 38Q63 38 63 56z" fill="#5BB65B"/><circle cx="32" cy="18" r="9" fill="#F4C7A1"/><path d="M16 58Q16 32 32 32Q48 32 48 58z" fill="#8E2A3A"/>',
+       /* TABCEDCO: sprout with coin */
+       '<path d="M32 54V26" stroke="#5BB65B" stroke-width="4" stroke-linecap="round" fill="none"/><path d="M32 38Q12 38 10 18Q30 18 32 38z" fill="#5BB65B"/><path d="M32 30Q34 12 54 10Q54 28 32 30z" fill="#8FD16B"/><ellipse cx="32" cy="57" rx="22" ry="5" fill="#A0673A"/><circle cx="50" cy="46" r="7" fill="#F7C948" stroke="#E0A21B" stroke-width="2"/>',
+       /* TAMCO: scales */
+       '<rect x="30" y="10" width="4" height="42" fill="#0B5D57"/><rect x="18" y="52" width="28" height="6" rx="3" fill="#0B5D57"/><rect x="8" y="14" width="48" height="4" rx="2" fill="#F2B632"/><circle cx="32" cy="9" r="4.500" fill="#8E2A3A"/><path d="M10 17 2 34M10 17 18 34M54 17 46 34M54 17 62 34" stroke="#0B5D57" stroke-width="1.500" fill="none"/><path d="M2 34H18Q16 45 10 45Q4 45 2 34z" fill="#2FA8DD"/><path d="M46 34H62Q60 45 54 45Q48 45 46 34z" fill="#8E2A3A"/>',
+       /* women entrepreneur: shop */
+       '<path d="M6 12H58L62 26H2z" fill="#8E2A3A"/><path d="M19 12H32V26H17zM45 12H58L62 26H47z" fill="#fff"/><rect x="8" y="26" width="48" height="28" fill="#FFE9C2"/><rect x="26" y="34" width="14" height="20" fill="#2FA8DD"/><rect x="11" y="32" width="11" height="10" fill="#A8DDF5"/><rect x="43" y="32" width="10" height="10" fill="#A8DDF5"/><rect x="4" y="54" width="56" height="5" rx="2.500" fill="#0B5D57"/>',
+       /* working women: briefcase */
+       '<path d="M24 22V14Q24 10 28 10H36Q40 10 40 14V22" fill="none" stroke="#0B5D57" stroke-width="4"/><rect x="6" y="20" width="52" height="36" rx="6" fill="#F59B3A"/><rect x="6" y="34" width="52" height="4" fill="#C77A1F"/><rect x="27" y="30" width="10" height="12" rx="2" fill="#F7C948"/>',
+       /* surety: shield with tick */
+       '<path d="M32 4 10 12V30C10 44 20 54 32 60 44 54 54 44 54 30V12z" fill="#2FA8DD"/><path d="M32 4V60C20 54 10 44 10 30V12z" fill="#1C86B8"/><path d="M20 31 29 40 44 22" fill="none" stroke="#fff" stroke-width="5.500" stroke-linecap="round" stroke-linejoin="round"/>'
       ];
-      var BADGES=["#C9962F,#7A5A12","#C0503F,#7A231B","#3B5F8F,#1C3454","#2F8A86,#164A4A","#E08A2E,#A5561A","#4C9A5F,#215A35","#7E5BB0,#3E2670","#C2517F,#7F2050","#8A9A2E,#4F5E14","#4A5A73,#1A2436"];
     function read(a) {
       var tag = a.querySelector(".tag").textContent;
       var m = /([\d.]+)/.exec(tag);
@@ -484,8 +483,9 @@
     document.body.appendChild(dlg);
     function openDialog(id) {
       var d = read(document.getElementById(id));
-      dlg.innerHTML = '<div class="lcd-head"><button class="lcd-close" aria-label="' + tr("Close") + '">&times;</button><h3 id="lcd-t">' + d.title + '</h3><p class="lcd-ta">' + d.ta + '</p><span class="lcd-rate">' + d.tag + '</span></div><div class="lcd-body"><p>' + d.desc + '</p><ul>' + d.feats.map(function (f) { return "<li>" + f + "</li>"; }).join("") + '</ul><div class="lcd-docs">' + d.docs + "</div></div>";
-      dlg.querySelector(".lcd-close").onclick = function () { dlg.close(); };
+      var docs = d.docs.replace(/<b>[\s\S]*?<\/b>\s*/, "");
+      dlg.innerHTML = '<div class="lcd2"><aside class="lcd2-side"><span class="lcd2-kick">' + tr("Loan scheme") + '</span><div class="lcd2-rate"><b>' + d.rate + '</b><i>%</i><small>' + tr("per annum") + '</small></div></aside><div class="lcd2-main"><button class="lcd2-close" aria-label="' + tr("Close") + '">&times;</button><h3 id="lcd-t">' + d.title + '</h3><p class="lcd2-ta">' + d.ta + '</p><p class="lcd2-desc">' + d.desc + '</p><h4>' + tr("What you get") + '</h4><ol class="lcd2-list">' + d.feats.map(function (f) { return "<li>" + f + "</li>"; }).join("") + '</ol><h4>' + tr("Documents to bring") + '</h4><p class="lcd2-docs">' + docs + '</p></div></div>';
+      dlg.querySelector(".lcd2-close").onclick = function () { dlg.close(); };
       dlg.showModal();
     }
     dlg.addEventListener("click", function (e) { if (e.target === dlg) dlg.close(); });
@@ -495,7 +495,7 @@
       c.className = "lc lc-3 ic" + (i + 1);
       c.tabIndex = 0;
       c.setAttribute("role", "button");
-      var front = '<div class="lc-front"><div class="lc-top"><span class="lc-ico-w"><span class="lc-ico" style="background:linear-gradient(145deg,' + BADGES[i % BADGES.length] + ')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">' + ICONS[i % ICONS.length] + '</svg></span></span><div class="lc-rate"><span class="num">' + d.rate + '</span>%<small>per annum</small></div></div><h3>' + d.title + '</h3><p class="lc-ta">' + d.ta + '</p><p class="lc-p">' + d.desc + '</p><span class="lc-cta">View details <i>&rarr;</i></span></div>';
+      var front = '<div class="lc-front"><div class="lc-top"><span class="lc-ico-w"><span class="lc-ico"><svg viewBox="0 0 64 64" aria-hidden="true">' + ICONS[i % ICONS.length] + '</svg></span></span><div class="lc-rate"><span class="num">' + d.rate + '</span>%<small>per annum</small></div></div><h3>' + d.title + '</h3><p class="lc-ta">' + d.ta + '</p><p class="lc-p">' + d.desc + '</p><span class="lc-cta">View details <i>&rarr;</i></span></div>';
       var back = '<div class="lc-back"><h4>Key features</h4><ul>' + d.feats.slice(0, 4).map(function (f) { return "<li>" + f + "</li>"; }).join("") + "</ul></div>";
       c.innerHTML = '<div class="lc-inner">' + front + back + "</div>";
       c.addEventListener("click", function () { openDialog(a.id); });

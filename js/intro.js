@@ -15,7 +15,7 @@
   window.kucbIntroMs = TOTAL + 200;
   var st = document.createElement("style");
   st.textContent = "html.iz-on{overflow:hidden}.iz{position:fixed;inset:0;z-index:9999;overflow:hidden;pointer-events:none}" +
-    ".iz-bg{position:absolute;inset:0;background:linear-gradient(135deg,#14304d,#0d2138)}" +
+    ".iz-bg{position:absolute;inset:0;background:linear-gradient(135deg,#14304d,#042B28)}" +
     ".iz-clip{position:absolute;overflow:hidden}.iz-photo{position:absolute;inset:0;background:url(assets/home-hero-bg7.png) center/cover no-repeat}" +
     ".iz-logo{position:fixed;z-index:6;object-fit:contain}" +
     ".iz-name{position:fixed;left:0;right:0;z-index:5;text-align:center;color:#fff;font-family:Inter,'Mukta Malar',system-ui,sans-serif;font-weight:700;padding:0 1rem;line-height:1.3;font-size:clamp(1.3rem,3.8vw,2.4rem);text-shadow:0 2px 16px rgba(0,0,0,.7)}" +
