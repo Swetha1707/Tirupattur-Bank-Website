@@ -6,31 +6,32 @@
 <title>Kaveripattinam Urban Co-operative Bank Ltd. | Krishnagiri District</title>
 <meta name="description" content="Kaveripattinam Urban Co-operative Bank – savings, fixed deposits, gold loans, house construction and business loans in Kaveripattinam, Krishnagiri district, Tamil Nadu.">
 <meta name="theme-color" content="#0B5D57">
-<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="assets/favicon.png" type="image/png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Anek+Tamil:wght@500;600;700&family=Mukta+Malar:wght@400;500;600;700&display=swap" rel="stylesheet">
 <script>
 /* Hide the page from the very first paint when the intro is about to play, so the home page never flashes before it. */
 (function(){try{
-  var d=document.documentElement;
-  if(!matchMedia("(prefers-reduced-motion: reduce)").matches){
+  var d=document.documentElement,seen=false;
+  try{seen=sessionStorage.getItem("kucbIntroSeen")==="1";}catch(e){}
+  if(seen){d.classList.add("iz-skip");}   /* intro already played in this visit: refresh / coming back to Home shows no intro */
+  else if(!matchMedia("(prefers-reduced-motion: reduce)").matches){
     d.classList.add("iz-pre");
+    try{sessionStorage.setItem("kucbIntroSeen","1");}catch(e){}
     setTimeout(function(){d.classList.remove("iz-pre");},4000); /* safety net */
   }
 }catch(e){}})();
 </script>
-<link rel="stylesheet" href="css/style.css?v=250">
+<link rel="stylesheet" href="css/style.css?v=283">
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
-<header class="site-header"><div class="wrap">
-  <a class="topbar-brand" href="index.html">
-    <img src="assets/bank-logo-cropped.png" alt="" width="34" height="34">
-    <span>Kaveripattinam Urban<br>Co-operative Bank Ltd.</span>
+<div class="top-strip"><div class="wrap"><a class="topbar-brand" href="index.html">
+    <img src="assets/bank-logo-new.png" alt="" width="34" height="34">
+    <span>The Kaveripattinam<br>Cooperative Town Bank Ltd</span>
   </a>
-  <button class="nav-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Open menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18"/></svg></button>
-  <nav class="nav" id="site-nav" aria-label="Main"><ul><li><a href="index.html" aria-current="page"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 10.5 12 3l9 7.5"/><path d="M5 9.5V20a1 1 0 0 0 1 1h3v-6h6v6h3a1 1 0 0 0 1-1V9.5"/></svg>Home</a></li><li><a href="about.html">About us</a></li><li><a href="deposits.html">Deposits</a></li><li><a href="loans.html">Loans</a></li><li><a href="services.html">Services</a></li><li><a href="rates.html">Interest rates</a></li><li><a href="notices.html">Notices</a></li><li><a href="customer-corner.html">Customer corner</a></li><li class="nav-cta"><a href="contact.html">Contact us</a></li></ul></nav>
+  <div class="top-actions"><a class="top-btn top-btn-line" href="#">Internet Banking<span class="top-soon">Coming soon</span></a><a class="top-btn top-btn-solid" href="deposits.html">Open Account</a></div>
   <div class="settings-menu">
     <button type="button" class="settings-toggle" aria-haspopup="true" aria-expanded="false" aria-controls="language-menu" aria-label="Settings">
       <span class="settings-icon" aria-hidden="true">Aa</span>
@@ -52,7 +53,10 @@
         </div>
       </div>
     </div>
-  </div>
+  </div></div></div>
+<header class="site-header"><div class="wrap">
+  <button class="nav-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Open menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18"/></svg></button>
+  <nav class="nav" id="site-nav" aria-label="Main"><ul><li><a href="index.html" aria-current="page"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 10.5 12 3l9 7.5"/><path d="M5 9.5V20a1 1 0 0 0 1 1h3v-6h6v6h3a1 1 0 0 0 1-1V9.5"/></svg>Home</a></li><li><a href="about.html">About us</a></li><li><a href="deposits.html">Deposits</a></li><li><a href="loans.html">Loans</a></li><li><a href="services.html">Services</a></li><li><a href="rates.html">Interest rates</a></li><li><a href="notices.html">Notices</a></li><li><a href="customer-corner.html">Customer corner</a></li><li class="nav-cta"><a href="contact.html">Contact us</a></li></ul></nav>
 </div></header>
 <div class="welcome-popup" id="welcomePopup" role="status" aria-labelledby="welcomePopupText" hidden>
   <div class="welcome-popup-card">
@@ -69,8 +73,9 @@
   <canvas id="heroParticles"></canvas>
   <div class="wrap">
   <div class="hero-copy">
-    <h1>The bank that <br>belongs to<br> Kaveripattinam</h1>
-    <p class="hero-ta" lang="ta">நம் ஊர், நம் வங்கி</p>
+    <h1>Our very <br>Own</h1>
+    <p class="hero-ta" lang="ta">Kaveripattinam 
+      <br>Coorperative Town Bank</p>
     <p class="lead">We serve you better by <br>earning your trust Today, <br>and doing it all over<br> again Tomorrow.</p>
     <div class="hero-actions">
       <a class="btn btn-mango" href="deposits.html">Open an account</a>
@@ -83,7 +88,7 @@
         <span class="qi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="2" width="16" height="20" rx="2"/><path d="M8 6h8M8 11h.01M12 11h.01M16 11h.01M8 15h.01M12 15h.01M16 15h.01M8 19h8"/></svg></span>
         <div>
           <span class="quick-label">Fixed deposit rate</span>
-          <strong class="quick-stat">7.75%</strong>
+          <strong class="quick-stat">8%</strong>
           <p class="quick-caption">12–24 months, indicative - confirm the current rate at the branch</p>
           <a class="quick-link" href="rates.html">View all rates →</a>
         </div>
@@ -95,15 +100,6 @@
           <strong class="quick-stat">Same day</strong>
           <p class="quick-caption">Gold appraised at the counter and the loan sanctioned the same visit</p>
           <a class="quick-link" href="loans.html#gold">Explore gold loan →</a>
-        </div>
-      </div>
-      <div class="quick-slide">
-        <span class="qi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v18M5 21h14M3 7h18"/><path d="m6 7-3 7a3 3 0 0 0 6 0zM18 7l-3 7a3 3 0 0 0 6 0z"/></svg></span>
-        <div>
-          <span class="quick-label">Deposit insurance</span>
-          <strong class="quick-stat">₹5 lakh</strong>
-          <p class="quick-caption">Every deposit insured by DICGC, per depositor, per bank</p>
-          <a class="quick-link" href="customer-corner.html#dicgc">Learn about DICGC →</a>
         </div>
       </div>
       <div class="quick-slide">
@@ -132,7 +128,7 @@
 </section>
 <div class="notices" role="region" aria-label="Notices"><div class="wrap">
   <span class="notices-label">Important</span>
-  <div class="notices-track" tabindex="0"><ul class="notices-list"><li>Alert: the Bank never asks for your OTP, PIN or card details</li><li>Senior citizens get 0.50% extra on fixed deposits</li><li>Gold loans sanctioned the same day after appraisal</li><li>Update your KYC at the branch to keep your account active</li><li>Deposit insurance cover is subject to applicable DICGC terms; verify details with the Bank</li><li aria-hidden="true">Alert: the Bank never asks for your OTP, PIN or card details</li><li aria-hidden="true">Senior citizens get 0.50% extra on fixed deposits</li><li aria-hidden="true">Gold loans sanctioned the same day after appraisal</li><li aria-hidden="true">Update your KYC at the branch to keep your account active</li><li aria-hidden="true">Deposit insurance cover is subject to applicable DICGC terms; verify details with the Bank</li></ul></div>
+  <div class="notices-track" tabindex="0"><ul class="notices-list"><li>Alert: the Bank never asks for your OTP, PIN or ATM card details</li><li>Stay safe from fraud: report unauthorised transactions to the branch immediately, and on the national cyber crime helpline 1930 or cybercrime.gov.in</li><li>Senior citizens get 0.50% extra on fixed deposits</li><li>Instant Gold Loan Approval after valuation</li><li>Update your KYC at the branch to keep your bank account active</li><li>Deposit insurance cover is subject to applicable DICGC terms; verify details with the Bank</li><li aria-hidden="true">Alert: the Bank never asks for your OTP, PIN or ATM card details</li><li aria-hidden="true">Stay safe from fraud: report unauthorised transactions to the branch immediately, and on the national cyber crime helpline 1930 or cybercrime.gov.in</li><li aria-hidden="true">Senior citizens get 0.50% extra on fixed deposits</li><li aria-hidden="true">Instant Gold Loan Approval after valuation</li><li aria-hidden="true">Update your KYC at the branch to keep your bank account active</li><li aria-hidden="true">Deposit insurance cover is subject to applicable DICGC terms; verify details with the Bank</li></ul></div>
 </div></div>
 
 <section class="section"><div class="wrap"><div class="offer-panel">
@@ -169,7 +165,7 @@
         <li><a href="customer-corner.html#grievance">Raise a complaint <span>3-step process</span></a></li>
         <li><a href="customer-corner.html#forms">Download forms <span>Available soon</span></a></li>
         <li><a href="customer-corner.html#dicgc">Deposit insurance <span>Up to ₹5 lakh</span></a></li>
-        <li><a href="customer-corner.html#fraud">Fraud awareness <span>Stay alert</span></a></li>
+        <li><a href="index.html">Fraud awareness <span>Stay alert</span></a></li>
       </ul>
       <a href="customer-corner.html">Visit customer corner</a>
     </div>
@@ -180,7 +176,7 @@
   <div>
     <span class="gold-eyebrow">Same-day gold loan</span>
     <h2>Gold Loan in <em>under an hour</em></h2>
-    <p class="ta" lang="ta">தங்கக் கடன் - ஒரு மணி நேரத்தில்</p>
+    <p class="ta" lang="ta">நகைக் கடன் - ஒரு மணி நேரத்தில்</p>
     <p>Bring your gold ornaments and your Aadhaar card. Our appraiser weighs and tests the gold in front of you, and the loan is paid out the same visit - to your account or in cash.</p>
     <div class="gold-stats"><div><b>&#8377;10,000</b><span>Jewel loan per gram</span></div><div><b>8.25%*</b><span>Deposits &middot; individuals</span></div><div><b>8.50%*</b><span>Deposits &middot; senior citizens</span></div></div>
     <p class="gold-foot">*Per annum. Rates are indicative and subject to change. Please confirm at the branch.</p>
@@ -197,7 +193,7 @@
   <div>
     <h2>Fixed deposit interest rates</h2>
     <p>Rates shown per annum, calculated as simple interest. Monthly payout is 0.10% lower than cumulative.</p>
-    <div class="table-wrap"><table><thead><tr><th>Tenure</th><th class="num">Cumulative (paid at maturity)</th><th class="num">Monthly Payout</th></tr></thead><tbody><tr><td>1 to 2 months</td><td class="num">4.00%</td><td class="num">3.90%</td></tr><tr><td>3 to 4 months</td><td class="num">5.00%</td><td class="num">4.90%</td></tr><tr><td>5 to 6 months</td><td class="num">5.50%</td><td class="num">5.40%</td></tr><tr><td>6 to 9 months</td><td class="num">6.00%</td><td class="num">5.90%</td></tr><tr><td>10 to 11 months</td><td class="num">6.50%</td><td class="num">6.40%</td></tr><tr><td>12 to 24 months</td><td class="num">7.75%</td><td class="num">7.65%</td></tr></tbody></table></div>
+    <div class="table-wrap"><table><thead><tr><th>Tenure</th><th class="num">Cumulative (paid at maturity)</th><th class="num">Monthly Payout</th></tr></thead><tbody><tr><td>1 to 2 months</td><td class="num">4.00%</td><td class="num">3.90%</td></tr><tr><td>3 to 4 months</td><td class="num">5.00%</td><td class="num">4.90%</td></tr><tr><td>5 to 6 months</td><td class="num">5.50%</td><td class="num">5.40%</td></tr><tr><td>6 to 9 months</td><td class="num">6.00%</td><td class="num">5.90%</td></tr><tr><td>10 to 11 months</td><td class="num">6.50%</td><td class="num">6.40%</td></tr><tr><td>12 to 24 months</td><td class="num">8.00%</td><td class="num">7.65%</td></tr></tbody></table></div>
     <p class="note">Senior citizens earn an additional 0.25% p.a. on deposits with tenure above 12 months. Each depositor is insured by DICGC up to a maximum of ₹5,00,000 (principal and interest combined) per bank, in the same right and capacity. <a href="rates.html">Full rate chart</a></p>
   </div>
   <div>
@@ -262,7 +258,7 @@
     <h2>Visit the branch</h2>
     <dl>
       <div><dt>Address</dt><dd>11/64,Pillaiyar Koil Strret,<br>Kaveripattinam,<br>Tamil Nadu - 635112</dd></div>
-      <div><dt>Phone</dt><dd><a class="visit-contact" href="tel:04343-252-026"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg><span class="placeholder phone-number" title="Placeholder – replace with official detail">04343-252-026</span></a></dd></div>
+      <div><dt>Landline</dt><dd><a class="visit-contact" href="tel:04343-252-016"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg><span class="placeholder phone-number" title="Placeholder – replace with official detail">04343-252-016</span></a></dd></div>
       <div><dt>Email</dt><dd><a class="visit-contact" href="mailto:email@kaveripattinamtown.bank.in"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>email@kaveripattinamtown.bank.in</a></dd></div>
       
       <div><dt>Banking hours</dt><dd>Mon–Sat, 10:00 AM – 4:00 PM<br>Closed on Sundays, 2nd & 4th Saturdays and public holidays</dd></div>
@@ -273,13 +269,13 @@
 </div></div></section>
 <section class="cta-band"><div class="wrap">
   <div><h2>Talk to us at the branch</h2><p>Bring your Aadhaar and PAN. Most accounts open the same day.</p></div>
-  <div class="hero-actions" style="margin:0"><a class="btn btn-mango" href="contact.html">Send an enquiry</a><a class="btn btn-ghost" href="tel:04343-252-026">Call the branch</a></div>
+  <div class="hero-actions" style="margin:0"><a class="btn btn-mango" href="contact.html">Send an enquiry</a><a class="btn btn-ghost" href="tel:04343-252-016">Call the branch</a></div>
 </div></section>
 </main>
 <footer class="site-footer"><div class="wrap">
   <div class="foot-grid">
     <div>
-      <div class="foot-brand"><img src="assets/bank-logo-cropped.png" alt="" width="46" height="46"><strong>Kaveripattinam Urban Co-operative Bank Ltd.</strong></div>
+      <div class="foot-brand"><img src="assets/bank-logo-new.png" alt="" width="46" height="46"><strong>The Kaveripattinam Cooperative Town Bank Ltd</strong></div>
       <p>A member-owned co-operative bank serving Kaveripattinam and the surrounding villages of Krishnagiri district.</p>
     </div>
     <div>
@@ -301,7 +297,7 @@
         <li><a href="customer-corner.html#kyc">KYC documents</a></li>
         <li><a href="contact.html">Contact us</a></li>
         <li><a href="customer-corner.html#grievance">Raise a complaint</a></li>
-        <li><a href="customer-corner.html#fraud">Fraud awareness</a></li>
+        <li><a href="index.html">Fraud awareness</a></li>
         <li><a href="about.html">About the bank</a></li>
         <li><a href="customer-corner.html#dicgc">Deposit insurance</a></li>
         <li><a href="contact.html">Send a query</a></li>
@@ -324,17 +320,17 @@
     <div>
       <h4>Visit us</h4>
       <p>11/64,Pillaiyar Koil Strret,<br>Kaveripattinam,<br>Tamil Nadu - 635112</p>
-      <a class="footer-contact" href="tel:04343-252-026"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg><span class="placeholder phone-number" title="Placeholder – replace with official detail">04343-252-026</span></a><span class="footer-contact-spacer"></span><a class="footer-contact" href="mailto:email@kaveripattinamtown.bank.in"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>email@kaveripattinamtown.bank.in</a><span class="footer-contact-spacer"></span><a href="https://www.google.com/maps/dir/?api=1&destination=Kaveripattinam%20Urban%20Cooperative%20Bank%2C%2011%2F64%20Pillaiyar%20Koil%20Street%2C%20Kaveripattinam%2C%20Krishnagiri%2C%20Tamil%20Nadu%20635112" target="_blank" rel="noopener">Get directions</a></p>
+      <a class="footer-contact" href="tel:04343-252-016"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg><span class="placeholder phone-number" title="Placeholder – replace with official detail">04343-252-016</span></a><span class="footer-contact-spacer"></span><a class="footer-contact" href="mailto:email@kaveripattinamtown.bank.in"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>email@kaveripattinamtown.bank.in</a><span class="footer-contact-spacer"></span><a href="https://www.google.com/maps/dir/?api=1&destination=Kaveripattinam%20Urban%20Cooperative%20Bank%2C%2011%2F64%20Pillaiyar%20Koil%20Street%2C%20Kaveripattinam%2C%20Krishnagiri%2C%20Tamil%20Nadu%20635112" target="_blank" rel="noopener">Get directions</a></p>
     </div>
   </div>
   <div class="foot-bottom">
-    <span>© <span data-year>2026</span> Kaveripattinam Urban Co-operative Bank Ltd. All rights reserved.</span>
+    <span>© <span data-year>2026</span> The Kaveripattinam Cooperative Town Bank Ltd. All rights reserved.</span>
     <span>Regulated by the Reserve Bank of India and the Registrar of Co-operative Societies, Tamil Nadu.</span>
   </div>
 </div></footer>
 <button class="to-top" aria-label="Back to top"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m18 15-6-6-6 6"/></svg></button>
 <script src="js/translations.js?v=25"></script>
-<script src="js/intro.js?v=23"></script>
+<script src="js/intro.js?v=25"></script>
 <script src="js/main.js?v=38"></script>
 </body>
 </html>

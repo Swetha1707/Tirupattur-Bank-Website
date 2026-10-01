@@ -5,10 +5,11 @@
   window.kucbIntroMs = 0;
   var html = document.documentElement;
   function ready() { html.classList.remove("iz-pre"); }   // lifts the "hide page until the intro is ready" cover set in <head>
+  if (html.classList.contains("iz-skip")) { ready(); return; }   // already shown once in this visit
   var brandImg = document.querySelector(".topbar-brand img"), hero = document.querySelector(".hero");
   if (!brandImg || !hero || !document.body.animate) { ready(); return; }
   if (matchMedia("(prefers-reduced-motion: reduce)").matches) { ready(); return; }
-  var NAME = ["Kaveripattinam", "Urban Co-operative", "Bank Ltd."];
+  var NAME = ["The Kaveripattinam", "Cooperative Town", "Bank Ltd"];
   var EASE = "cubic-bezier(.2,.8,.2,1)", FLYE = "cubic-bezier(.6,0,.2,1)";
   var ZOOM = 2400, LIFT = 950, FLY = 750, HOLD = ZOOM;           // photo lands at HOLD, then the veil lifts
   var TOTAL = HOLD + LIFT;

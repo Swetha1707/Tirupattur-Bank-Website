@@ -410,7 +410,7 @@
       t.setAttribute("aria-expanded", on ? "true" : "false");
     }
     tiles.forEach(function (t) {
-      var p = t.querySelector("p");
+      var p = t.querySelector(".svc-more");
       var title = t.querySelector("h3");
       if (!p || !title) return;
       var st = document.createElement("span");
@@ -674,4 +674,29 @@
   window.addEventListener("kucb-languagechange", function () { setTimeout(syncBanner, 50); });
   window.addEventListener("scroll", stuck, { passive: true });
   if (window.ResizeObserver) new ResizeObserver(measure).observe(header);
+})();
+
+// Internet Banking pop-up (coming soon)
+(function () {
+  var btn = document.querySelector(".top-btn-line");
+  if (!btn || typeof HTMLDialogElement === "undefined") return;
+  btn.setAttribute("aria-haspopup", "dialog");
+  var dlg = document.createElement("dialog");
+  dlg.className = "ib-dialog";
+  dlg.setAttribute("aria-labelledby", "ib-title");
+  document.body.appendChild(dlg);
+  function t(s) { return typeof tr === "function" ? tr(s) : s; }
+  function build() {
+    dlg.innerHTML = '<button type="button" class="ib-x" aria-label="' + t("Close") + '">&times;</button>' +
+      '<span class="ib-badge"><i></i>' + t("Coming soon") + '</span>' +
+      '<h3 id="ib-title">' + t("Internet Banking is launching soon") + '</h3>' +
+      '<p class="ib-lead">' + t("We are building a safe and simple internet banking service for your convenience. Something good is coming your way very soon!") + '</p>' +
+      '<ul class="ib-chips"><li>' + t("Available 24×7") + '</li><li>' + t("Safe and secure") + '</li><li>' + t("Easy to use") + '</li></ul>' +
+      '<p class="ib-note">' + t("Until then, visit your nearest branch - our team will be happy to help you.") + '</p>' +
+      '<div class="ib-actions"><a class="btn btn-teal" href="contact.html">' + t("Contact Us") + '</a><button type="button" class="ib-close btn btn-line">' + t("Close") + '</button></div>';
+    dlg.querySelector(".ib-x").onclick = function () { dlg.close(); };
+    dlg.querySelector(".ib-close").onclick = function () { dlg.close(); };
+  }
+  btn.addEventListener("click", function (e) { e.preventDefault(); build(); dlg.showModal(); });
+  dlg.addEventListener("click", function (e) { if (e.target === dlg) dlg.close(); });
 })();
