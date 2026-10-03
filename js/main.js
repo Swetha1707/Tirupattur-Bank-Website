@@ -276,6 +276,13 @@
       var mat = D * Math.pow(1 + r / 4, 4 * y);
       out("dep", inr(D)); out("drate", val("drate").toFixed(1) + "%"); out("years", y + " " + tr(y === 1 ? "year" : "years"));
       out("mat", inr(mat)); out("earned", inr(mat - D)); out("principal", inr(D));
+
+      // RD (monthly instalments, quarterly compounding)
+      if (calc.querySelector("[data-manual=rdmonthly]")) {
+        var M = val("rdmonthly"), rr = val("rdrate") / 100, n = Math.round(val("rdmonths")), rdMat = 0;
+        for (var k = 1; k <= n; k++) rdMat += M * Math.pow(1 + rr / 4, (n - k + 1) / 3);
+        out("rdmat", inr(rdMat)); out("rdearned", inr(rdMat - M * n)); out("rdprincipal", inr(M * n));
+      }
     }
     window.addEventListener("kucb-languagechange", update);
     var loanType = calc.querySelector("[data-manual=loantype]");
@@ -286,6 +293,11 @@
         update();
       });
     }
+    var rdType = calc.querySelector("[data-manual=rdtype]");
+    var rdRate = calc.querySelector("[data-manual=rdrate]");
+    if (rdType && rdRate) {
+      rdType.addEventListener("change", function () { rdRate.value = rdType.value; update(); });
+    }
     panels.forEach(function (panel) {
       panel.querySelector("[data-action=calculate]").addEventListener("click", function () {
         update();
@@ -295,7 +307,8 @@
         var select = panel.querySelector("select[data-manual]");
         if (select) {
           select.selectedIndex = Array.prototype.findIndex.call(select.options, function (o) { return o.defaultSelected; });
-          if (loanRate) loanRate.value = select.value;
+          var rateBox = panel.querySelector("input[readonly][data-manual]");
+          if (rateBox) rateBox.value = select.value;
         }
         update();
       });

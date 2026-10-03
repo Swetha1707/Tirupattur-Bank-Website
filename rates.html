@@ -10,7 +10,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Anek+Tamil:wght@500;600;700&family=Mukta+Malar:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/style.css?v=304">
+<link rel="stylesheet" href="css/style.css?v=305">
 <style>
 /* Rates page styling */
 body.page-rates .section{background:var(--mist)}
@@ -146,6 +146,7 @@ body.page-rates .section{background:var(--mist)}
   <div class="calc-tabs" role="tablist" aria-label="Calculators">
     <button role="tab" aria-selected="true" aria-controls="p-emi" id="t-emi">Loan EMI</button>
     <button role="tab" aria-selected="false" aria-controls="p-fd" id="t-fd">Fixed deposit</button>
+    <button role="tab" aria-selected="false" aria-controls="p-rd" id="t-rd">Recurring deposit</button>
   </div>
   <div role="tabpanel" id="p-emi" aria-labelledby="t-emi">
     <div class="field"><div class="field-head"><label for="loantype-manual">Loan type</label><select class="calc-manual" id="loantype-manual" data-manual="loantype" aria-label="Select loan type">
@@ -164,9 +165,9 @@ body.page-rates .section{background:var(--mist)}
       <option value="15">Siragugal Loan</option>
       <option value="15">Surety Loan</option>
     </select></div></div>
-    <div class="field"><div class="field-head"><label for="loan-manual">Loan amount</label><input class="calc-manual" type="number" id="loan-manual" data-manual="loan" min="10000" max="5000000" step="1" value="0" aria-label="Enter loan amount"></div></div>
-    <div class="field"><div class="field-head"><label for="lrate-manual">Interest rate (% per year, set by loan type)</label><input class="calc-manual" type="number" id="lrate-manual" data-manual="lrate" min="6" max="15" step="0.1" value="15" readonly aria-label="Interest rate, set automatically by loan type"></div></div>
-    <div class="field"><div class="field-head"><label for="tenure-manual">Tenure (months)</label><input class="calc-manual" type="number" id="tenure-manual" data-manual="tenure" min="6" max="240" step="1" value="0" aria-label="Enter loan tenure in months"></div></div>
+    <div class="field"><div class="field-head"><label for="loan-manual">Loan amount</label><input class="calc-manual" type="number" id="loan-manual" data-manual="loan" value="0" aria-label="Enter loan amount" step="any"></div></div>
+    <div class="field"><div class="field-head"><label for="lrate-manual">Interest rate (% per year, set by loan type)</label><input class="calc-manual" type="number" id="lrate-manual" data-manual="lrate" value="15" readonly aria-label="Interest rate, set automatically by loan type" step="any"></div></div>
+    <div class="field"><div class="field-head"><label for="tenure-manual">Tenure (months)</label><input class="calc-manual" type="number" id="tenure-manual" data-manual="tenure" value="0" aria-label="Enter loan tenure in months" step="any"></div></div>
     <div class="result" aria-live="polite">
       <div class="big"><small>Monthly EMI</small><b data-out="emi"></b></div>
       <div><small>Total interest</small><b data-out="interest"></b></div>
@@ -175,9 +176,9 @@ body.page-rates .section{background:var(--mist)}
     <div class="calc-actions"><button class="btn btn-line" type="button" data-action="cancel">Cancel</button><button class="btn btn-teal" type="button" data-action="calculate">Calculate</button></div>
   </div>
   <div role="tabpanel" id="p-fd" aria-labelledby="t-fd" hidden>
-    <div class="field"><div class="field-head"><label for="dep-manual">Deposit amount</label><input class="calc-manual" type="number" id="dep-manual" data-manual="dep" min="5000" max="2500000" step="1" value="0" aria-label="Enter deposit amount"></div></div>
-    <div class="field"><div class="field-head"><label for="drate-manual">Interest rate</label><input class="calc-manual" type="number" id="drate-manual" data-manual="drate" min="4" max="9" step="0.05" value="0" aria-label="Enter deposit interest rate"></div></div>
-    <div class="field"><div class="field-head"><label for="years-manual">Period (years)</label><input class="calc-manual" type="number" id="years-manual" data-manual="years" min="1" max="10" step="1" value="0" aria-label="Enter deposit period in years"></div></div>
+    <div class="field"><div class="field-head"><label for="dep-manual">Deposit amount</label><input class="calc-manual" type="number" id="dep-manual" data-manual="dep" value="0" aria-label="Enter deposit amount" step="any"></div></div>
+    <div class="field"><div class="field-head"><label for="drate-manual">Interest rate</label><input class="calc-manual" type="number" id="drate-manual" data-manual="drate" value="0" aria-label="Enter deposit interest rate" step="any"></div></div>
+    <div class="field"><div class="field-head"><label for="years-manual">Period (years)</label><input class="calc-manual" type="number" id="years-manual" data-manual="years" value="0" aria-label="Enter deposit period in years" step="any"></div></div>
     <div class="result" aria-live="polite">
       <div class="big"><small>Maturity value</small><b data-out="mat"></b></div>
       <div><small>Interest earned</small><b data-out="earned"></b></div>
@@ -185,7 +186,22 @@ body.page-rates .section{background:var(--mist)}
     </div>
     <div class="calc-actions"><button class="btn btn-line" type="button" data-action="cancel">Cancel</button><button class="btn btn-teal" type="button" data-action="calculate">Calculate</button></div>
   </div>
-  <p class="note">Estimates only. FD calculated with quarterly compounding. Final figures are confirmed at the branch.</p>
+    <div role="tabpanel" id="p-rd" aria-labelledby="t-rd" hidden>
+    <div class="field"><div class="field-head"><label for="rdtype-manual">Depositor type</label><select class="calc-manual" id="rdtype-manual" data-manual="rdtype" aria-label="Select depositor type">
+      <option value="8" selected>General</option>
+      <option value="8.25">Senior citizens</option>
+    </select></div></div>
+    <div class="field"><div class="field-head"><label for="rdmonthly-manual">Monthly deposit amount</label><input class="calc-manual" type="number" id="rdmonthly-manual" data-manual="rdmonthly" value="0" aria-label="Enter monthly deposit amount" step="any"></div></div>
+    <div class="field"><div class="field-head"><label for="rdrate-manual">Interest rate (% per year, set by depositor type)</label><input class="calc-manual" type="number" id="rdrate-manual" data-manual="rdrate" value="8" readonly aria-label="Interest rate, set automatically by depositor type" step="any"></div></div>
+    <div class="field"><div class="field-head"><label for="rdmonths-manual">Tenure (months)</label><input class="calc-manual" type="number" id="rdmonths-manual" data-manual="rdmonths" value="0" aria-label="Enter deposit tenure in months" step="any"></div></div>
+    <div class="result" aria-live="polite">
+      <div class="big"><small>Maturity value</small><b data-out="rdmat"></b></div>
+      <div><small>Interest earned</small><b data-out="rdearned"></b></div>
+      <div><small>You deposit</small><b data-out="rdprincipal"></b></div>
+    </div>
+    <div class="calc-actions"><button class="btn btn-line" type="button" data-action="cancel">Cancel</button><button class="btn btn-teal" type="button" data-action="calculate">Calculate</button></div>
+  </div>
+  <p class="note">Estimates only. FD and RD calculated with quarterly compounding. Final figures are confirmed at the branch.</p>
 </div></div></div></section>
 <section class="cta-band"><div class="wrap">
   <div><h2>Talk to us at the branch</h2><p>Bring your Aadhaar and PAN. Most accounts open the same day.</p></div>
@@ -253,7 +269,7 @@ body.page-rates .section{background:var(--mist)}
   </div>
 </div></footer>
 <button class="to-top" aria-label="Back to top"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m18 15-6-6-6 6"/></svg></button>
-<script src="js/translations.js?v=85"></script>
-<script src="js/main.js?v=63"></script>
+<script src="js/translations.js?v=86"></script>
+<script src="js/main.js?v=64"></script>
 </body>
 </html>
