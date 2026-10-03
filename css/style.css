@@ -61,7 +61,7 @@ p { margin: 0 0 1em; max-width: 68ch; }
 /* Header uses the same background image as each page's banner */
 .site-header { background-color: var(--teal-deep); background-image: linear-gradient(rgba(4,30,28,.35), rgba(4,30,28,.35)), var(--header-img, none); background-size: cover; background-position: center top; }
 body:has(.hero) { --header-img: url("../assets/home-hero-bg7.png?v=1"); }
-body.page-about { --header-img: url("../assets/about-hero-bg.png?v=2"); }
+body.page-about { --header-img: url("../assets/about-hero-bg3.png?v=1"); }
 body.page-deposits { --header-img: url("../assets/deposits-hero-bg3.png?v=1"); }
 body.page-loans { --header-img: url("../assets/loans-hero-bg2.png?v=1"); }
 body.page-services { --header-img: url("../assets/services-hero-bg.png?v=1"); }
@@ -199,7 +199,7 @@ body.nav-scale-lock .settings-icon { font-size: calc(.8rem / 1.12); }
 .page-hero::after { content: ""; position: absolute; right: -60px; top: -60px; width: 300px; height: 300px; background: url("../assets/kolam.svg?v=3") center / contain no-repeat; opacity: .35; }
 body.page-deposits .page-hero { background: url("../assets/deposits-hero-bg3.png?v=1") center/cover no-repeat; }
 body.page-deposits .page-hero::after { display: none; }
-body.page-about .page-hero { background: url("../assets/about-hero-bg.png?v=2") center/cover no-repeat; }
+body.page-about .page-hero { background: url("../assets/about-hero-bg3.png?v=1") center/cover no-repeat; }
 body.page-loans .page-hero { background: url("../assets/loans-hero-bg4.png?v=1") center/cover no-repeat; }
 body.page-loans .page-hero::after { display: none; }
 body.page-services .page-hero { background: url("../assets/services-hero-bg.png?v=1") center/cover no-repeat; }
@@ -1303,7 +1303,7 @@ body:has(.page-hero) .site-header .nav a[aria-current="page"] { color: #0B5D57 !
 body:has(.page-hero) .site-header .nav .nav-cta a { background: #0B5D57 !important; color: #fff !important; }
 body:has(.page-hero) .site-header .nav-toggle, body:has(.page-hero) .site-header .settings-toggle { border-color: #B7D3CE !important; }
 @media (max-width: 900px) { body:has(.page-hero) .page-hero::after, body:has(.page-hero) .page-hero::before { display: none; } body:has(.page-hero) .page-hero .wrap > * { max-width: 100%; } }
-body.page-about { --pimg: url("../assets/about-hero-bg.png?v=2"); --ppos: 92% 0; --psize: auto 108%; }
+body.page-about { --pimg: url("../assets/about-hero-bg3.png?v=1"); --ppos: 79% 0; --psize: auto 108%; }
 body.page-deposits { --pimg: url("../assets/deposits-hero-bg3.png?v=1"); --ppos: 86% 50%; --psize: auto 100%; }
 body.page-loans { --pimg: url("../assets/loans-hero-bg4.png?v=1"); --ppos: 87% 50%; --psize: auto 82%; }
 body.page-services { --pimg: url("../assets/services-hero-bg.png?v=1"); --ppos: 73% 50%; --psize: auto 100%; }
@@ -1678,3 +1678,43 @@ html[lang="ta"] p.ta,
 html[lang="ta"] .lc-ta,
 html[lang="ta"] .lcd2-ta,
 html[lang="ta"] .page-hero .hero-ta { display: none !important; }
+
+/* Customer corner: downloadable forms list */
+.cc-forms-list { max-width: 860px; margin: 0 auto; }
+.np-date-doc { color: #0B5D57; }
+.np-date-doc svg { width: 24px; height: 24px; }
+
+/* FAQ */
+.cc-tiles { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+@media (max-width: 900px) { .cc-tiles { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 560px) { .cc-tiles { grid-template-columns: 1fr; } }
+.faq { max-width: 860px; margin: 0 auto; }
+.faq-tools { display: flex; flex-wrap: wrap; gap: .8rem; align-items: center; margin-bottom: 1.1rem; }
+.faq-search { flex: 1 1 240px; padding: .7rem 1rem; border: 1.5px solid #CFE0DB; border-radius: 999px; background: #fff; font: inherit; color: var(--ink); }
+.faq-search:focus { outline: 2px solid #0B5D57; outline-offset: 1px; border-color: #0B5D57; }
+.faq-btns { display: flex; gap: .5rem; }
+.faq-btns button { padding: .55rem 1rem; border: 1.5px solid #0B5D57; border-radius: 999px; background: #fff; color: #0B5D57; font: inherit; font-weight: 600; font-size: .88rem; cursor: pointer; transition: background .2s, color .2s; }
+.faq-btns button:hover { background: #0B5D57; color: #fff; }
+.faq-list { display: grid; gap: .7rem; }
+.faq-item { background: #fff; border: 1px solid #E4ECE9; border-left: 5px solid #D9E8E5; border-radius: 14px; box-shadow: 0 6px 16px -12px rgba(7,64,60,.35); transition: border-color .25s, box-shadow .25s; }
+.faq-item[hidden] { display: none; }
+.faq-item[open] { border-left-color: #F2B632; box-shadow: 0 12px 26px -16px rgba(7,64,60,.45); }
+.faq-item summary { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding: 1rem 1.2rem; cursor: pointer; list-style: none; font-weight: 700; color: #07403C; line-height: 1.4; }
+.faq-item summary::-webkit-details-marker { display: none; }
+.faq-item summary::after { content: "+"; flex: none; width: 30px; height: 30px; display: grid; place-items: center; border-radius: 50%; border: 2px solid #0B5D57; color: #0B5D57; font-size: 1.3rem; line-height: 1; transition: transform .25s, background .25s, color .25s; }
+.faq-item[open] summary::after { transform: rotate(45deg); background: #0B5D57; color: #fff; }
+.faq-item summary:focus-visible { outline: 2px solid #0B5D57; outline-offset: 2px; border-radius: 12px; }
+.faq-a { padding: 0 1.2rem 1.1rem; color: #3C524E; line-height: 1.65; }
+.faq-a p { margin: 0; }
+.faq-empty { margin: 1rem 0 0; text-align: center; color: var(--ink-soft); }
+.faq-btns { flex: 0 0 auto; }
+.faq-btns button { white-space: nowrap; min-width: 108px; text-align: center; }
+@media (max-width: 560px) {
+  .faq-search { flex: 1 1 100%; }
+  .faq-btns { flex: 1 1 100%; display: grid; grid-template-columns: 1fr 1fr; gap: .6rem; }
+  .faq-btns button { width: 100%; min-width: 0; }
+}
+/* FAQ icon drawn with lines so it is always exactly centred: + when closed, − when open */
+.faq-item summary::after { content: ""; font-size: 0; width: 30px; height: 30px; border-radius: 50%; border: 2px solid #0B5D57; color: #0B5D57; background: linear-gradient(currentColor, currentColor) center / 12px 2px no-repeat, linear-gradient(currentColor, currentColor) center / 2px 12px no-repeat; transform: none; display: block; }
+.faq-item[open] summary::after { transform: none; background-color: #0B5D57; color: #fff; background-image: linear-gradient(currentColor, currentColor); background-size: 12px 2px; background-position: center; background-repeat: no-repeat; }
+.faq-item summary { align-items: center; }

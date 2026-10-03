@@ -696,3 +696,40 @@
   btn.addEventListener("click", function (e) { e.preventDefault(); build(); dlg.showModal(); });
   dlg.addEventListener("click", function (e) { if (e.target === dlg) dlg.close(); });
 })();
+
+// FAQ accordion: one answer open at a time, search, expand / collapse all
+(function () {
+  var box = document.querySelector(".faq");
+  if (!box) return;
+  var items = [].slice.call(box.querySelectorAll(".faq-item"));
+  var search = box.querySelector(".faq-search");
+  var empty = box.querySelector(".faq-empty");
+  var searching = false;
+  items.forEach(function (it) {
+    it.addEventListener("toggle", function () {
+      if (!it.open || searching || box.getAttribute("data-all") === "1") return;
+      items.forEach(function (o) { if (o !== it) o.open = false; });
+    });
+  });
+  [].forEach.call(box.querySelectorAll("[data-faq]"), function (b) {
+    b.addEventListener("click", function () {
+      var open = b.getAttribute("data-faq") === "open";
+      box.setAttribute("data-all", "1");
+      items.forEach(function (it) { if (!it.hidden) it.open = open; });
+      setTimeout(function () { box.removeAttribute("data-all"); }, 0);
+    });
+  });
+  function filter() {
+    var q = search.value.trim().toLowerCase(), shown = 0;
+    searching = !!q;
+    items.forEach(function (it) {
+      var hit = !q || it.textContent.toLowerCase().indexOf(q) !== -1;
+      it.hidden = !hit;
+      if (hit) shown++;
+    });
+    empty.hidden = shown !== 0;
+  }
+  search.addEventListener("input", filter);
+  window.addEventListener("kucb-languagechange", function () { if (search.value) filter(); });
+  if (location.hash === "#faq") { var f = document.getElementById("faq"); if (f) f.scrollIntoView(); }
+})();
