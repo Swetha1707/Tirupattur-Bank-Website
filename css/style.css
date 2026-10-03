@@ -1667,3 +1667,14 @@ body:has(.page-hero) .site-header.is-stuck { background: rgba(255,255,255,.96) !
   .hero { background: #EAF2F0 !important; }
   .hero .wrap { padding-bottom: 2rem !important; }
 }
+
+/* Home gold stat boxes: label on top at the big size, number below at the small size */
+.gold-stats div { display: flex; flex-direction: column-reverse; justify-content: flex-end; }
+.gold-stats span { font-size: 1.2rem; font-weight: 700; line-height: 1.2; letter-spacing: 0; text-transform: none; color: var(--teal-deep); margin: 0 0 .35rem; }
+.gold-stats b { font-size: .8rem !important; font-weight: 600; letter-spacing: .07em; text-transform: uppercase; color: var(--ink-soft); white-space: normal; line-height: 1.2; }
+
+/* Tamil language: the page text is already Tamil, so hide the separate Tamil sub-lines that would repeat it */
+html[lang="ta"] p.ta,
+html[lang="ta"] .lc-ta,
+html[lang="ta"] .lcd2-ta,
+html[lang="ta"] .page-hero .hero-ta { display: none !important; }

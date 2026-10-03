@@ -9,18 +9,18 @@
   var brandImg = document.querySelector(".topbar-brand img"), hero = document.querySelector(".hero");
   if (!brandImg || !hero || !document.body.animate) { ready(); return; }
   if (matchMedia("(prefers-reduced-motion: reduce)").matches) { ready(); return; }
-  var NAME = ["The Kaveripattinam", "Cooperative Town", "Bank Ltd"];
+  var NAME = ["காவேரிப்பட்டினம்", "கூட்டுறவு நகர வங்கி லிமிடெட்"];   // bank name in Tamil
   var EASE = "cubic-bezier(.2,.8,.2,1)", FLYE = "cubic-bezier(.6,0,.2,1)";
   var ZOOM = 2400, LIFT = 950, FLY = 750, HOLD = ZOOM;           // photo lands at HOLD, then the veil lifts
   var TOTAL = HOLD + LIFT;
   window.kucbIntroMs = TOTAL + 200;
   var st = document.createElement("style");
   st.textContent = "html.iz-on{overflow:hidden}.iz{position:fixed;inset:0;z-index:9999;overflow:hidden;pointer-events:none}" +
-    ".iz-bg{position:absolute;inset:0;background:linear-gradient(135deg,#14304d,#042B28)}" +
-    ".iz-clip{position:absolute;overflow:hidden}.iz-photo{position:absolute;inset:0;background:url(assets/home-hero-bg7.png) center/cover no-repeat}" +
+    ".iz-bg{position:absolute;inset:0;background:linear-gradient(135deg,#0B5D57,#042B28)}" +
+    ".iz-clip{position:absolute;overflow:hidden}.iz-photo{position:absolute;inset:0}" +
     ".iz-logo{position:fixed;z-index:6;object-fit:contain}" +
-    ".iz-name{position:fixed;left:0;right:0;z-index:5;text-align:center;color:#fff;font-family:Inter,'Mukta Malar',system-ui,sans-serif;font-weight:700;padding:0 1rem;line-height:1.3;font-size:clamp(1.3rem,3.8vw,2.4rem);text-shadow:0 2px 16px rgba(0,0,0,.7)}" +
-    ".iz-line{display:block}";
+    ".iz-name{position:fixed;left:0;right:0;z-index:5;text-align:center;color:#fff;font-family:'Anek Tamil','Mukta Malar',Inter,system-ui,sans-serif;font-weight:700;padding:0 1rem;line-height:1.4;font-size:clamp(1.5rem,4.4vw,2.8rem);text-shadow:0 2px 16px rgba(0,0,0,.6)}" +
+    ".iz-line{display:block}.iz-line+.iz-line{color:#F0D48A}";
   document.head.appendChild(st);
   brandImg.style.visibility = "hidden";
   var ov = document.createElement("div"); ov.className = "iz"; ov.setAttribute("aria-hidden", "true");
@@ -37,6 +37,13 @@
     var clip = mk("iz-clip", ov);
     clip.style.cssText = "left:" + hr.left + "px;top:" + hr.top + "px;width:" + hr.width + "px;height:" + hr.height + "px";
     var photo = mk("iz-photo", clip);
+    // copy the hero's real background (image, size, position, colour) so the intro lands exactly on it, with no jump
+    var hs = getComputedStyle(hero);
+    photo.style.backgroundColor = hs.backgroundColor;
+    photo.style.backgroundImage = hs.backgroundImage;
+    photo.style.backgroundSize = hs.backgroundSize;
+    photo.style.backgroundPosition = hs.backgroundPosition;
+    photo.style.backgroundRepeat = hs.backgroundRepeat;
     A(photo, [{ opacity: 0, filter: "brightness(.35)", transform: "scale(1.3)" }, { opacity: 1, filter: "brightness(.5)", transform: "scale(1.12)", offset: .28 },
       { opacity: 1, filter: "brightness(.55)", transform: "scale(1)" }], { duration: ZOOM, easing: "cubic-bezier(.25,.6,.3,1)" });
     // veil lifts: photo brightens to full (identical to the page beneath) while the navy backdrop dissolves

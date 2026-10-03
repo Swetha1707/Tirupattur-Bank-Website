@@ -261,7 +261,7 @@
       });
     });
 
-    function val(name) { return parseFloat(calc.querySelector("[data-manual=" + name + "]").value); }
+    function val(name) { var n = parseFloat(calc.querySelector("[data-manual=" + name + "]").value); return isNaN(n) ? 0 : n; }
     function out(name, text) { var o = calc.querySelector("[data-out=" + name + "]"); if (o) o.textContent = text; }
 
     function update() {
@@ -288,10 +288,6 @@
     }
     panels.forEach(function (panel) {
       panel.querySelector("[data-action=calculate]").addEventListener("click", function () {
-        var inputs = panel.querySelectorAll("input[data-manual]");
-        for (var i = 0; i < inputs.length; i++) {
-          if (!inputs[i].reportValidity()) return;
-        }
         update();
       });
       panel.querySelector("[data-action=cancel]").addEventListener("click", function () {
