@@ -288,7 +288,7 @@ body.page-customer-corner .page-hero::after { display: none; }
 @media (max-width: 700px) { .rates-scroll { max-height: 620px; } }
 .recurring-rates-block { margin-top: 2.4rem; }
 .recurring-rates-intro { color: var(--ink-soft); margin-bottom: 1.2rem; }
-.recurring-rates-table { width: 100%; min-width: 380px; border-collapse: collapse; }
+.recurring-rates-table { width: 100%; min-width: 440px; border-collapse: collapse; }
 .recurring-rates-table th { background: #0B5D57; color: #fff; white-space: nowrap; }
 .recurring-rates-table td { background: #fff; }
 .recurring-rates-table th, .recurring-rates-table td { padding: .8rem 1rem; }
@@ -1718,3 +1718,18 @@ html[lang="ta"] .page-hero .hero-ta { display: none !important; }
 .faq-item summary::after { content: ""; font-size: 0; width: 30px; height: 30px; border-radius: 50%; border: 2px solid #0B5D57; color: #0B5D57; background: linear-gradient(currentColor, currentColor) center / 12px 2px no-repeat, linear-gradient(currentColor, currentColor) center / 2px 12px no-repeat; transform: none; display: block; }
 .faq-item[open] summary::after { transform: none; background-color: #0B5D57; color: #fff; background-image: linear-gradient(currentColor, currentColor); background-size: 12px 2px; background-position: center; background-repeat: no-repeat; }
 .faq-item summary { align-items: center; }
+
+/* DICGC logo above the breadcrumb on the Deposits banner */
+.page-hero .dicgc-logo { order: -1; display: block; height: 64px; width: auto; max-width: 100%; margin: 0 0 .7rem; object-fit: contain; }
+body:has(.page-hero) .page-hero .wrap > img.dicgc-logo { order: -1; mix-blend-mode: multiply; }
+body:has(.page-hero) .page-hero .wrap > img.dicgc-logo { order: -1 !important; }
+body:has(.page-hero) .page-hero .wrap > img.dicgc-logo { mix-blend-mode: normal; box-sizing: content-box; padding: 5px 8px; background: #fff; border-radius: 12px; box-shadow: 0 8px 18px -10px rgba(7,64,60,.45); height: 56px; width: auto; }
+body:has(.page-hero) .page-hero .wrap > img.dicgc-logo { height: 74px; margin-top: -1.2rem; }
+
+/* Centred, blinking "launching soon" message in the top strip */
+.top-strip .wrap { position: relative; }
+.top-strip .top-note { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); margin: 0; max-width: 36%; text-align: center; pointer-events: none; }
+.top-strip .top-note span { display: inline-block; background: none; border: 0; box-shadow: none; padding: 0; font-size: 1.05rem; font-weight: 800; letter-spacing: .02em; color: #0B5D57; animation: topBlink 1.3s ease-in-out infinite; }
+@keyframes topBlink { 0%, 100% { opacity: 1; } 50% { opacity: .15; } }
+@media (prefers-reduced-motion: reduce) { .top-strip .top-note span { animation: none; } }
+@media (max-width: 1100px) { .top-strip .top-note { display: none; } }

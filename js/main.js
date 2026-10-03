@@ -681,7 +681,7 @@
   dlg.className = "ib-dialog";
   dlg.setAttribute("aria-labelledby", "ib-title");
   document.body.appendChild(dlg);
-  function t(s) { return typeof tr === "function" ? tr(s) : s; }
+  function t(s) { return window.kucbTranslate ? window.kucbTranslate(s) : s; }
   function build() {
     dlg.innerHTML = '<button type="button" class="ib-x" aria-label="' + t("Close") + '">&times;</button>' +
       '<span class="ib-badge"><i></i>' + t("Coming soon") + '</span>' +

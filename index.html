@@ -23,7 +23,7 @@
   }
 }catch(e){}})();
 </script>
-<link rel="stylesheet" href="css/style.css?v=295">
+<link rel="stylesheet" href="css/style.css?v=304">
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
@@ -31,6 +31,7 @@
     <img src="assets/bank-logo-new.png" alt="" width="34" height="34">
     <span>The Kaveripattinam<br>Cooperative Town Bank Ltd No-5918</span>
   </a>
+  <p class="top-note"><span>Little drops of water make a mighty ocean</span></p>
   <div class="top-actions"><a class="top-btn top-btn-line" href="#">Internet Banking<span class="top-soon">Coming soon</span></a><a class="top-btn top-btn-solid" href="deposits.html">Open Account</a></div>
   <div class="settings-menu">
     <button type="button" class="settings-toggle" aria-haspopup="true" aria-expanded="false" aria-controls="language-menu" aria-label="Settings">
@@ -75,7 +76,7 @@
   <div class="hero-copy">
     <h1>Our Bank <br>Our very <br>Own</h1>
     <p class="hero-ta" lang="ta">Kaveripattinam 
-      <br>Coorperative Town Bank</p>
+      <br>Cooperative Town Bank</p>
     <p class="lead">We serve you better by <br>earning your trust Today, <br>and doing it all over<br> again Tomorrow.</p>
     <div class="hero-actions">
       <a class="btn btn-mango" href="deposits.html">Open an account</a>
@@ -178,7 +179,7 @@
     <h2>Instant <em>Gold Loan Approval</em></h2>
     <p class="ta" lang="ta">நகைக் கடன் - உடனடி ஒப்புதல்</p>
     <p>Please bring your gold jewelry and Aadhaar card. Once the appraiser weighs and inspects the jewelry in your presence, the loan amount will be credited to your savings account and the funds disbursed.</p>
-    <div class="gold-stats"><div><b>&#8377;10,000</b><span>Jewel loan per gram</span></div><div><b>8.25%*</b><span>Deposits &middot; individuals</span></div><div><b>8.50%*</b><span>Deposits &middot; senior citizens</span></div></div>
+    <div class="gold-stats"><div><b>&#8377;10,000</b><span>Jewel loan per gram</span></div><div><b>8.25%</b><span>Deposits &middot; individuals</span></div><div><b>8.50%</b><span>Deposits &middot; senior citizens</span></div></div>
     <p class="gold-foot">*Per annum. Rates are indicative and subject to change. Please confirm at the branch.</p>
     <div class="hero-actions"><a class="btn btn-teal" href="loans.html#gold">See gold loan details</a><a class="btn btn-line" href="rates.html">Estimate your EMI</a></div>
   </div>
@@ -206,22 +207,23 @@
   </div>
   <div role="tabpanel" id="p-emi" aria-labelledby="t-emi">
     <div class="field"><div class="field-head"><label for="loantype-manual">Loan type</label><select class="calc-manual" id="loantype-manual" data-manual="loantype" aria-label="Select loan type">
-      <option value="12">House Construction Loan</option>
+      <option value="13">House Construction Loan</option>
       <option value="11">Gold Loan</option>
-      <option value="13">Joint Liability Group Loan</option>
-      <option value="12">Home Mortgage Loan</option>
-      <option value="12">Loan for Differently Abled Persons (NHFDC)</option>
-      <option value="12" selected>Self Help Group Loan</option>
-      <option value="12">Business Loan</option>
-      <option value="8">TABCEDCO Loan</option>
+      <option value="15">Joint Liability Group Loan</option>
+      <option value="13">Home Mortgage Loan</option>
+      <option value="15">Loan for Differently Abled Persons (NHFDC)</option>
+      <option value="15" selected>Self Help Group Loan</option>
+      <option value="15">Business Loan</option>
+      <option value="7">TABCEDCO Loan</option>
       <option value="6">TAMCO Loan</option>
-      <option value="12">Women Entrepreneur Loan</option>
-      <option value="12">Working Women Loan</option>
-      <option value="">Educational Loan</option>
-      <option value="">Siragugal Loan</option>
+      <option value="15">Women Entrepreneur Loan</option>
+      <option value="14">Working Women Loan</option>
+      <option value="15">Educational Loan</option>
+      <option value="15">Siragugal Loan</option>
+      <option value="15">Surety Loan</option>
     </select></div></div>
     <div class="field"><div class="field-head"><label for="loan-manual">Loan amount</label><input class="calc-manual" type="number" id="loan-manual" data-manual="loan" min="10000" max="5000000" step="1" value="0" aria-label="Enter loan amount"></div></div>
-    <div class="field"><div class="field-head"><label for="lrate-manual">Interest rate (% per year, set by loan type)</label><input class="calc-manual" type="number" id="lrate-manual" data-manual="lrate" min="6" max="13" step="0.1" value="12" readonly aria-label="Interest rate, set automatically by loan type"></div></div>
+    <div class="field"><div class="field-head"><label for="lrate-manual">Interest rate (% per year, set by loan type)</label><input class="calc-manual" type="number" id="lrate-manual" data-manual="lrate" min="6" max="15" step="0.1" value="15" readonly aria-label="Interest rate, set automatically by loan type"></div></div>
     <div class="field"><div class="field-head"><label for="tenure-manual">Tenure (months)</label><input class="calc-manual" type="number" id="tenure-manual" data-manual="tenure" min="6" max="240" step="1" value="0" aria-label="Enter loan tenure in months"></div></div>
     <div class="result" aria-live="polite">
       <div class="big"><small>Monthly EMI</small><b data-out="emi"></b></div>
@@ -336,8 +338,8 @@
   </div>
 </div></footer>
 <button class="to-top" aria-label="Back to top"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m18 15-6-6-6 6"/></svg></button>
-<script src="js/translations.js?v=82"></script>
+<script src="js/translations.js?v=85"></script>
 <script src="js/intro.js?v=60"></script>
-<script src="js/main.js?v=62"></script>
+<script src="js/main.js?v=63"></script>
 </body>
 </html>

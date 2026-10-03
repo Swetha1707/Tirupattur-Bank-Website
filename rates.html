@@ -10,7 +10,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Anek+Tamil:wght@500;600;700&family=Mukta+Malar:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/style.css?v=295">
+<link rel="stylesheet" href="css/style.css?v=304">
 <style>
 /* Rates page styling */
 body.page-rates .section{background:var(--mist)}
@@ -58,6 +58,7 @@ body.page-rates .section{background:var(--mist)}
     <img src="assets/bank-logo-new.png" alt="" width="34" height="34">
     <span>The Kaveripattinam<br>Cooperative Town Bank Ltd No-5918</span>
   </a>
+  <p class="top-note"><span>Little drops of water make a mighty ocean</span></p>
   <div class="top-actions"><a class="top-btn top-btn-line" href="#">Internet Banking<span class="top-soon">Coming soon</span></a><a class="top-btn top-btn-solid" href="deposits.html">Open Account</a></div>
   <div class="settings-menu">
     <button type="button" class="settings-toggle" aria-haspopup="true" aria-expanded="false" aria-controls="language-menu" aria-label="Settings">
@@ -93,7 +94,7 @@ body.page-rates .section{background:var(--mist)}
   <a class="hero-link" href="#calculators">Calculate Loans and Deposits <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"/></svg></a>
 </div></section><section class="section" style="padding-bottom:0;background:transparent"><div class="wrap"><div class="rp-stats">
   <div class="rp-stat"><small>Best FD rate</small><b>8.50%</b><span>Senior citizens, 3 years</span></div>
-  <div class="rp-stat"><small>Recurring deposit</small><b>7.75%</b><span>12 to 24 months</span></div>
+  <div class="rp-stat"><small>Recurring deposit</small><b>8%</b><span>12 to 24 months</span></div>
   <div class="rp-stat"><small>Lowest loan rate</small><b>6%</b><span>TAMCO Loan</span></div>
   <div class="rp-stat"><small>Highest loan rate</small><b>15%</b><span>Joint Liability Group Loan</span></div>
 </div></div></section>
@@ -116,28 +117,28 @@ body.page-rates .section{background:var(--mist)}
         <div class="recurring-rates-block">
           <h2>Recurring deposit rate</h2>
           <p class="recurring-rates-intro">Save a fixed amount every month and earn a fixed rate.</p>
-          <div class="table-wrap"><table class="recurring-rates-table"><thead><tr><th>Tenure</th><th>Interest Rate</th></tr></thead><tbody>
-            <tr><td>12 to 24 months</td><td>7.75%</td></tr>
+          <div class="table-wrap"><table class="recurring-rates-table"><thead><tr><th>Tenure</th><th class="num">General</th><th class="num">Senior citizens</th></tr></thead><tbody>
+            <tr><td>12 to 24 months</td><td class="num">8%</td><td class="num">8.25%</td></tr>
           </tbody></table></div>
         </div>
       </div>
       <h2 class="loan-rates-title">Loan interest rates</h2>
       <p class="loan-rates-intro">Rates per annum, calculated as simple interest on a daily basis (principal × rate × days ÷ 365).</p>
       <div class="table-wrap"><table class="loan-rates-table"><thead><tr><th>Loan type</th><th>Interest rate (p.a.)</th></tr></thead><tbody>
-        <tr><td>House Construction Loan</td><td>12%</td></tr>
+        <tr><td>House Construction Loan</td><td>13%</td></tr>
         <tr><td>Gold Loan</td><td>11%</td></tr>
-        <tr><td>Joint Liability Group Loan</td><td>13%</td></tr>
-        <tr><td>Home Mortgage Loan</td><td>12%</td></tr>
-        <tr><td>Loan for Differently Abled Persons (NHFDC)</td><td>12%</td></tr>
-        <tr><td>Self Help Group Loan</td><td>12%</td></tr>
-        <tr><td>Business Loan</td><td>12%</td></tr>
-        <tr><td>TABCEDCO Loan</td><td>8%</td></tr>
+        <tr><td>Joint Liability Group Loan</td><td>15%</td></tr>
+        <tr><td>Home Mortgage Loan</td><td>13%</td></tr>
+        <tr><td>Loan for Differently Abled Persons (NHFDC)</td><td>15%</td></tr>
+        <tr><td>Self Help Group Loan</td><td>15%</td></tr>
+        <tr><td>Business Loan</td><td>15%</td></tr>
+        <tr><td>TABCEDCO Loan</td><td>7%</td></tr>
         <tr><td>TAMCO Loan</td><td>6%</td></tr>
-        <tr><td>Women Entrepreneur Loan</td><td>12%</td></tr>
-        <tr><td>Working Women Loan</td><td>12%</td></tr>
-        <tr><td>Educational Loan</td><td></td></tr>
-        <tr><td>Siragugal Loan</td><td></td></tr>
-        <tr><td>Surety Loan</td><td>12%</td></tr>
+        <tr><td>Women Entrepreneur Loan</td><td>15%</td></tr>
+        <tr><td>Working Women Loan</td><td>14%</td></tr>
+        <tr><td>Educational Loan</td><td>15%*</td></tr>
+        <tr><td>Siragugal Loan</td><td>15%*</td></tr>
+        <tr><td>Surety Loan</td><td>15%</td></tr>
       </tbody></table></div>
     </div>
   </div>
@@ -148,22 +149,23 @@ body.page-rates .section{background:var(--mist)}
   </div>
   <div role="tabpanel" id="p-emi" aria-labelledby="t-emi">
     <div class="field"><div class="field-head"><label for="loantype-manual">Loan type</label><select class="calc-manual" id="loantype-manual" data-manual="loantype" aria-label="Select loan type">
-      <option value="12">House Construction Loan</option>
+      <option value="13">House Construction Loan</option>
       <option value="11">Gold Loan</option>
-      <option value="13">Joint Liability Group Loan</option>
-      <option value="12">Home Mortgage Loan</option>
-      <option value="12">Loan for Differently Abled Persons (NHFDC)</option>
-      <option value="12" selected>Self Help Group Loan</option>
-      <option value="12">Business Loan</option>
-      <option value="8">TABCEDCO Loan</option>
+      <option value="15">Joint Liability Group Loan</option>
+      <option value="13">Home Mortgage Loan</option>
+      <option value="15">Loan for Differently Abled Persons (NHFDC)</option>
+      <option value="15" selected>Self Help Group Loan</option>
+      <option value="15">Business Loan</option>
+      <option value="7">TABCEDCO Loan</option>
       <option value="6">TAMCO Loan</option>
-      <option value="12">Women Entrepreneur Loan</option>
-      <option value="12">Working Women Loan</option>
-      <option value="">Educational Loan</option>
-      <option value="">Siragugal Loan</option>
+      <option value="15">Women Entrepreneur Loan</option>
+      <option value="14">Working Women Loan</option>
+      <option value="15">Educational Loan</option>
+      <option value="15">Siragugal Loan</option>
+      <option value="15">Surety Loan</option>
     </select></div></div>
     <div class="field"><div class="field-head"><label for="loan-manual">Loan amount</label><input class="calc-manual" type="number" id="loan-manual" data-manual="loan" min="10000" max="5000000" step="1" value="0" aria-label="Enter loan amount"></div></div>
-    <div class="field"><div class="field-head"><label for="lrate-manual">Interest rate (% per year, set by loan type)</label><input class="calc-manual" type="number" id="lrate-manual" data-manual="lrate" min="6" max="13" step="0.1" value="12" readonly aria-label="Interest rate, set automatically by loan type"></div></div>
+    <div class="field"><div class="field-head"><label for="lrate-manual">Interest rate (% per year, set by loan type)</label><input class="calc-manual" type="number" id="lrate-manual" data-manual="lrate" min="6" max="15" step="0.1" value="15" readonly aria-label="Interest rate, set automatically by loan type"></div></div>
     <div class="field"><div class="field-head"><label for="tenure-manual">Tenure (months)</label><input class="calc-manual" type="number" id="tenure-manual" data-manual="tenure" min="6" max="240" step="1" value="0" aria-label="Enter loan tenure in months"></div></div>
     <div class="result" aria-live="polite">
       <div class="big"><small>Monthly EMI</small><b data-out="emi"></b></div>
@@ -251,7 +253,7 @@ body.page-rates .section{background:var(--mist)}
   </div>
 </div></footer>
 <button class="to-top" aria-label="Back to top"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m18 15-6-6-6 6"/></svg></button>
-<script src="js/translations.js?v=82"></script>
-<script src="js/main.js?v=62"></script>
+<script src="js/translations.js?v=85"></script>
+<script src="js/main.js?v=63"></script>
 </body>
 </html>
