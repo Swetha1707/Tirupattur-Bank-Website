@@ -1,12 +1,12 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="The Tirupattur Urban Co-operative Bank Ltd">
   <!-- Placeholder emblem: replace with the bank's official logo -->
-  <path d="M32 3 L57 11 V30 C57 46 46 56 32 61 C18 56 7 46 7 30 V11 Z" fill="#1B2F73"/>
-  <path d="M32 3 L57 11 V30 C57 46 46 56 32 61 C18 56 7 46 7 30 V11 Z" fill="none" stroke="#E8833A" stroke-width="2.5"/>
+  <path d="M32 3 L57 11 V30 C57 46 46 56 32 61 C18 56 7 46 7 30 V11 Z" fill="#8A1F38"/>
+  <path d="M32 3 L57 11 V30 C57 46 46 56 32 61 C18 56 7 46 7 30 V11 Z" fill="none" stroke="#E8B73A" stroke-width="2.5"/>
   <path d="M16 25 L32 16 L48 25 Z" fill="#FFFFFF"/>
   <rect x="17" y="27" width="30" height="3" rx="1" fill="#FFFFFF"/>
   <rect x="19" y="32" width="4" height="12" fill="#FFFFFF"/>
   <rect x="27" y="32" width="4" height="12" fill="#FFFFFF"/>
   <rect x="33" y="32" width="4" height="12" fill="#FFFFFF"/>
   <rect x="41" y="32" width="4" height="12" fill="#FFFFFF"/>
-  <rect x="15" y="46" width="34" height="4" rx="1" fill="#E8833A"/>
+  <rect x="15" y="46" width="34" height="4" rx="1" fill="#E8B73A"/>
 </svg>

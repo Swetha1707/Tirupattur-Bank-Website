@@ -16,11 +16,11 @@
   window.kucbIntroMs = TOTAL + 200;
   var st = document.createElement("style");
   st.textContent = "html.iz-on{overflow:hidden}.iz{position:fixed;inset:0;z-index:9999;overflow:hidden;pointer-events:none}" +
-    ".iz-bg{position:absolute;inset:0;background:linear-gradient(135deg,#0B1B5D,#040C2B)}" +
+    ".iz-bg{position:absolute;inset:0;background:linear-gradient(135deg,#6B1226,#2B040B)}" +
     ".iz-clip{position:absolute;overflow:hidden}.iz-photo{position:absolute;inset:0}" +
     ".iz-logo{position:fixed;z-index:6;object-fit:contain}" +
     ".iz-name{position:fixed;left:0;right:0;z-index:5;text-align:center;color:#fff;font-family:'Anek Tamil','Mukta Malar',Inter,system-ui,sans-serif;font-weight:700;padding:0 1rem;line-height:1.4;font-size:clamp(1.5rem,4.4vw,2.8rem);text-shadow:0 2px 16px rgba(0,0,0,.6)}" +
-    ".iz-line{display:block}.iz-line+.iz-line{color:#F0B38A}";
+    ".iz-line{display:block}.iz-line+.iz-line{color:#E8C97A}";
   document.head.appendChild(st);
   brandImg.style.visibility = "hidden";
   var ov = document.createElement("div"); ov.className = "iz"; ov.setAttribute("aria-hidden", "true");
