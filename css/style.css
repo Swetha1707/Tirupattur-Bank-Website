@@ -1733,3 +1733,7 @@ body:has(.page-hero) .page-hero .wrap > img.dicgc-logo { height: 74px; margin-to
 @keyframes topBlink { 0%, 100% { opacity: 1; } 50% { opacity: .15; } }
 @media (prefers-reduced-motion: reduce) { .top-strip .top-note span { animation: none; } }
 @media (max-width: 1100px) { .top-strip .top-note { display: none; } }
+
+/* Notices: RBI Master Direction category */
+.notice-tag-master { background: #F2B632; color: #07403C; }
+.np-list .np-row[data-category="master"] { --c: #F2B632; }

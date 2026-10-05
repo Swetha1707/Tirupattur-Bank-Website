@@ -9,7 +9,7 @@
   var brandImg = document.querySelector(".topbar-brand img"), hero = document.querySelector(".hero");
   if (!brandImg || !hero || !document.body.animate) { ready(); return; }
   if (matchMedia("(prefers-reduced-motion: reduce)").matches) { ready(); return; }
-  var NAME = ["காவேரிப்பட்டினம்", "கூட்டுறவு நகர வங்கி லிமிடெட்"];   // bank name in Tamil
+  var NAME = ["காவேரிப்பட்டிணம்", "கூட்டுறவு நகர வங்கி லிமிடெட்"];   // bank name in Tamil
   var EASE = "cubic-bezier(.2,.8,.2,1)", FLYE = "cubic-bezier(.6,0,.2,1)";
   var ZOOM = 2400, LIFT = 950, FLY = 750, HOLD = ZOOM;           // photo lands at HOLD, then the veil lifts
   var TOTAL = HOLD + LIFT;
