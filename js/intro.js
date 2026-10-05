@@ -9,18 +9,18 @@
   var brandImg = document.querySelector(".topbar-brand img"), hero = document.querySelector(".hero");
   if (!brandImg || !hero || !document.body.animate) { ready(); return; }
   if (matchMedia("(prefers-reduced-motion: reduce)").matches) { ready(); return; }
-  var NAME = ["காவேரிப்பட்டிணம்", "கூட்டுறவு நகர வங்கி லிமிடெட்"];   // bank name in Tamil
+  var NAME = ["திருப்பத்தூர் நகர", "கூட்டுறவு வங்கி லிமிடெட்"];   // bank name in Tamil
   var EASE = "cubic-bezier(.2,.8,.2,1)", FLYE = "cubic-bezier(.6,0,.2,1)";
   var ZOOM = 2400, LIFT = 950, FLY = 750, HOLD = ZOOM;           // photo lands at HOLD, then the veil lifts
   var TOTAL = HOLD + LIFT;
   window.kucbIntroMs = TOTAL + 200;
   var st = document.createElement("style");
   st.textContent = "html.iz-on{overflow:hidden}.iz{position:fixed;inset:0;z-index:9999;overflow:hidden;pointer-events:none}" +
-    ".iz-bg{position:absolute;inset:0;background:linear-gradient(135deg,#0B5D57,#042B28)}" +
+    ".iz-bg{position:absolute;inset:0;background:linear-gradient(135deg,#0B1B5D,#040C2B)}" +
     ".iz-clip{position:absolute;overflow:hidden}.iz-photo{position:absolute;inset:0}" +
     ".iz-logo{position:fixed;z-index:6;object-fit:contain}" +
     ".iz-name{position:fixed;left:0;right:0;z-index:5;text-align:center;color:#fff;font-family:'Anek Tamil','Mukta Malar',Inter,system-ui,sans-serif;font-weight:700;padding:0 1rem;line-height:1.4;font-size:clamp(1.5rem,4.4vw,2.8rem);text-shadow:0 2px 16px rgba(0,0,0,.6)}" +
-    ".iz-line{display:block}.iz-line+.iz-line{color:#F0D48A}";
+    ".iz-line{display:block}.iz-line+.iz-line{color:#F0B38A}";
   document.head.appendChild(st);
   brandImg.style.visibility = "hidden";
   var ov = document.createElement("div"); ov.className = "iz"; ov.setAttribute("aria-hidden", "true");
