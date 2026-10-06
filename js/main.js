@@ -35,23 +35,6 @@
   window.addEventListener("load", setHeaderHeight);
   window.addEventListener("kucb-languagechange", setHeaderHeight);
 
-  // Home page: proverb popup: bottom-right, shown on every load / refresh, auto-hides after 3s
-  var welcomePopup = document.getElementById("welcomePopup");
-  if (welcomePopup) {
-    var closePopup = function () {
-      welcomePopup.hidden = true;
-      document.removeEventListener("keydown", popupKey);
-    };
-    var popupKey = function (e) { if (e.key === "Escape") closePopup(); };
-    welcomePopup.querySelector(".welcome-popup-close").addEventListener("click", closePopup);
-    // Wait for the page-open intro (js/intro.js) to finish, then show for 3s
-    setTimeout(function () {
-      welcomePopup.hidden = false;
-      document.addEventListener("keydown", popupKey);
-      setTimeout(closePopup, 3000);
-    }, window.kucbIntroMs || 0);
-  }
-
   // Mobile nav
   var toggle = document.querySelector(".nav-toggle");
   var nav = document.getElementById("site-nav");
@@ -410,33 +393,23 @@
     show(cards.some(function (c) { return c.id === start; }) ? start : cards[0].id);
   })();
 
-  // Services page: click a tile to reveal its description
+  // Services page: flip cards (hover on desktop, tap on touch) built from the service tiles
   (function () {
     var tiles = [].slice.call(document.querySelectorAll(".page-services .service"));
     if (!tiles.length) return;
-    function setOpen(t, on) {
-      t.classList.toggle("is-open", on);
-      t.setAttribute("aria-expanded", on ? "true" : "false");
-    }
-    tiles.forEach(function (t) {
-      var p = t.querySelector(".svc-more");
-      var title = t.querySelector("h3");
-      if (!p || !title) return;
-      var st = document.createElement("span");
-      st.className = "st";
-      p.insertBefore(st, p.firstChild);
+    tiles.forEach(function (t, i) {
+      var svg = t.querySelector("svg"), title = t.querySelector("h3"), short = t.querySelector(".svc-short"), more = t.querySelector(".svc-more ul");
+      if (!svg || !title || !more) return;
+      var front = '<div class="lc-front"><div class="lc-top"><span class="lc-ico-w"><span class="lc-ico">' + svg.outerHTML + '</span></span></div><h3>' + title.textContent + '</h3><p class="lc-p">' + (short ? short.textContent : "") + '</p><span class="lc-cta">Hover or tap for details <i>&rarr;</i></span></div>';
+      var back = '<div class="lc-back"><h4>Key features</h4>' + more.outerHTML + '</div>';
+      t.className = "lc lc-3 ic" + ((i % 9) + 1);
+      t.innerHTML = '<div class="lc-inner">' + front + back + "</div>";
       t.tabIndex = 0;
       t.setAttribute("role", "button");
-      t.setAttribute("aria-expanded", "false");
-      t.addEventListener("click", function () {
-        var on = !t.classList.contains("is-open");
-        st.textContent = title.textContent;
-        tiles.forEach(function (o) { setOpen(o, false); });
-        setOpen(t, on);
-      });
+      t.addEventListener("click", function () { t.classList.toggle("is-flip"); });
       t.addEventListener("keydown", function (e) {
         if (e.key === "Enter" || e.key === " ") { e.preventDefault(); t.click(); }
-        if (e.key === "Escape") setOpen(t, false);
+        if (e.key === "Escape") t.classList.remove("is-flip");
       });
     });
   })();
@@ -485,6 +458,7 @@
     }
     var host = document.createElement("div");
     host.id = "lc-grid";
+    host.className = "grid-3";
     nav.parentNode.insertBefore(host, nav.nextSibling);
     var dlg = document.createElement("dialog");
     dlg.className = "lc-dialog";
@@ -498,19 +472,27 @@
       dlg.showModal();
     }
     dlg.addEventListener("click", function (e) { if (e.target === dlg) dlg.close(); });
+    var tilesL = [];
     arts.forEach(function (a, i) {
       var d = read(a);
       var c = document.createElement("div");
-      c.className = "lc lc-3 ic" + (i + 1);
+      c.className = "service";
       c.tabIndex = 0;
       c.setAttribute("role", "button");
-      var front = '<div class="lc-front"><div class="lc-top"><span class="lc-ico-w"><span class="lc-ico"><svg viewBox="0 0 64 64" aria-hidden="true">' + ICONS[i % ICONS.length] + '</svg></span></span><div class="lc-rate"><span class="num">' + d.rate + '</span>%<small>per annum</small></div></div><h3>' + d.title + '</h3><p class="lc-ta">' + d.ta + '</p><p class="lc-p">' + d.desc + '</p><span class="lc-cta">View details <i>&rarr;</i></span></div>';
-      var back = '<div class="lc-back"><h4>Key features</h4><ul>' + d.feats.slice(0, 4).map(function (f) { return "<li>" + f + "</li>"; }).join("") + "</ul></div>";
-      c.innerHTML = '<div class="lc-inner">' + front + back + "</div>";
-      c.addEventListener("click", function () { openDialog(a.id); });
-      c.addEventListener("keydown", function (e) {
-        if (e.key === "Enter" || e.key === " ") { e.preventDefault(); openDialog(a.id); }
+      c.setAttribute("aria-expanded", "false");
+      c.innerHTML = '<svg viewBox="0 0 64 64" aria-hidden="true">' + ICONS[i % ICONS.length] + '</svg><h3>' + d.title + '</h3><span class="svc-short"><b>' + d.rate + '%</b> per annum</span><div class="svc-more"><span class="st">' + d.title + '</span><ul>' + d.feats.slice(0, 4).map(function (f) { return "<li>" + f + "</li>"; }).join("") + '</ul><button type="button" class="svc-detail">View details &rarr;</button></div>';
+      function setOpen(on) { c.classList.toggle("is-open", on); c.setAttribute("aria-expanded", on ? "true" : "false"); }
+      c.addEventListener("click", function () {
+        var on = !c.classList.contains("is-open");
+        tilesL.forEach(function (o) { o.classList.remove("is-open"); o.setAttribute("aria-expanded", "false"); });
+        setOpen(on);
       });
+      c.querySelector(".svc-detail").addEventListener("click", function (e) { e.stopPropagation(); openDialog(a.id); });
+      c.addEventListener("keydown", function (e) {
+        if (e.key === "Enter" || e.key === " ") { e.preventDefault(); c.click(); }
+        if (e.key === "Escape") setOpen(false);
+      });
+      tilesL.push(c);
       host.appendChild(c);
     });
     document.documentElement.classList.add("lc-on");
@@ -545,7 +527,7 @@
         history.replaceState(null, "", "#" + tile.id);
         tile.scrollIntoView({ block: "center", behavior: "smooth" });
         setTimeout(function () {
-          if (!tile.classList.contains("is-open")) tile.click();
+          tile.classList.add("is-flip");
           tile.classList.remove("is-flash");
           void tile.offsetWidth;
           tile.classList.add("is-flash");

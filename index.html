@@ -9,7 +9,7 @@
 <link rel="icon" href="assets/favicon.png" type="image/png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Anek+Tamil:wght@500;600;700&family=Mukta+Malar:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Anek+Tamil:wght@500;600;700&family=Poppins:wght@400;500;600;700&family=Mukta+Malar:wght@400;500;600;700&display=swap" rel="stylesheet">
 <script>
 /* Hide the page from the very first paint when the intro is about to play, so the home page never flashes before it. */
 (function(){try{
@@ -31,7 +31,6 @@
     <img src="assets/tucb-logo.png" alt="" width="34" height="34">
     <span>The Tirupattur Urban<br>Co-operative Bank Ltd</span>
   </a>
-  <p class="top-note"><span>Little drops of water make a mighty ocean</span></p>
   <div class="top-actions"><a class="top-btn top-btn-line" href="#">Internet Banking<span class="top-soon">Coming soon</span></a><a class="top-btn top-btn-solid" href="deposits.html">Open Account</a></div>
   <div class="settings-menu">
     <button type="button" class="settings-toggle" aria-haspopup="true" aria-expanded="false" aria-controls="language-menu" aria-label="Settings">
@@ -59,13 +58,6 @@
   <button class="nav-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Open menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18"/></svg></button>
   <nav class="nav" id="site-nav" aria-label="Main"><ul><li><a href="index.html" aria-current="page"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 10.5 12 3l9 7.5"/><path d="M5 9.5V20a1 1 0 0 0 1 1h3v-6h6v6h3a1 1 0 0 0 1-1V9.5"/></svg>Home</a></li><li><a href="about.html">About us</a></li><li><a href="deposits.html">Deposits</a></li><li><a href="loans.html">Loans</a></li><li><a href="services.html">Services</a></li><li><a href="rates.html">Interest rates</a></li><li><a href="notices.html">Notices</a></li><li><a href="customer-corner.html">Customer corner</a></li><li class="nav-cta"><a href="contact.html">Contact us</a></li></ul></nav>
 </div></header>
-<div class="welcome-popup" id="welcomePopup" role="status" aria-labelledby="welcomePopupText" hidden>
-  <div class="welcome-popup-card">
-    <button type="button" class="welcome-popup-close" aria-label="Close message">&times;</button>
-    <p class="welcome-popup-ta" id="welcomePopupText" lang="ta">சிறுதுளி பெரு வெள்ளம்</p>
-    <p class="welcome-popup-en">Little drops of water make a mighty ocean</p>
-  </div>
-</div>
 <main id="main">
 <section class="hero">
   <div class="hero-glow hero-glow-1"></div>
@@ -185,6 +177,15 @@
   </ul>
 </div></section>
 
+<section class="section"><div class="wrap">
+  <div class="section-head values-head"><h2>Why bank with a co-operative</h2></div>
+  <div class="values">
+    <div class="value-card"><span class="value-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="8" r="3.2"/><path d="M2.8 20c0-3.6 2.7-6 6.2-6s6.2 2.4 6.2 6"/><circle cx="17.5" cy="9" r="2.4" class="ac"/><path d="M16.5 14.3c3 .1 4.9 2 4.9 5.2"/></svg></span><h3>Owned by members</h3><p>Every shareholder is a customer from our area. Profits return to members as dividend and to the town as lower loan rates.</p></div>
+    <div class="value-card"><span class="value-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-6.5-5.6-6.5-11a6.5 6.5 0 0 1 13 0c0 5.400-6.500 11-6.500 11z"/><circle cx="12" cy="10" r="2.600" class="ac"/></svg></span><h3>Decisions made here</h3><p>Loans are sanctioned by a local board that understands the harvest season, the market days and the needs of small traders.</p></div>
+    <div class="value-card"><span class="value-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2.800 4.600 5.800v5.700c0 4.600 3.100 8.200 7.400 9.700 4.300-1.500 7.400-5.100 7.400-9.700V5.800z"/><path d="m8.500 12.200 2.500 2.600 4.600-5" class="ac" style="fill:none"/></svg></span><h3>Safe and regulated</h3><p>We are supervised by the Reserve Bank of India, and every depositor is insured by DICGC up to ₹5 lakh.</p></div>
+  </div>
+</div></section>
+
 <section class="section section-mist hr-sec"><div class="wrap split">
   <div>
     <h2>Fixed deposit interest rates</h2>
@@ -256,15 +257,6 @@
   </div>
   <p class="note">Estimates only. FD and RD calculated with quarterly compounding. Final figures are confirmed at the branch.</p>
 </div>
-  </div>
-</div></section>
-
-<section class="section"><div class="wrap">
-  <div class="section-head values-head"><h2>Why bank with a co-operative</h2></div>
-  <div class="values">
-    <div class="value-card"><span class="value-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="8" r="3.2"/><path d="M2.8 20c0-3.6 2.7-6 6.2-6s6.2 2.4 6.2 6"/><circle cx="17.5" cy="9" r="2.4" class="ac"/><path d="M16.5 14.3c3 .1 4.9 2 4.9 5.2"/></svg></span><h3>Owned by members</h3><p>Every shareholder is a customer from our area. Profits return to members as dividend and to the town as lower loan rates.</p></div>
-    <div class="value-card"><span class="value-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-6.5-5.6-6.5-11a6.5 6.5 0 0 1 13 0c0 5.400-6.500 11-6.500 11z"/><circle cx="12" cy="10" r="2.600" class="ac"/></svg></span><h3>Decisions made here</h3><p>Loans are sanctioned by a local board that understands the harvest season, the market days and the needs of small traders.</p></div>
-    <div class="value-card"><span class="value-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2.800 4.600 5.800v5.700c0 4.600 3.100 8.200 7.400 9.700 4.300-1.500 7.400-5.100 7.400-9.700V5.800z"/><path d="m8.500 12.200 2.500 2.600 4.600-5" class="ac" style="fill:none"/></svg></span><h3>Safe and regulated</h3><p>We are supervised by the Reserve Bank of India, and every depositor is insured by DICGC up to ₹5 lakh.</p></div>
   </div>
 </div></section>
 
