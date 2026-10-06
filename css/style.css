@@ -2122,3 +2122,8 @@ body:has(.hero) .site-footer, body.page-about .site-footer, body.page-deposits .
 body.page-about .ab-eyebrow { border: 0 !important; box-shadow: none !important; }
 body.page-customer-corner .cc-quick a, body.page-customer-corner .cc-quick .cc-q, body.page-customer-corner .cc-steps > *, body.page-customer-corner .cc-quick > .wrap > * > * {
   border-radius: 6px !important; box-shadow: none !important; border: 1.5px solid var(--v4-line) !important; background: var(--v4-panel) !important; }
+/* new TUCB tree logo */
+.top-strip .topbar-brand img { height: 54px !important; width: auto !important; background: transparent !important; padding: 0 !important; }
+.foot-brand img { height: 58px !important; width: auto !important; padding: 4px 6px !important; background: #fff !important; border-radius: 8px; }
+@media (max-width: 700px) { .top-strip .topbar-brand img { height: 44px !important; } }
+.fixed-rates-dicgc { margin-top: .8rem; padding: .7rem 1rem; background: #FBF1D6; border-left: 4px solid #C9971C; border-radius: 4px; color: #3D0A16; font-size: .95rem; }
