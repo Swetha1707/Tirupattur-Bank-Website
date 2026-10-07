@@ -16,11 +16,11 @@
   window.kucbIntroMs = TOTAL + 200;
   var st = document.createElement("style");
   st.textContent = "html.iz-on{overflow:hidden}.iz{position:fixed;inset:0;z-index:9999;overflow:hidden;pointer-events:none}" +
-    ".iz-bg{position:absolute;inset:0;background:linear-gradient(135deg,#6B1226,#2B040B)}" +
+    ".iz-bg{position:absolute;inset:0;background:linear-gradient(135deg,#16673C,#141B16)}" +
     ".iz-clip{position:absolute;overflow:hidden}.iz-photo{position:absolute;inset:0}" +
-    ".iz-logo{position:fixed;z-index:6;object-fit:contain}" +
-    ".iz-name{position:fixed;left:0;right:0;z-index:5;text-align:center;color:#fff;font-family:'Anek Tamil','Mukta Malar',Inter,system-ui,sans-serif;font-weight:700;padding:0 1rem;line-height:1.4;font-size:clamp(1.5rem,4.4vw,2.8rem);text-shadow:0 2px 16px rgba(0,0,0,.6)}" +
-    ".iz-line{display:block}.iz-line+.iz-line{color:#E8C97A}";
+    ".iz-logo{position:fixed;z-index:6;object-fit:contain;filter:drop-shadow(0 0 1px #fff) drop-shadow(0 0 1px #fff) drop-shadow(0 0 3px #fff) drop-shadow(0 0 10px rgba(255,255,255,.9))}" +
+    ".iz-name{position:fixed;left:0;right:0;z-index:5;text-align:center;color:#fff;font-family:'Anek Tamil','Mukta Malar',Inter,system-ui,sans-serif;font-weight:700;padding:0 1rem;line-height:1.4;font-size:clamp(1.5rem,4.4vw,2.8rem);text-shadow:0 0 3px rgba(0,0,0,.9),0 2px 6px rgba(0,0,0,.85),0 4px 22px rgba(0,0,0,.8);-webkit-font-smoothing:antialiased;background:linear-gradient(180deg,rgba(10,18,13,0),rgba(10,18,13,.55) 25%,rgba(10,18,13,.55) 75%,rgba(10,18,13,0));padding-block:.6rem}" +
+    ".iz-line{display:block}.iz-line{color:#fff}.iz-line+.iz-line{color:#C4F7D8}";
   document.head.appendChild(st);
   brandImg.style.visibility = "hidden";
   var ov = document.createElement("div"); ov.className = "iz"; ov.setAttribute("aria-hidden", "true");
