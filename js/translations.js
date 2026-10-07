@@ -359,6 +359,7 @@
     "Senior citizens, 3 years": "மூத்த குடிமக்கள், 3 ஆண்டுகள்",
     "Yes. Deposits up to Rs.1,00,000/- are insured with DICGC.": "ஆம். ரூ.1,00,000/- வரையிலான வைப்புகளுக்கு DICGC காப்பீடு உள்ளது.",
     "Safe Deposit Locker facility is available for customers at the headquarters and Tamil Nadu Housing Board branches.": "பாதுகாப்புப் பெட்டக (லாக்கர்) வசதி தலைமை அலுவலகம் மற்றும் தமிழ்நாடு வீட்டுவசதி வாரியக் கிளைகளில் வாடிக்கையாளர்களுக்குக் கிடைக்கிறது.",
+    "NHFDC Loan": "NHFDC கடன்",
     "B.C. Kumar": "பி.சி. குமார்"
   });
 
