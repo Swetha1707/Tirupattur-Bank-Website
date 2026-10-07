@@ -2202,3 +2202,9 @@ body.page-customer-corner .cc-quick a, body.page-customer-corner .cc-quick .cc-q
   .hero .hero-copy { max-width: 100%; }
   .hero .quick { position: relative !important; left: auto !important; right: auto !important; top: auto !important; bottom: auto !important; width: 100%; max-width: 380px; margin: 1.5rem 0 0 !important; }
 }
+.foot-phones { margin: .6rem 0; }
+.foot-phones a, .visit-info dd a { color: inherit; text-decoration: none; font-weight: 600; }
+.foot-phones a:hover, .visit-info dd a:hover { text-decoration: underline; }
+.np-help-phones { margin-top: .5rem; font-size: .95rem; line-height: 1.7; }
+.np-help-phones a { color: inherit; font-weight: 700; text-decoration: none; }
+.np-help-phones a:hover { text-decoration: underline; }
