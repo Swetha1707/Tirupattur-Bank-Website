@@ -18,7 +18,7 @@ rather than guessed. Add them when the bank confirms them:
 | Phone / email | Footer, home "Visit the branch", contact page cards, customer-corner FAQ |
 | Street address & exact map pin | Footer, contact page, about page; Google Maps links search for the bank by name |
 | IFSC, registration no., history, membership figures | about.html (sections were removed) |
-| Board member names | about.html board grid (Managing Director: B.C. Kumar, per Tirupathur district directory) |
+| Board member names | about.html board grid (Managing Director: B.C. Kumar, per Tirupattur district directory) |
 | Enquiry form | Removed (it emailed the previous bank); re-add with the bank's email or a form service |
 | Downloadable forms | customer-corner.html lists them as "At branch"; add PDFs in `assets/forms/` and relink |
 | Interest rates | rates.html, index.html — confirm current board-approved rates |
